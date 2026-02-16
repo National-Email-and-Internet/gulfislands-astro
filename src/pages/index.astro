@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- Hero with Gulf Islands Photo -->
+  <section class="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" 
+        alt="Gulf Islands coastline" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-ocean-900/60 via-ocean-900/40 to-ocean-950/80"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+      <p class="text-sm uppercase tracking-widest text-ocean-200 mb-4 font-medium">British Columbia, Canada</p>
+      <h1 class="font-['Playfair_Display'] text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Discover the <span class="italic text-ocean-200">Gulf Islands</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Your gateway to the beautiful archipelago between Vancouver Island and mainland BC. Explore communities, businesses, and island life.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#directory" class="bg-white text-ocean-800 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition shadow-lg">
+          Explore Directory
+        </a>
+        <a href="#islands" class="border-2 border-white/40 hover:border-white/80 px-8 py-4 rounded-lg font-semibold transition">
+          The Islands
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- The Islands Section -->
+  <section id="islands" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          The <span class="italic text-ocean-600">Islands</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          A collection of unique islands, each with its own character and charm.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Salt Spring Island -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80" 
+              alt="Salt Spring Island"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-gray-900 mb-2">Salt Spring Island</h3>
+            <p class="text-gray-600 text-sm mb-4">The largest and most populated island, known for its vibrant arts community, farmers market, and natural beauty.</p>
+            <span class="text-ocean-600 text-sm font-medium">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Galiano Island -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80" 
+              alt="Galiano Island"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-gray-900 mb-2">Galiano Island</h3>
+            <p class="text-gray-600 text-sm mb-4">Known as the "friendly island," featuring stunning parks, hiking trails, and a relaxed rural atmosphere.</p>
+            <span class="text-ocean-600 text-sm font-medium">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Mayne Island -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80" 
+              alt="Mayne Island"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-gray-900 mb-2">Mayne Island</h3>
+            <p class="text-gray-600 text-sm mb-4">A peaceful island with rich agricultural heritage, historic sites, and beautiful ocean views.</p>
+            <span class="text-ocean-600 text-sm font-medium">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Pender Islands -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" 
+              alt="Pender Islands"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-gray-900 mb-2">Pender Islands</h3>
+            <p class="text-gray-600 text-sm mb-4">North and South Pender offer golf, hiking, beaches, and a tight-knit community feel.</p>
+            <span class="text-ocean-600 text-sm font-medium">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Gabriola Island -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1518173946687-a4c036bc3c5c?w=800&q=80" 
+              alt="Gabriola Island"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-gray-900 mb-2">Gabriola Island</h3>
+            <p class="text-gray-600 text-sm mb-4">The "Isle of the Arts" with a thriving artist community, sandstone formations, and scenic coastline.</p>
+            <span class="text-ocean-600 text-sm font-medium">Explore →</span>
+          </div>
+        </div>
+
+        <!-- Saturna Island -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80" 
+              alt="Saturna Island"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-['Playfair_Display'] text-2xl font-semibold text-gray-900 mb-2">Saturna Island</h3>
+            <p class="text-gray-600 text-sm mb-4">A quiet, rugged island with spectacular views, vineyards, and abundant wildlife.</p>
+            <span class="text-ocean-600 text-sm font-medium">Explore →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directory Section -->
+  <section id="directory" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Island <span class="italic text-forest-600">Directory</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Find local businesses, services, and community resources across the Gulf Islands.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Stay -->
+        <a href="#stay" class="group p-8 bg-gray-50 rounded-2xl hover:bg-ocean-50 transition-all duration-300 border border-transparent hover:border-ocean-200">
+          <div class="w-14 h-14 bg-ocean-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-ocean-200 transition-colors">
+            <svg class="w-7 h-7 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-xl text-gray-900 mb-2">Stay</h3>
+          <p class="text-gray-600 text-sm">Accommodations, B&Bs, resorts, and vacation rentals.</p>
+        </a>
+
+        <!-- Eat & Drink -->
+        <a href="#eat" class="group p-8 bg-gray-50 rounded-2xl hover:bg-forest-50 transition-all duration-300 border border-transparent hover:border-forest-200">
+          <div class="w-14 h-14 bg-forest-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest-200 transition-colors">
+            <svg class="w-7 h-7 text-forest-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-xl text-gray-900 mb-2">Eat & Drink</h3>
+          <p class="text-gray-600 text-sm">Restaurants, cafés, wineries, and local producers.</p>
+        </a>
+
+        <!-- Explore -->
+        <a href="#explore" class="group p-8 bg-gray-50 rounded-2xl hover:bg-sand-50 transition-all duration-300 border border-transparent hover:border-sand-200">
+          <div class="w-14 h-14 bg-sand-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sand-200 transition-colors">
+            <svg class="w-7 h-7 text-sand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-xl text-gray-900 mb-2">Explore</h3>
+          <p class="text-gray-600 text-sm">Hiking trails, beaches, parks, and outdoor activities.</p>
+        </a>
+
+        <!-- Services -->
+        <a href="#services" class="group p-8 bg-gray-50 rounded-2xl hover:bg-ocean-50 transition-all duration-300 border border-transparent hover:border-ocean-200">
+          <div class="w-14 h-14 bg-ocean-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-ocean-200 transition-colors">
+            <svg class="w-7 h-7 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-xl text-gray-900 mb-2">Services</h3>
+          <p class="text-gray-600 text-sm">Local businesses, trades, professionals, and services.</p>
+        </a>
+
+        <!-- Community -->
+        <a href="#community" class="group p-8 bg-gray-50 rounded-2xl hover:bg-forest-50 transition-all duration-300 border border-transparent hover:border-forest-200">
+          <div class="w-14 h-14 bg-forest-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest-200 transition-colors">
+            <svg class="w-7 h-7 text-forest-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-xl text-gray-900 mb-2">Community</h3>
+          <p class="text-gray-600 text-sm">Organizations, events, government, and community groups.</p>
+        </a>
+
+        <!-- Get Here -->
+        <a href="#transport" class="group p-8 bg-gray-50 rounded-2xl hover:bg-sand-50 transition-all duration-300 border border-transparent hover:border-sand-200">
+          <div class="w-14 h-14 bg-sand-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sand-200 transition-colors">
+            <svg class="w-7 h-7 text-sand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-xl text-gray-900 mb-2">Get Here</h3>
+          <p class="text-gray-600 text-sm">Ferries, transportation, and travel information.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Section (Secondary) -->
+  <section id="email" class="py-24 bg-gradient-to-br from-ocean-800 to-ocean-900 text-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-ocean-300 mb-4 font-medium">Personal Email</p>
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-6">
+            Get Your <span class="italic text-ocean-200">Island</span> Email Address
+          </h2>
+          <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+            Show your island connection with a personal email address at @gulfislands.com or @saltspring.com. Same secure, ad-free platform used by businesses — for your personal use.
+          </p>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ocean-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-200">5GB to 100GB mailbox options</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ocean-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-200">Advanced spam & virus protection</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ocean-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-200">Ad-free, private, and secure</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ocean-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-200">Works with all email apps</span>
+            </li>
+          </ul>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://natinternet.com/personal-email/" class="bg-white text-ocean-800 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition text-center">
+              Get Your Island Email
+            </a>
+            <a href="https://natinternet.com/personal-email/" class="border-2 border-white/30 hover:border-white/60 px-8 py-4 rounded-lg font-semibold transition text-center">
+              Learn More
+            </a>
+          </div>
+        </div>
+        
+        <!-- Domain Cards -->
+        <div class="space-y-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-12 h-12 bg-ocean-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-['Playfair_Display'] text-xl font-semibold">yourname@gulfislands.com</h3>
+                <p class="text-ocean-200 text-sm">For all Gulf Islands residents & lovers</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-12 h-12 bg-forest-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-['Playfair_Display'] text-xl font-semibold">yourname@saltspring.com</h3>
+                <p class="text-ocean-200 text-sm">Salt Spring Island's signature address</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Gulf Islands BC - Your Gateway to the Gulf Islands', 
+  description = 'Discover the beautiful Gulf Islands of British Columbia. Directory of local businesses, accommodations, services, and community resources.' 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <!-- Navigation -->
+  <nav class="bg-white/90 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <svg class="w-8 h-8 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+        </svg>
+        <span class="font-['Playfair_Display'] text-xl font-semibold text-gray-900">Gulf Islands</span>
+      </a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#islands" class="text-gray-600 hover:text-ocean-600 transition">Islands</a>
+        <a href="#directory" class="text-gray-600 hover:text-ocean-600 transition">Directory</a>
+        <a href="#email" class="text-gray-600 hover:text-ocean-600 transition">Get Island Email</a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-6 py-4">
+      <div class="flex flex-col gap-4">
+        <a href="#islands" class="text-gray-600 hover:text-ocean-600 transition py-2">Islands</a>
+        <a href="#directory" class="text-gray-600 hover:text-ocean-600 transition py-2">Directory</a>
+        <a href="#email" class="text-gray-600 hover:text-ocean-600 transition py-2">Get Island Email</a>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  </script>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ocean-950 text-gray-300 py-12 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-['Playfair_Display'] text-xl text-white mb-4">Gulf Islands</h3>
+        <p class="text-sm leading-relaxed">Your gateway to the beautiful Gulf Islands of British Columbia. Discover local businesses, services, and community resources.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="text-sm space-y-2">
+          <li><a href="#islands" class="hover:text-white transition">The Islands</a></li>
+          <li><a href="#directory" class="hover:text-white transition">Directory</a></li>
+          <li><a href="#email" class="hover:text-white transition">Get Island Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Email Services</h4>
+        <p class="text-sm mb-3">Get your own @gulfislands.com or @saltspring.com email address.</p>
+        <a href="https://natinternet.com/personal-email/" class="text-ocean-300 hover:text-ocean-200 text-sm font-medium">Learn More →</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-8 pt-8 border-t border-ocean-900 text-sm text-center">
+      <p>© {new Date().getFullYear()} Gulf Islands Directory. Email services by <a href="https://natinternet.com" class="text-ocean-300 hover:text-ocean-200">NEIC</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
