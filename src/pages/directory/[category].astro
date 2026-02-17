@@ -16,52 +16,82 @@ const { categoryName } = Astro.props;
 const allListings = await getCollection('directory');
 const listings = allListings.filter(item => item.data.category === category);
 
-// Group by island for better organization
-const groupedByIsland = listings.reduce((acc, item) => {
-  const island = item.data.island || 'Other';
-  if (!acc[island]) acc[island] = [];
-  acc[island].push(item);
+// Get unique subcategories
+const subcategories = [...new Set(listings.map(item => item.data.subcategory).filter(Boolean))].sort();
+
+// Group by subcategory
+const groupedBySubcategory = listings.reduce((acc, item) => {
+  const sub = item.data.subcategory || 'General';
+  if (!acc[sub]) acc[sub] = [];
+  acc[sub].push(item);
   return acc;
 }, {});
+
+// Sort subcategories so "General" is last or first as preferred
+const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
+    if (a === 'General') return 1;
+    if (b === 'General') return -1;
+    return a.localeCompare(b);
+});
 ---
 
 <Layout title={`${categoryName} - Gulf Islands Directory`}>
   <section class="py-16 bg-gray-50 min-h-screen">
     <div class="max-w-6xl mx-auto px-6">
       <div class="mb-12">
-        <a href="/" class="text-ocean-600 hover:underline mb-4 inline-block">← Back to Home</a>
-        <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-gray-900 mt-2">
-          {categoryName} <span class="italic text-ocean-600">Listings</span>
-        </h1>
-        <p class="text-xl text-gray-600 mt-4">
-          Discover {categoryName.toLowerCase()} businesses and services across the Gulf Islands.
-        </p>
+        <a href="/" class="text-ocean-600 hover:underline mb-4 inline-block flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Back to Home
+        </a>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-gray-900 mt-2">
+                    {categoryName} <span class="italic text-ocean-600">Listings</span>
+                </h1>
+                <p class="text-xl text-gray-600 mt-4 max-w-2xl">
+                    Discover {categoryName.toLowerCase()} businesses and services across the Gulf Islands.
+                </p>
+            </div>
+            {subcategories.length > 0 && (
+                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm md:w-64">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Jump to Section</p>
+                    <div class="flex flex-wrap gap-2">
+                        <select class="w-full bg-gray-50 border-none text-sm rounded-lg focus:ring-ocean-500" onchange="window.location.hash=this.value">
+                            <option value="">Choose a sub-category...</option>
+                            {sortedSubKeys.map(sub => (
+                                <option value={`#${sub.toLowerCase().replace(/\s+/g, '-')}`}>{sub}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+            )}
+        </div>
       </div>
 
-      {Object.keys(groupedByIsland).length === 0 ? (
+      {listings.length === 0 ? (
         <div class="bg-white rounded-2xl p-12 text-center border border-gray-200">
           <p class="text-gray-500 text-lg">No listings found in this category yet.</p>
           <a href="/submit-listing" class="text-ocean-600 font-semibold mt-4 inline-block">Add your business →</a>
         </div>
       ) : (
-        <div class="space-y-16">
-          {Object.entries(groupedByIsland).sort().map(([island, islandListings]) => (
-            <div>
+        <div class="space-y-20">
+          {sortedSubKeys.map((sub) => (
+            <div id={sub.toLowerCase().replace(/\s+/g, '-')}>
               <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-4 mb-8 flex items-center gap-3">
                 <span class="w-2 h-8 bg-ocean-500 rounded-full"></span>
-                {island}
+                {sub}
+                <span class="text-sm font-normal text-gray-400 ml-auto">{groupedBySubcategory[sub].length} results</span>
               </h2>
+              
               <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {islandListings.map(listing => (
-                  <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col h-full">
+                {groupedBySubcategory[sub].sort((a, b) => a.data.name.localeCompare(b.data.name)).map(listing => (
+                  <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group">
                     <div class="flex-grow">
-                      <h3 class="text-xl font-bold text-gray-900 mb-2">{listing.data.name}</h3>
-                      {listing.data.subcategory && (
-                        <span class="text-xs uppercase tracking-wider text-ocean-600 font-bold mb-3 block">
-                          {listing.data.subcategory}
-                        </span>
-                      )}
-                      <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+                      <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-ocean-600 transition-colors">{listing.data.name}</h3>
+                        <span class="bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded font-bold uppercase whitespace-nowrap">{listing.data.island.split(' ')[0]}</span>
+                      </div>
+                      <p class="text-gray-600 text-sm line-clamp-3 mb-4 italic leading-relaxed">
                         {listing.data.description || "Local business serving the Gulf Islands."}
                       </p>
                     </div>
@@ -70,7 +100,7 @@ const groupedByIsland = listings.reduce((acc, item) => {
                         href={listing.data.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="mt-4 text-ocean-600 font-semibold text-sm hover:text-ocean-700 flex items-center gap-1"
+                        class="mt-4 text-ocean-600 font-bold text-sm hover:text-ocean-700 flex items-center justify-between border-t border-gray-50 pt-4"
                       >
                         Visit Website 
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
