@@ -4,18 +4,85 @@ import { getCollection } from 'astro:content';
 
 const allListings = await getCollection('directory');
 const featuredSlugs = [
-  'salt-spring-island-firerescue', 
-  'the-driftwood-online', 
-  'galiano-health-care-centre', 
-  'salt-spring-centre', 
-  'montague-harbour-marina', 
-  'vbc-web-design-consulting',
+  'salt-spring-island-firerescue',
+  'salt-spring-centre',
   'oceanwood-country-inn',
-  'mayne-island-kayak--canoe-rentals'
+  'the-hastings-country-house-hotel',
+  'restaurant-house-piccolo',
+  'harlans-chocolates',
+  'salt-spring-resort-spa-retreat',
+  'cliffhouse-cottages',
 ];
-const featuredListings = allListings.filter(l => 
+const featuredListings = allListings.filter(l =>
   featuredSlugs.includes(l.slug)
 );
+
+// Category icon paths and colors
+const categoryConfig: Record<string, { color: string; bg: string; icon: string }> = {
+  stay: {
+    color: 'text-ocean-600',
+    bg: 'bg-ocean-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`
+  },
+  eat: {
+    color: 'text-forest-600',
+    bg: 'bg-forest-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`
+  },
+  activities: {
+    color: 'text-sand-600',
+    bg: 'bg-sand-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`
+  },
+  services: {
+    color: 'text-gray-600',
+    bg: 'bg-gray-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`
+  },
+  shopping: {
+    color: 'text-ocean-500',
+    bg: 'bg-ocean-50',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>`
+  },
+  health: {
+    color: 'text-teal-600',
+    bg: 'bg-teal-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`
+  },
+  'real-estate': {
+    color: 'text-forest-600',
+    bg: 'bg-forest-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`
+  },
+  community: {
+    color: 'text-purple-600',
+    bg: 'bg-purple-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`
+  },
+};
+
+// Map slugs to downloaded logo images
+const featuredImages: Record<string, string> = {
+  'salt-spring-island-firerescue': '/images/featured/saltspring-fire-crest.png',
+  'salt-spring-centre': '/images/featured/saltspring-centre.png',
+  'oceanwood-country-inn': '/images/featured/oceanwood.png',
+};
+
+// Category label display names
+const categoryLabels: Record<string, string> = {
+  stay: 'Stay',
+  eat: 'Eat & Drink',
+  activities: 'Activities',
+  services: 'Services',
+  shopping: 'Shopping',
+  health: 'Health & Wellness',
+  'real-estate': 'Real Estate',
+  community: 'Community',
+};
+
+function cleanUrl(url: string): string {
+  return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+}
 ---
 
 <Layout>
@@ -89,38 +156,78 @@ const featuredListings = allListings.filter(l =>
     </div>
   </section>
 
-  <!-- Featured Listings (NEW) -->
-  <section class="py-12 bg-ocean-50/50">
+  <!-- Featured Listings -->
+  <section class="py-14 bg-ocean-50/50">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex justify-between items-end mb-8">
+      <div class="flex justify-between items-end mb-10">
         <div>
           <h2 class="font-['Playfair_Display'] text-3xl font-bold text-gray-900 mb-2">Featured Local <span class="italic text-ocean-600">Businesses</span></h2>
           <p class="text-gray-600">Highly-rated services and organizations across the islands.</p>
         </div>
-        <a href="#directory" class="text-ocean-600 font-semibold hover:underline hidden sm:block">View all categories →</a>
+        <a href="#directory" class="text-ocean-600 font-semibold hover:underline hidden sm:block">Browse all categories →</a>
       </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuredListings.map(listing => (
-          <div class="bg-white rounded-xl p-6 shadow-sm border border-ocean-100 hover:shadow-md transition flex flex-col h-full relative overflow-hidden group">
-            <div class="absolute top-0 right-0 bg-ocean-100 text-ocean-600 text-[10px] font-black px-2 py-1 uppercase tracking-tighter rounded-bl-lg">Featured</div>
-            <div class="flex-grow">
-              <span class="text-xs font-bold text-ocean-500 uppercase tracking-widest mb-1 block">{listing.data.island}</span>
-              <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-ocean-600 transition-colors">{listing.data.name}</h3>
-              <p class="text-gray-600 text-sm line-clamp-2 mb-4 leading-relaxed">
-                {listing.data.description || "Leading Gulf Islands provider of local products and services."}
-              </p>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        {featuredListings.map(listing => {
+          const cat = listing.data.category as string;
+          const cfg = categoryConfig[cat] ?? categoryConfig['services'];
+          const img = featuredImages[listing.slug];
+          const displayUrl = listing.data.url ? cleanUrl(listing.data.url) : null;
+          const catLabel = categoryLabels[cat] ?? cat;
+          return (
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition overflow-hidden flex group relative">
+              {/* Left panel — logo/image or colored icon block */}
+              <div class={`w-36 flex-shrink-0 flex items-center justify-center p-4 ${cfg.bg}`}>
+                {img ? (
+                  <img
+                    src={img}
+                    alt={listing.data.name}
+                    class="max-w-full max-h-20 object-contain"
+                  />
+                ) : (
+                  <svg class={`w-10 h-10 ${cfg.color}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={cfg.icon} />
+                )}
+              </div>
+
+              {/* Right panel — content */}
+              <div class="flex flex-col flex-1 p-5 min-w-0">
+                {/* Top: Featured badge + category */}
+                <div class="flex items-center gap-2 mb-2">
+                  <span class={`inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider ${cfg.color}`}>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={cfg.icon} />
+                    {catLabel}
+                  </span>
+                  <span class="ml-auto bg-ocean-100 text-ocean-600 text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-tight">Featured</span>
+                </div>
+
+                {/* Business name */}
+                <h3 class="text-base font-bold text-gray-900 group-hover:text-ocean-600 transition-colors leading-snug mb-1">
+                  {listing.data.name}
+                </h3>
+
+                {/* Island */}
+                <p class="text-xs text-gray-400 font-medium mb-2">{listing.data.island}</p>
+
+                {/* Description */}
+                <p class="text-gray-500 text-sm line-clamp-2 leading-relaxed flex-1">
+                  {listing.data.description || "Local business serving the Gulf Islands community."}
+                </p>
+
+                {/* URL — clickable but clean-looking */}
+                {displayUrl && (
+                  <a
+                    href={listing.data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-3 text-ocean-600 text-xs font-semibold hover:text-ocean-800 hover:underline truncate block"
+                  >
+                    {displayUrl}
+                  </a>
+                )}
+              </div>
             </div>
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-50">
-              <span class="text-xs text-gray-400 font-medium">{listing.data.subcategory || listing.data.category}</span>
-              {listing.data.url && (
-                <a href={listing.data.url} target="_blank" class="text-ocean-600 text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
-                  Website <span class="text-lg">→</span>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>
