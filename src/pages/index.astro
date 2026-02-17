@@ -4,8 +4,18 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <!-- Hero - Directory Focused -->
-  <section class="relative bg-gradient-to-br from-ocean-800 via-ocean-700 to-forest-700 text-white">
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+  <section class="relative text-white overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img 
+        src="/images/islands/salt-spring-ferry-hero.jpg" 
+        alt="Gulf Islands ferry view" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-ocean-900/95 via-ocean-900/85 to-ocean-900/70"></div>
+    </div>
+    
+    <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <p class="text-sm uppercase tracking-widest text-ocean-200 mb-4 font-medium">The Gulf Islands Directory</p>
