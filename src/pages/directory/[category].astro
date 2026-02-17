@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const categories = ['stay', 'eat', 'activities', 'services', 'shopping', 'real-estate', 'health', 'community'];
+  return categories.map(category => ({
+    params: { category },
+    props: { categoryName: category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ') }
+  }));
+}
+
+const { category } = Astro.params;
+const { categoryName } = Astro.props;
+
+const allListings = await getCollection('directory');
+const listings = allListings.filter(item => item.data.category === category);
+
+// Group by island for better organization
+const groupedByIsland = listings.reduce((acc, item) => {
+  const island = item.data.island || 'Other';
+  if (!acc[island]) acc[island] = [];
+  acc[island].push(item);
+  return acc;
+}, {});
+---
+
+<Layout title={`${categoryName} - Gulf Islands Directory`}>
+  <section class="py-16 bg-gray-50 min-h-screen">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <a href="/" class="text-ocean-600 hover:underline mb-4 inline-block">← Back to Home</a>
+        <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-gray-900 mt-2">
+          {categoryName} <span class="italic text-ocean-600">Listings</span>
+        </h1>
+        <p class="text-xl text-gray-600 mt-4">
+          Discover {categoryName.toLowerCase()} businesses and services across the Gulf Islands.
+        </p>
+      </div>
+
+      {Object.keys(groupedByIsland).length === 0 ? (
+        <div class="bg-white rounded-2xl p-12 text-center border border-gray-200">
+          <p class="text-gray-500 text-lg">No listings found in this category yet.</p>
+          <a href="/submit-listing" class="text-ocean-600 font-semibold mt-4 inline-block">Add your business →</a>
+        </div>
+      ) : (
+        <div class="space-y-16">
+          {Object.entries(groupedByIsland).sort().map(([island, islandListings]) => (
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-4 mb-8 flex items-center gap-3">
+                <span class="w-2 h-8 bg-ocean-500 rounded-full"></span>
+                {island}
+              </h2>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {islandListings.map(listing => (
+                  <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col h-full">
+                    <div class="flex-grow">
+                      <h3 class="text-xl font-bold text-gray-900 mb-2">{listing.data.name}</h3>
+                      {listing.data.subcategory && (
+                        <span class="text-xs uppercase tracking-wider text-ocean-600 font-bold mb-3 block">
+                          {listing.data.subcategory}
+                        </span>
+                      )}
+                      <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+                        {listing.data.description || "Local business serving the Gulf Islands."}
+                      </p>
+                    </div>
+                    {listing.data.url && (
+                      <a 
+                        href={listing.data.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="mt-4 text-ocean-600 font-semibold text-sm hover:text-ocean-700 flex items-center gap-1"
+                      >
+                        Visit Website 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
