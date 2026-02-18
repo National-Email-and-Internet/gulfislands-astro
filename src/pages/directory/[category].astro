@@ -161,7 +161,13 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
               </h2>
               
               <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {groupedBySubcategory[sub].sort((a, b) => a.data.name.localeCompare(b.data.name)).map(listing => (
+                {groupedBySubcategory[sub].sort((a, b) => {
+                  // Featured listings first, then alphabetically by name
+                  const aFeatured = a.data.featured ? 0 : 1;
+                  const bFeatured = b.data.featured ? 0 : 1;
+                  if (aFeatured !== bFeatured) return aFeatured - bFeatured;
+                  return a.data.name.localeCompare(b.data.name);
+                }).map(listing => (
                   <div class="listing-card bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group" data-island={listing.data.island}>
                     {/* Category icon + name — first line */}
                     <div class={`inline-flex items-center gap-1.5 mb-3 ${cfg.color}`}>

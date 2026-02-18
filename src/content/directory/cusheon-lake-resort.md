@@ -6,6 +6,8 @@ category: "stay"
 subcategory: "Resorts & Spas"
 description: ""
 title: "Cusheon Lake Resort | Salt Spring Island BC Cabins on the Lake"
+featured: true
+
 ---
 
 

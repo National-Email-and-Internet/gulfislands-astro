@@ -3,15 +3,21 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const allListings = await getCollection('directory');
-const featuredSlugs = [
-  'salt-spring-island-firerescue',
-  'salt-spring-centre',
-  'oceanwood-country-inn',
-  'vbc-web-design-consulting',
-];
-const featuredListings = allListings.filter(l =>
-  featuredSlugs.includes(l.slug)
-);
+
+// Get featured listings (those with featured: true)
+const featuredListings = allListings
+  .filter(l => l.data.featured)
+  .sort((a, b) => (a.data.name || '').localeCompare(b.data.name || ''));
+
+// Featured images map
+const featuredImages: Record<string, string> = {
+  'salt-spring-island-firerescue': '/images/featured/saltspring-fire-crest.png',
+  'salt-spring-centre': '/images/featured/saltspring-centre.png',
+  'oceanwood-country-inn': '/images/featured/oceanwood.png',
+  'vbc-web-design-consulting': '/images/featured/isleofwebs.jpg',
+  'the-hastings-country-house-hotel': '/images/featured/hastings-house.png',
+  'cusheon-lake-resort': '/images/featured/cusheon-lake.png',
+};
 
 // Category icon paths and colors
 const categoryConfig: Record<string, { color: string; bg: string; icon: string }> = {
@@ -85,14 +91,6 @@ const categoryConfig: Record<string, { color: string; bg: string; icon: string }
     bg: 'bg-purple-100',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`
   },
-};
-
-// Map slugs to downloaded logo images
-const featuredImages: Record<string, string> = {
-  'salt-spring-island-firerescue': '/images/featured/saltspring-fire-crest.png',
-  'salt-spring-centre': '/images/featured/saltspring-centre.png',
-  'oceanwood-country-inn': '/images/featured/oceanwood.png',
-  'vbc-web-design-consulting': '/images/featured/isleofwebs.jpg',
 };
 
 // Category label display names

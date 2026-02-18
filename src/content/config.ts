@@ -10,6 +10,7 @@ const directory = defineCollection({
     subcategory: z.string().optional(),
     description: z.string().optional(),
     title: z.string().optional(),
+    featured: z.boolean().optional(),
   }),
 });
 

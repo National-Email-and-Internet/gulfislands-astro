@@ -6,6 +6,7 @@ category: "health"
 subcategory: "Spas & Retreats"
 description: ""
 title: "Salt Spring Centre of Yoga | Retreats, Workshops &amp; Yoga Teacher Training"
+featured: true
 ---
 
 

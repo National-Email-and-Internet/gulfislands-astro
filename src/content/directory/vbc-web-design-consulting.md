@@ -6,6 +6,7 @@ category: "trades"
 subcategory: "Computing Professionals"
 description: ""
 title: "Paul Marcano's VBC Design Web Consulting"
+featured: true
 ---
 
 

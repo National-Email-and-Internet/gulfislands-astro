@@ -6,6 +6,7 @@ category: "community"
 subcategory: ""
 description: ""
 title: "Salt Spring Island Fire Rescue"
+featured: true
 ---
 
 
