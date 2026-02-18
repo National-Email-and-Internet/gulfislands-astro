@@ -33,7 +33,7 @@ const categoryConfig: Record<string, { color: string; bg: string; label: string;
   eat: { color: 'text-forest-600', bg: 'bg-forest-100', label: 'Eat & Drink', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>` },
   'arts-culture': { color: 'text-purple-600', bg: 'bg-purple-100', label: 'Arts & Culture', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>` },
   shopping: { color: 'text-ocean-500', bg: 'bg-ocean-50', label: 'Shopping', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>` },
-  marine: { color: 'text-ocean-700', bg: 'bg-ocean-100', label: 'Marine & Boating', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>` }, // Bolt for now, will find a better one
+  marine: { color: 'text-ocean-700', bg: 'bg-ocean-100', label: 'Marine & Boating', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>` },
   'getting-here': { color: 'text-ocean-600', bg: 'bg-ocean-100', label: 'Getting Here', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>` },
   'real-estate': { color: 'text-forest-600', bg: 'bg-forest-100', label: 'Real Estate', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>` },
   activities: { color: 'text-sand-600', bg: 'bg-sand-100', label: 'Activities & Outdoors', icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>` },
@@ -54,6 +54,16 @@ function cleanUrl(url: string): string {
 const allListings = await getCollection('directory');
 const listings = allListings.filter(item => item.data.category === category);
 
+// Get unique islands and their counts
+const islands = [...new Set(listings.map(item => item.data.island).filter(Boolean))].sort();
+const islandCounts: Record<string, number> = {};
+listings.forEach(item => {
+  const island = item.data.island;
+  if (island) {
+    islandCounts[island] = (islandCounts[island] || 0) + 1;
+  }
+});
+
 // Get unique subcategories
 const subcategories = [...new Set(listings.map(item => item.data.subcategory).filter(Boolean))].sort();
 
@@ -63,9 +73,9 @@ const groupedBySubcategory = listings.reduce((acc, item) => {
   if (!acc[sub]) acc[sub] = [];
   acc[sub].push(item);
   return acc;
-}, {});
+}, {} as Record<string, typeof listings>);
 
-// Sort subcategories so "General" is last or first as preferred
+// Sort subcategories so "General" is last
 const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
     if (a === 'General') return 1;
     if (b === 'General') return -1;
@@ -76,7 +86,7 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
 <Layout title={`${categoryName} - Gulf Islands Directory`}>
   <section class="py-16 bg-gray-50 min-h-screen">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-12">
+      <div class="mb-8">
         <a href="/" class="text-ocean-600 hover:underline mb-4 inline-block flex items-center gap-1">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
             Back to Home
@@ -106,24 +116,53 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
         </div>
       </div>
 
+      <!-- Island Filter Bar -->
+      <div class="mb-10 sticky top-0 z-10 -mx-6 px-6 py-4 bg-gradient-to-b from-gray-50 via-gray-50 to-transparent">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <span class="text-sm font-bold text-gray-500 uppercase tracking-wider flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Filter by Island
+          </span>
+          <div class="flex flex-wrap gap-2" id="island-filter">
+            <button 
+              data-island="all" 
+              class="island-btn active px-4 py-2 rounded-full text-sm font-semibold transition-all bg-ocean-600 text-white shadow-sm"
+            >
+              All Islands <span class="ml-1 opacity-75">({listings.length})</span>
+            </button>
+            {islands.map(island => (
+              <button 
+                data-island={island}
+                class="island-btn px-4 py-2 rounded-full text-sm font-semibold transition-all bg-white text-gray-700 border border-gray-200 hover:border-ocean-300 hover:text-ocean-600"
+              >
+                {island.split(' ')[0]} <span class="ml-1 opacity-50">({islandCounts[island]})</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {listings.length === 0 ? (
         <div class="bg-white rounded-2xl p-12 text-center border border-gray-200">
           <p class="text-gray-500 text-lg">No listings found in this category yet.</p>
-          <a href="/submit-listing" class="text-ocean-600 font-semibold mt-4 inline-block">Add your business →</a>
+          <a href="/submit-listing" class="text-ocean-600 font-semibold mt-4 inline-block">Add your business &rarr;</a>
         </div>
       ) : (
         <div class="space-y-20">
           {sortedSubKeys.map((sub) => (
-            <div id={sub.toLowerCase().replace(/\s+/g, '-')}>
+            <div id={sub.toLowerCase().replace(/\s+/g, '-')} class="subcategory-section" data-subcategory={sub}>
               <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-200 pb-4 mb-8 flex items-center gap-3">
                 <span class="w-2 h-8 bg-ocean-500 rounded-full"></span>
                 {sub}
-                <span class="text-sm font-normal text-gray-400 ml-auto">{groupedBySubcategory[sub].length} results</span>
+                <span class="text-sm font-normal text-gray-400 ml-auto subcategory-count">{groupedBySubcategory[sub].length} results</span>
               </h2>
               
               <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {groupedBySubcategory[sub].sort((a, b) => a.data.name.localeCompare(b.data.name)).map(listing => (
-                  <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group">
+                  <div class="listing-card bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group" data-island={listing.data.island}>
                     {/* Category icon + name — first line */}
                     <div class={`inline-flex items-center gap-1.5 mb-3 ${cfg.color}`}>
                       <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={cfg.icon} />
@@ -132,7 +171,7 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
 
                     <div class="flex items-start justify-between mb-1.5">
                       <h3 class="text-base font-bold text-gray-900 group-hover:text-ocean-600 transition-colors leading-snug">{listing.data.name}</h3>
-                      <span class="ml-2 bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded font-bold uppercase whitespace-nowrap flex-shrink-0">{listing.data.island.split(' ')[0]}</span>
+                      <span class="ml-2 bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded font-bold uppercase whitespace-nowrap flex-shrink-0">{listing.data.island?.split(' ')[0]}</span>
                     </div>
 
                     <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed flex-1">
@@ -151,6 +190,88 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
           ))}
         </div>
       )}
+
+      <!-- No results message (hidden by default) -->
+      <div id="no-results" class="hidden bg-white rounded-2xl p-12 text-center border border-gray-200">
+        <p class="text-gray-500 text-lg">No listings found for the selected island in this category.</p>
+        <button onclick="document.querySelector('[data-island=all]').click()" class="text-ocean-600 font-semibold mt-4 inline-block">Show all islands &rarr;</button>
+      </div>
     </div>
   </section>
+
+  <script>
+    // Island filter functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.island-btn');
+      const cards = document.querySelectorAll('.listing-card');
+      const sections = document.querySelectorAll('.subcategory-section');
+      const noResults = document.getElementById('no-results');
+      
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selectedIsland = btn.dataset.island;
+          
+          // Update button styles
+          buttons.forEach(b => {
+            b.classList.remove('active', 'bg-ocean-600', 'text-white', 'shadow-sm');
+            b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200', 'hover:border-ocean-300', 'hover:text-ocean-600');
+          });
+          btn.classList.add('active', 'bg-ocean-600', 'text-white', 'shadow-sm');
+          btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200', 'hover:border-ocean-300', 'hover:text-ocean-600');
+          
+          // Filter cards
+          let visibleCount = 0;
+          cards.forEach(card => {
+            if (selectedIsland === 'all' || card.dataset.island === selectedIsland) {
+              card.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+          
+          // Update section visibility and counts
+          sections.forEach(section => {
+            const visibleSectionCards = section.querySelectorAll('.listing-card:not(.hidden)');
+            const countEl = section.querySelector('.subcategory-count');
+            
+            if (visibleSectionCards.length === 0) {
+              section.classList.add('hidden');
+            } else {
+              section.classList.remove('hidden');
+              if (countEl) {
+                countEl.textContent = `${visibleSectionCards.length} result${visibleSectionCards.length !== 1 ? 's' : ''}`;
+              }
+            }
+          });
+          
+          // Show/hide no results message
+          if (visibleCount === 0) {
+            noResults?.classList.remove('hidden');
+          } else {
+            noResults?.classList.add('hidden');
+          }
+          
+          // Update URL without reload
+          const url = new URL(window.location.href);
+          if (selectedIsland === 'all') {
+            url.searchParams.delete('island');
+          } else {
+            url.searchParams.set('island', selectedIsland);
+          }
+          window.history.replaceState({}, '', url);
+        });
+      });
+      
+      // Check for island param in URL on load
+      const urlParams = new URLSearchParams(window.location.search);
+      const islandParam = urlParams.get('island');
+      if (islandParam) {
+        const matchingBtn = document.querySelector(`[data-island="${islandParam}"]`);
+        if (matchingBtn) {
+          (matchingBtn as HTMLElement).click();
+        }
+      }
+    });
+  </script>
 </Layout>
