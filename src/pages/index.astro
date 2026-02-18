@@ -523,29 +523,24 @@ function cleanUrl(url: string): string {
           </a>
         </div>
 
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 w-full max-w-md">
           <p class="text-sm font-semibold mb-4 text-center">Check Availability</p>
           <div class="space-y-3">
-            <div class="flex flex-col sm:flex-row gap-2">
-              <div class="flex-1 flex items-center gap-2">
-                <input 
-                  type="text" 
-                  id="email-user" 
-                  placeholder="yourname"
-                  class="flex-1 bg-ocean-800/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-ocean-300"
-                />
-                <span class="text-white/60">@</span>
-              </div>
-              <select id="email-domain" class="bg-ocean-800/50 border border-white/20 rounded-lg px-4 py-3 text-white appearance-none cursor-pointer focus:outline-none focus:border-ocean-300 sm:w-48">
-                <option value="gulfislands.com">gulfislands.com</option>
-                <option value="saltspring.com">saltspring.com</option>
-                <option value="gabriola.com">gabriola.com</option>
-                <option value="mayneisland.net">mayneisland.net</option>
-                <option value="galianoisland.net">galianoisland.net</option>
-                <option value="penderislands.net">penderislands.net</option>
-                <option value="pacificnet.net">pacificnet.net</option>
-              </select>
-            </div>
+            <input 
+              type="text" 
+              id="email-user" 
+              placeholder="yourname"
+              class="w-full bg-ocean-800/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-ocean-300"
+            />
+            <select id="email-domain" class="w-full bg-ocean-800/50 border border-white/20 rounded-lg px-4 py-3 text-white appearance-none cursor-pointer focus:outline-none focus:border-ocean-300">
+              <option value="gulfislands.com">gulfislands.com</option>
+              <option value="saltspring.com">saltspring.com</option>
+              <option value="gabriola.com">gabriola.com</option>
+              <option value="mayneisland.net">mayneisland.net</option>
+              <option value="galianoisland.net">galianoisland.net</option>
+              <option value="penderislands.net">penderislands.net</option>
+              <option value="pacificnet.net">pacificnet.net</option>
+            </select>
             <button 
               id="check-email-btn"
               class="w-full bg-ocean-600 hover:bg-ocean-500 text-white py-3 rounded-lg font-semibold transition"
