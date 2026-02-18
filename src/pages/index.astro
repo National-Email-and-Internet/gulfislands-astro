@@ -533,15 +533,20 @@ function cleanUrl(url: string): string {
               class="bg-transparent border-b-2 border-white/40 focus:border-white text-white placeholder-white/40 focus:outline-none text-center min-w-[120px]"
             />
             <span class="text-white/60">@</span>
-            <select id="email-domain" class="bg-transparent border-b-2 border-white/40 focus:border-white text-white appearance-none cursor-pointer focus:outline-none text-center pr-4">
-              <option value="gulfislands.com" class="bg-ocean-800">gulfislands.com</option>
-              <option value="saltspring.com" class="bg-ocean-800">saltspring.com</option>
-              <option value="gabriola.com" class="bg-ocean-800">gabriola.com</option>
-              <option value="mayneisland.net" class="bg-ocean-800">mayneisland.net</option>
-              <option value="galianoisland.net" class="bg-ocean-800">galianoisland.net</option>
-              <option value="penderislands.net" class="bg-ocean-800">penderislands.net</option>
-              <option value="pacificnet.net" class="bg-ocean-800">pacificnet.net</option>
-            </select>
+            <div class="relative">
+              <select id="email-domain" class="bg-transparent border-b-2 border-white/40 focus:border-white text-white appearance-none cursor-pointer focus:outline-none text-center pr-6">
+                <option value="gulfislands.com" class="bg-ocean-800">gulfislands.com</option>
+                <option value="saltspring.com" class="bg-ocean-800">saltspring.com</option>
+                <option value="gabriola.com" class="bg-ocean-800">gabriola.com</option>
+                <option value="mayneisland.net" class="bg-ocean-800">mayneisland.net</option>
+                <option value="galianoisland.net" class="bg-ocean-800">galianoisland.net</option>
+                <option value="penderislands.net" class="bg-ocean-800">penderislands.net</option>
+                <option value="pacificnet.net" class="bg-ocean-800">pacificnet.net</option>
+              </select>
+              <svg class="w-4 h-4 absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
           </div>
           <button 
             id="check-email-btn"
