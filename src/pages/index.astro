@@ -138,38 +138,39 @@ function cleanUrl(url: string): string {
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <p class="text-sm uppercase tracking-widest text-ocean-200 mb-4 font-medium">The Gulf Islands Directory</p>
-          <h1 class="font-['Playfair_Display'] text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Find <span class="italic text-ocean-200">Local</span> Businesses & Services
+          <h1 class="font-['Playfair_Display'] text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
+            I am on
+            <span class="inline-flex items-center relative">
+              <select id="hero-island-select" class="appearance-none bg-transparent border-b-2 border-ocean-200 text-ocean-200 italic font-semibold text-4xl md:text-6xl cursor-pointer focus:outline-none pr-8 min-w-[200px]">
+                <option value="all">...</option>
+                <option value="Salt Spring Island">Salt Spring</option>
+                <option value="Galiano Island">Galiano</option>
+                <option value="Mayne Island">Mayne</option>
+                <option value="Pender Island">Pender</option>
+                <option value="Gabriola Island">Gabriola</option>
+                <option value="Saturna Island">Saturna</option>
+              </select>
+              <svg class="w-6 h-6 md:w-8 md:h-8 text-ocean-200 absolute right-0 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+            Island
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Your comprehensive guide to Gulf Islands businesses, services, and community resources. From Salt Spring to Saturna, find what you need.
+            Your guide to local businesses, services, and community resources.
           </p>
 
-          <!-- Search Box -->
-          <div class="bg-white rounded-xl p-2 shadow-2xl">
-            <form class="flex flex-col sm:flex-row gap-2">
-              <input
-                type="text"
-                placeholder="Search businesses, services..."
-                class="flex-1 px-4 py-3 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500"
-              />
-              <select class="px-4 py-3 text-gray-600 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-ocean-500">
-                <option>All Islands</option>
-                <option>Salt Spring</option>
-                <option>Galiano</option>
-                <option>Mayne</option>
-                <option>Pender</option>
-                <option>Gabriola</option>
-                <option>Saturna</option>
-              </select>
-              <button type="submit" class="bg-ocean-600 hover:bg-ocean-700 text-white px-6 py-3 rounded-lg font-semibold transition">
-                Search
-              </button>
-            </form>
+          <div class="flex flex-wrap gap-4">
+            <a href="#directory" class="bg-white text-ocean-700 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition shadow-lg">
+              Browse Directory
+            </a>
+            <a href="/submit-listing" class="border-2 border-white/40 hover:border-white/80 text-white px-6 py-3 rounded-lg font-semibold transition">
+              Add Your Business
+            </a>
           </div>
         </div>
 
-        <!-- Visual element - ferry silhouette or leave empty for cleaner look -->
+        <!-- Visual element - ferry silhouette -->
         <div class="hidden md:flex items-center justify-center">
           <div class="relative">
             <svg class="w-64 h-48 text-white/10" viewBox="0 0 200 150" fill="currentColor">
@@ -641,3 +642,24 @@ function cleanUrl(url: string): string {
     </div>
   </section>
 </Layout>
+
+<script>
+  // Hero island selector - sync with global header selector
+  const heroSelect = document.getElementById('hero-island-select') as HTMLSelectElement;
+  
+  // Load saved island from localStorage
+  const savedIsland = localStorage.getItem('selectedIsland') || 'all';
+  if (heroSelect) heroSelect.value = savedIsland;
+  
+  heroSelect?.addEventListener('change', (e) => {
+    const value = (e.target as HTMLSelectElement).value;
+    localStorage.setItem('selectedIsland', value);
+    // Dispatch event for other components to listen
+    window.dispatchEvent(new CustomEvent('islandChanged', { detail: { island: value } }));
+    // Also update header selector if present
+    const headerSelect = document.getElementById('island-selector') as HTMLSelectElement;
+    const mobileSelect = document.getElementById('island-selector-mobile') as HTMLSelectElement;
+    if (headerSelect) headerSelect.value = value;
+    if (mobileSelect) mobileSelect.value = value;
+  });
+</script>
