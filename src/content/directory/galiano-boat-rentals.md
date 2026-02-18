@@ -2,7 +2,7 @@
 name: "Galiano Boat Rentals"
 url: "http://www.cedarplace.com/boatrentals/"
 island: "Galiano Island"
-category: "services"
+category: "marine"
 subcategory: "Boat Rentals"
 description: ""
 title: "Galiano Boat Rentals"

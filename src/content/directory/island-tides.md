@@ -2,7 +2,7 @@
 name: "Island Tides"
 url: "http://www.islandtides.com/"
 island: "All Islands"
-category: "services"
+category: "news"
 subcategory: "Local Newspapers"
 description: "Free - Printed every second Thursday"
 title: ":: This Site is Under Construction ::"

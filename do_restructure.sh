@@ -1,0 +1,1 @@
+{"$f\" ]; then\n        sed -i": "category:.*/category: \"$cat\"/", "$f\"\n        if grep -q": "ubcategory:", "$f\"; then\n            sed -i": "subcategory:.*/subcategory: \"$sub\"/", "$f\"\n        else\n            sed -i": "category:/a subcategory: \"$sub\"", "$f\"\n        fi\n        echo": "pdated: $f -> $cat / $sub"}

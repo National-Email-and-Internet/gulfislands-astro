@@ -2,7 +2,7 @@
 name: "Maryanna Gabriel"
 url: "http://www.magiccottagecreations.com/"
 island: "All Islands"
-category: "services"
+category: "trades"
 subcategory: "Computing Professionals"
 description: ""
 title: "Magic Cottage Creations"

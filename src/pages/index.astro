@@ -29,30 +29,60 @@ const categoryConfig: Record<string, { color: string; bg: string; icon: string }
     bg: 'bg-forest-100',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`
   },
-  activities: {
-    color: 'text-sand-600',
-    bg: 'bg-sand-100',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`
-  },
-  services: {
-    color: 'text-gray-600',
-    bg: 'bg-gray-100',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`
+  'arts-culture': {
+    color: 'text-purple-600',
+    bg: 'bg-purple-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>`
   },
   shopping: {
     color: 'text-ocean-500',
     bg: 'bg-ocean-50',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>`
   },
-  health: {
-    color: 'text-teal-600',
-    bg: 'bg-teal-100',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`
+  marine: {
+    color: 'text-ocean-700',
+    bg: 'bg-ocean-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`
+  },
+  'getting-here': {
+    color: 'text-ocean-600',
+    bg: 'bg-ocean-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>`
   },
   'real-estate': {
     color: 'text-forest-600',
     bg: 'bg-forest-100',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`
+  },
+  activities: {
+    color: 'text-sand-600',
+    bg: 'bg-sand-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`
+  },
+  trades: {
+    color: 'text-gray-600',
+    bg: 'bg-gray-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`
+  },
+  health: {
+    color: 'text-teal-600',
+    bg: 'bg-teal-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`
+  },
+  farms: {
+    color: 'text-forest-600',
+    bg: 'bg-forest-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>`
+  },
+  news: {
+    color: 'text-blue-600',
+    bg: 'bg-blue-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>`
+  },
+  education: {
+    color: 'text-purple-700',
+    bg: 'bg-purple-100',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`
   },
   community: {
     color: 'text-purple-600',
@@ -72,12 +102,18 @@ const featuredImages: Record<string, string> = {
 const categoryLabels: Record<string, string> = {
   stay: 'Stay',
   eat: 'Eat & Drink',
-  activities: 'Activities',
-  services: 'Services',
+  'arts-culture': 'Arts & Culture',
   shopping: 'Shopping',
-  health: 'Health & Wellness',
+  marine: 'Marine & Boating',
+  'getting-here': 'Getting Here',
   'real-estate': 'Real Estate',
-  community: 'Community',
+  activities: 'Activities & Outdoors',
+  trades: 'Trades & Professional',
+  health: 'Health & Wellness',
+  farms: 'Farms & Agriculture',
+  news: 'News & Media',
+  education: 'Education',
+  community: 'Community & Government',
 };
 
 function cleanUrl(url: string): string {
@@ -90,14 +126,14 @@ function cleanUrl(url: string): string {
   <section class="relative text-white overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
-      <img 
-        src="/images/islands/salt-spring-ferry-hero.jpg" 
-        alt="Gulf Islands ferry view" 
+      <img
+        src="/images/islands/salt-spring-ferry-hero.jpg"
+        alt="Gulf Islands ferry view"
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-ocean-900/80 via-ocean-900/60 to-ocean-900/30"></div>
     </div>
-    
+
     <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
@@ -108,13 +144,13 @@ function cleanUrl(url: string): string {
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
             Your comprehensive guide to Gulf Islands businesses, services, and community resources. From Salt Spring to Saturna, find what you need.
           </p>
-          
+
           <!-- Search Box -->
           <div class="bg-white rounded-xl p-2 shadow-2xl">
             <form class="flex flex-col sm:flex-row gap-2">
-              <input 
-                type="text" 
-                placeholder="Search businesses, services..." 
+              <input
+                type="text"
+                placeholder="Search businesses, services..."
                 class="flex-1 px-4 py-3 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-500"
               />
               <select class="px-4 py-3 text-gray-600 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-ocean-500">
@@ -132,7 +168,7 @@ function cleanUrl(url: string): string {
             </form>
           </div>
         </div>
-        
+
         <!-- Stats -->
         <div class="grid grid-cols-2 gap-4">
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
@@ -249,10 +285,8 @@ function cleanUrl(url: string): string {
         <a href="/directory/stay" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-600">
           <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.stay.icon} />
             </div>
             <h3 class="font-semibold text-xl text-white mb-1">Stay</h3>
             <p class="text-ocean-100 text-sm">Hotels, B&Bs, Cabins, Camping</p>
@@ -263,56 +297,47 @@ function cleanUrl(url: string): string {
         <a href="/directory/eat" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-forest-600">
           <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.eat.icon} />
             </div>
             <h3 class="font-semibold text-xl text-white mb-1">Eat & Drink</h3>
             <p class="text-forest-100 text-sm">Restaurants, Cafés, Wineries</p>
           </div>
         </a>
 
-        <!-- Activities -->
-        <a href="/directory/activities" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-sand-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-sand-800/90 via-sand-800/40 to-transparent"></div>
+        <!-- Arts & Culture -->
+        <a href="/directory/arts-culture" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-purple-600">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['arts-culture'].icon} />
             </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Activities</h3>
-            <p class="text-sand-100 text-sm">Tours, Rentals, Adventures</p>
+            <h3 class="font-semibold text-xl text-white mb-1">Arts & Culture</h3>
+            <p class="text-purple-100 text-sm">Artists, Galleries, Venues</p>
           </div>
         </a>
 
-        <!-- Services -->
-        <a href="/directory/services" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+        <!-- Marine & Boating -->
+        <a href="/directory/marine" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.marine.icon} />
             </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Services</h3>
-            <p class="text-gray-300 text-sm">Trades, Professional, Health</p>
+            <h3 class="font-semibold text-xl text-white mb-1">Marine & Boating</h3>
+            <p class="text-ocean-100 text-sm">Marinas, Rentals, Repairs</p>
           </div>
         </a>
 
-        <!-- Shopping -->
-        <a href="/directory/shopping" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-500">
+        <!-- Getting Here -->
+        <a href="/directory/getting-here" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-500">
           <div class="absolute inset-0 bg-gradient-to-t from-ocean-800/90 via-ocean-800/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['getting-here'].icon} />
             </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Shopping</h3>
-            <p class="text-ocean-100 text-sm">Local Artisan, Groceries, Gifts</p>
+            <h3 class="font-semibold text-xl text-white mb-1">Getting Here</h3>
+            <p class="text-ocean-100 text-sm">Ferries, Air, Transport</p>
           </div>
         </a>
 
@@ -320,13 +345,35 @@ function cleanUrl(url: string): string {
         <a href="/directory/real-estate" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-forest-500">
           <div class="absolute inset-0 bg-gradient-to-t from-forest-800/90 via-forest-800/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['real-estate'].icon} />
             </div>
             <h3 class="font-semibold text-xl text-white mb-1">Real Estate</h3>
             <p class="text-forest-100 text-sm">Homes, Land, Rentals</p>
+          </div>
+        </a>
+
+        <!-- Activities & Outdoors -->
+        <a href="/directory/activities" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-sand-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-sand-800/90 via-sand-800/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6">
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.activities.icon} />
+            </div>
+            <h3 class="font-semibold text-xl text-white mb-1">Activities</h3>
+            <p class="text-sand-100 text-sm">Hiking, Tours, Tours</p>
+          </div>
+        </a>
+
+        <!-- Trades & Prof. -->
+        <a href="/directory/trades" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6">
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.trades.icon} />
+            </div>
+            <h3 class="font-semibold text-xl text-white mb-1">Trades</h3>
+            <p class="text-gray-300 text-sm">Construction, Legal, IT</p>
           </div>
         </a>
 
@@ -334,27 +381,47 @@ function cleanUrl(url: string): string {
         <a href="/directory/health" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-teal-600">
           <div class="absolute inset-0 bg-gradient-to-t from-teal-900/90 via-teal-900/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.health.icon} />
             </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Health & Wellness</h3>
+            <h3 class="font-semibold text-xl text-white mb-1">Health</h3>
             <p class="text-teal-100 text-sm">Clinics, Spas, Fitness</p>
           </div>
         </a>
 
-        <!-- Community -->
-        <a href="/directory/community" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-purple-600">
+        <!-- Farms & Agriculture -->
+        <a href="/directory/farms" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-forest-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6">
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.farms.icon} />
+            </div>
+            <h3 class="font-semibold text-xl text-white mb-1">Farms</h3>
+            <p class="text-forest-100 text-sm">Orchards, Markets, Livestock</p>
+          </div>
+        </a>
+
+        <!-- News & Media -->
+        <a href="/directory/news" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-blue-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6">
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.news.icon} />
+            </div>
+            <h3 class="font-semibold text-xl text-white mb-1">News</h3>
+            <p class="text-blue-100 text-sm">Newspapers, Radio, Blogs</p>
+          </div>
+        </a>
+
+        <!-- Community & Govt -->
+        <a href="/directory/community" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-purple-700">
           <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.community.icon} />
             </div>
             <h3 class="font-semibold text-xl text-white mb-1">Community</h3>
-            <p class="text-purple-100 text-sm">Organizations, Events, Groups</p>
+            <p class="text-purple-100 text-sm">Schools, Govt, Groups</p>
           </div>
         </a>
       </div>
@@ -393,7 +460,7 @@ function cleanUrl(url: string): string {
             </div>
           </div>
         </div>
-        
+
         <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
           <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
             <img src="/images/islands/salt-spring-beach-card.jpg" alt="Salt Spring Market" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -459,7 +526,7 @@ function cleanUrl(url: string): string {
             Submit Your Listing →
           </a>
         </div>
-        
+
         <!-- Pricing Cards -->
         <div class="space-y-4">
           <!-- Basic -->
@@ -476,7 +543,7 @@ function cleanUrl(url: string): string {
             </div>
             <p class="text-white/80 text-sm">Name, description, contact info, and category placement.</p>
           </div>
-          
+
           <!-- Featured -->
           <div class="bg-white rounded-xl p-6 text-gray-800 ring-2 ring-ocean-300 relative">
             <div class="absolute -top-3 right-4 bg-ocean-600 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -494,7 +561,7 @@ function cleanUrl(url: string): string {
             </div>
             <p class="text-gray-600 text-sm">Everything in Basic + photos, hours, map, website link, and priority placement.</p>
           </div>
-          
+
           <!-- Premium -->
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
             <div class="flex justify-between items-start mb-3">
@@ -565,7 +632,7 @@ function cleanUrl(url: string): string {
             Get Island Email →
           </a>
         </div>
-        
+
         <div class="flex gap-4">
           <div class="flex-1 bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 text-center">
             <div class="text-lg font-semibold mb-1">yourname@<br/>gulfislands.com</div>

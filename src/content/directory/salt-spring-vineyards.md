@@ -2,7 +2,7 @@
 name: "Salt Spring Vineyards"
 url: "http://www.saltspringvineyards.com/"
 island: "Salt Spring Island"
-category: "services"
+category: "farms"
 subcategory: ""
 description: ""
 title: "Coming Soon"

@@ -2,7 +2,7 @@
 name: "William Deverell"
 url: "http://www.deverell.com/"
 island: "All Islands"
-category: "services"
+category: "community"
 subcategory: ""
 description: ""
 title: "William Deverell"

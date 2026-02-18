@@ -2,7 +2,7 @@
 name: "Kalai Custom paddles"
 url: "http://www.kalaipaddles.com/"
 island: "All Islands"
-category: "services"
+category: "marine"
 subcategory: "Kayaking Equipment"
 description: ""
 title: "Kalai Paddles"

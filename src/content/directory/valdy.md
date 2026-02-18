@@ -2,7 +2,7 @@
 name: "Valdy"
 url: "http://www.valdy.com/"
 island: "Salt Spring Island"
-category: "shopping"
+category: "arts-culture"
 subcategory: "Musicians on Salt Spring Island"
 description: ""
 title: "valdy.com"

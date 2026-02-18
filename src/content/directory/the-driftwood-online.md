@@ -2,7 +2,7 @@
 name: "The Driftwood Online"
 url: "http://www.gulfislands.net/"
 island: "Salt Spring Island"
-category: "services"
+category: "news"
 subcategory: "Local Newspapers"
 description: "Saltspring - Printed weekly"
 title: "The Driftwood Online"

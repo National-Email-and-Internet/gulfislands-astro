@@ -2,7 +2,7 @@
 name: "Pringle Equine Services"
 url: "http://www.pringlearabians.com/"
 island: "All Islands"
-category: "services"
+category: "farms"
 subcategory: "Horses"
 description: ""
 title: "CashFlow Corner"

@@ -2,7 +2,7 @@
 name: "Terence Warbey"
 url: "http://www.twjewelry.com/"
 island: "Salt Spring Island"
-category: "shopping"
+category: "arts-culture"
 subcategory: "Jewellery"
 description: "Gold and silversmith"
 title: "Terence Warbey"
