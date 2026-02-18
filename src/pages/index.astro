@@ -250,160 +250,65 @@ function cleanUrl(url: string): string {
   </section>
 
   <!-- Browse by Category -->
-  <section id="directory" class="py-20 bg-white">
+  <section id="directory" class="py-12 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Browse by <span class="italic text-ocean-600">Category</span>
-        </h2>
-        <p class="text-gray-600 max-w-xl mx-auto">
-          Find exactly what you're looking for across all the Gulf Islands.
-        </p>
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <h2 class="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-gray-900">
+            Browse by <span class="italic text-ocean-600">Category</span>
+          </h2>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Stay -->
-        <a href="/directory/stay" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-600">
-          <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.stay.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Stay</h3>
-            <p class="text-ocean-100 text-sm">Hotels, B&Bs, Cabins, Camping</p>
-          </div>
+      <!-- Compact category pills -->
+      <div class="flex flex-wrap gap-2">
+        <a href="/directory/stay" class="inline-flex items-center gap-2 px-4 py-2 bg-ocean-50 hover:bg-ocean-100 text-ocean-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.stay.icon} />
+          Stay
         </a>
-
-        <!-- Eat & Drink -->
-        <a href="/directory/eat" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-forest-600">
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.eat.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Eat & Drink</h3>
-            <p class="text-forest-100 text-sm">Restaurants, Cafés, Wineries</p>
-          </div>
+        <a href="/directory/eat" class="inline-flex items-center gap-2 px-4 py-2 bg-forest-50 hover:bg-forest-100 text-forest-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.eat.icon} />
+          Eat & Drink
         </a>
-
-        <!-- Arts & Culture -->
-        <a href="/directory/arts-culture" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-purple-600">
-          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['arts-culture'].icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Arts & Culture</h3>
-            <p class="text-purple-100 text-sm">Artists, Galleries, Venues</p>
-          </div>
+        <a href="/directory/arts-culture" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['arts-culture'].icon} />
+          Arts & Culture
         </a>
-
-        <!-- Marine & Boating -->
-        <a href="/directory/marine" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.marine.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Marine & Boating</h3>
-            <p class="text-ocean-100 text-sm">Marinas, Rentals, Repairs</p>
-          </div>
+        <a href="/directory/marine" class="inline-flex items-center gap-2 px-4 py-2 bg-ocean-50 hover:bg-ocean-100 text-ocean-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.marine.icon} />
+          Marine
         </a>
-
-        <!-- Getting Here -->
-        <a href="/directory/getting-here" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-ocean-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-ocean-800/90 via-ocean-800/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['getting-here'].icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Getting Here</h3>
-            <p class="text-ocean-100 text-sm">Ferries, Air, Transport</p>
-          </div>
+        <a href="/directory/getting-here" class="inline-flex items-center gap-2 px-4 py-2 bg-ocean-50 hover:bg-ocean-100 text-ocean-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['getting-here'].icon} />
+          Getting Here
         </a>
-
-        <!-- Real Estate -->
-        <a href="/directory/real-estate" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-forest-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-800/90 via-forest-800/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['real-estate'].icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Real Estate</h3>
-            <p class="text-forest-100 text-sm">Homes, Land, Rentals</p>
-          </div>
+        <a href="/directory/real-estate" class="inline-flex items-center gap-2 px-4 py-2 bg-forest-50 hover:bg-forest-100 text-forest-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig['real-estate'].icon} />
+          Real Estate
         </a>
-
-        <!-- Activities & Outdoors -->
-        <a href="/directory/activities" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-sand-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-sand-800/90 via-sand-800/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.activities.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Activities</h3>
-            <p class="text-sand-100 text-sm">Hiking, Tours, Tours</p>
-          </div>
+        <a href="/directory/activities" class="inline-flex items-center gap-2 px-4 py-2 bg-sand-50 hover:bg-sand-100 text-sand-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.activities.icon} />
+          Activities
         </a>
-
-        <!-- Trades & Prof. -->
-        <a href="/directory/trades" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.trades.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Trades</h3>
-            <p class="text-gray-300 text-sm">Construction, Legal, IT</p>
-          </div>
+        <a href="/directory/trades" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.trades.icon} />
+          Trades
         </a>
-
-        <!-- Health & Wellness -->
-        <a href="/directory/health" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-teal-600">
-          <div class="absolute inset-0 bg-gradient-to-t from-teal-900/90 via-teal-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.health.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Health</h3>
-            <p class="text-teal-100 text-sm">Clinics, Spas, Fitness</p>
-          </div>
+        <a href="/directory/health" class="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.health.icon} />
+          Health
         </a>
-
-        <!-- Farms & Agriculture -->
-        <a href="/directory/farms" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-forest-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.farms.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Farms</h3>
-            <p class="text-forest-100 text-sm">Orchards, Markets, Livestock</p>
-          </div>
+        <a href="/directory/farms" class="inline-flex items-center gap-2 px-4 py-2 bg-forest-50 hover:bg-forest-100 text-forest-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.farms.icon} />
+          Farms
         </a>
-
-        <!-- News & Media -->
-        <a href="/directory/news" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-blue-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.news.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">News</h3>
-            <p class="text-blue-100 text-sm">Newspapers, Radio, Blogs</p>
-          </div>
+        <a href="/directory/news" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.news.icon} />
+          News
         </a>
-
-        <!-- Community & Govt -->
-        <a href="/directory/community" class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-purple-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-6">
-            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3 group-hover:bg-white/30 transition">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.community.icon} />
-            </div>
-            <h3 class="font-semibold text-xl text-white mb-1">Community</h3>
-            <p class="text-purple-100 text-sm">Schools, Govt, Groups</p>
-          </div>
+        <a href="/directory/community" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={categoryConfig.community.icon} />
+          Community
         </a>
       </div>
     </div>
