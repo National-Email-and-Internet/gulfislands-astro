@@ -156,11 +156,14 @@ function cleanUrl(url: string): string {
           </p>
 
           <div class="flex flex-wrap gap-4">
-            <a href="#directory" class="bg-white text-ocean-700 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition shadow-lg">
-              Browse Directory
-            </a>
-            <a href="/submit-listing" class="border-2 border-white/40 hover:border-white/80 text-white px-6 py-3 rounded-lg font-semibold transition">
-              Add Your Business
+            <button id="search-btn" class="bg-white text-ocean-700 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition shadow-lg flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              Search Directory
+            </button>
+            <a href="#directory" class="border-2 border-white/40 hover:border-white/80 text-white px-6 py-3 rounded-lg font-semibold transition">
+              Browse Categories
             </a>
           </div>
         </div>

@@ -149,5 +149,58 @@ const {
       <p>© {new Date().getFullYear()} Gulf Islands Directory. Email services by <a href="https://natinternet.com" class="text-ocean-300 hover:text-ocean-200">NEIC</a>.</p>
     </div>
   </footer>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" is:inline>
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  
+  <!-- Search Modal -->
+  <div id="search-modal" class="fixed inset-0 bg-black/50 z-[100] hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden shadow-2xl">
+      <div id="pagefind-search" class="p-4"></div>
+    </div>
+  </div>
+  
+  <script is:inline>
+    // Initialize Pagefind
+    const searchBtn = document.getElementById('search-btn');
+    const searchModal = document.getElementById('search-modal');
+    const pagefindContainer = document.getElementById('pagefind-search');
+    let pagefindInitialized = false;
+    
+    searchBtn?.addEventListener('click', function() {
+      searchModal.classList.remove('hidden');
+      searchModal.classList.add('flex');
+      
+      if (!pagefindInitialized && window.PagefindUI) {
+        new window.PagefindUI({
+          element: '#pagefind-search',
+          showSubResults: true,
+          showImages: false,
+        });
+        pagefindInitialized = true;
+      }
+      
+      // Focus the search input
+      setTimeout(function() {
+        const input = pagefindContainer?.querySelector('input');
+        input?.focus();
+      }, 100);
+    });
+    
+    // Close modal on click outside
+    searchModal?.addEventListener('click', function(e) {
+      if (e.target === searchModal) {
+        searchModal.classList.add('hidden');
+        searchModal.classList.remove('flex');
+      }
+    });
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !searchModal?.classList.contains('hidden')) {
+        searchModal.classList.add('hidden');
+        searchModal.classList.remove('flex');
+      }
+    });
+  </script>
 </body>
 </html>

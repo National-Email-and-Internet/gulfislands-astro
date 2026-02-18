@@ -168,7 +168,9 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
                   if (aFeatured !== bFeatured) return aFeatured - bFeatured;
                   return a.data.name.localeCompare(b.data.name);
                 }).map(listing => (
-                  <div class="listing-card bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group" data-island={listing.data.island}>
+                  <div class="listing-card bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group" data-island={listing.data.island} data-pagefind-body data-pagefind-meta="name:{listing.data.name}" data-pagefind-meta="island:{listing.data.island}" data-pagefind-meta="category:{catLabel}">
+                    {/* Category icon + name — first line */}
+                    {/* Category icon + name — first line */}
                     {/* Category icon + name — first line */}
                     <div class={`inline-flex items-center gap-1.5 mb-3 ${cfg.color}`}>
                       <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={cfg.icon} />
