@@ -7,11 +7,7 @@ const featuredSlugs = [
   'salt-spring-island-firerescue',
   'salt-spring-centre',
   'oceanwood-country-inn',
-  'the-hastings-country-house-hotel',
-  'restaurant-house-piccolo',
-  'harlans-chocolates',
-  'salt-spring-resort-spa-retreat',
-  'cliffhouse-cottages',
+  'vbc-web-design-consulting',
 ];
 const featuredListings = allListings.filter(l =>
   featuredSlugs.includes(l.slug)
@@ -20,8 +16,8 @@ const featuredListings = allListings.filter(l =>
 // Category icon paths and colors
 const categoryConfig: Record<string, { color: string; bg: string; icon: string }> = {
   stay: {
-    color: 'text-ocean-600',
-    bg: 'bg-ocean-100',
+    color: 'text-white',
+    bg: 'bg-ocean-700',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`
   },
   eat: {
@@ -96,6 +92,7 @@ const featuredImages: Record<string, string> = {
   'salt-spring-island-firerescue': '/images/featured/saltspring-fire-crest.png',
   'salt-spring-centre': '/images/featured/saltspring-centre.png',
   'oceanwood-country-inn': '/images/featured/oceanwood.png',
+  'vbc-web-design-consulting': '/images/featured/isleofwebs.jpg',
 };
 
 // Category label display names
