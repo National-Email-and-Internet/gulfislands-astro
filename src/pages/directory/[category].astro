@@ -207,71 +207,85 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
       const sections = document.querySelectorAll('.subcategory-section');
       const noResults = document.getElementById('no-results');
       
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const selectedIsland = btn.dataset.island;
-          
-          // Update button styles
-          buttons.forEach(b => {
+      function applyIslandFilter(selectedIsland: string) {
+        // Update button styles
+        buttons.forEach(b => {
+          const btnIsland = (b as HTMLElement).dataset.island;
+          if (btnIsland === selectedIsland || (selectedIsland === 'all' && btnIsland === 'all')) {
+            b.classList.add('active', 'bg-ocean-600', 'text-white', 'shadow-sm');
+            b.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200', 'hover:border-ocean-300', 'hover:text-ocean-600');
+          } else {
             b.classList.remove('active', 'bg-ocean-600', 'text-white', 'shadow-sm');
             b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200', 'hover:border-ocean-300', 'hover:text-ocean-600');
-          });
-          btn.classList.add('active', 'bg-ocean-600', 'text-white', 'shadow-sm');
-          btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200', 'hover:border-ocean-300', 'hover:text-ocean-600');
-          
-          // Filter cards
-          let visibleCount = 0;
-          cards.forEach(card => {
-            if (selectedIsland === 'all' || card.dataset.island === selectedIsland) {
-              card.classList.remove('hidden');
-              visibleCount++;
-            } else {
-              card.classList.add('hidden');
-            }
-          });
-          
-          // Update section visibility and counts
-          sections.forEach(section => {
-            const visibleSectionCards = section.querySelectorAll('.listing-card:not(.hidden)');
-            const countEl = section.querySelector('.subcategory-count');
-            
-            if (visibleSectionCards.length === 0) {
-              section.classList.add('hidden');
-            } else {
-              section.classList.remove('hidden');
-              if (countEl) {
-                countEl.textContent = `${visibleSectionCards.length} result${visibleSectionCards.length !== 1 ? 's' : ''}`;
-              }
-            }
-          });
-          
-          // Show/hide no results message
-          if (visibleCount === 0) {
-            noResults?.classList.remove('hidden');
-          } else {
-            noResults?.classList.add('hidden');
           }
-          
-          // Update URL without reload
-          const url = new URL(window.location.href);
-          if (selectedIsland === 'all') {
-            url.searchParams.delete('island');
+        });
+        
+        // Filter cards
+        let visibleCount = 0;
+        cards.forEach(card => {
+          if (selectedIsland === 'all' || (card as HTMLElement).dataset.island === selectedIsland) {
+            card.classList.remove('hidden');
+            visibleCount++;
           } else {
-            url.searchParams.set('island', selectedIsland);
+            card.classList.add('hidden');
           }
-          window.history.replaceState({}, '', url);
+        });
+        
+        // Update section visibility and counts
+        sections.forEach(section => {
+          const visibleSectionCards = section.querySelectorAll('.listing-card:not(.hidden)');
+          const countEl = section.querySelector('.subcategory-count');
+          
+          if (visibleSectionCards.length === 0) {
+            section.classList.add('hidden');
+          } else {
+            section.classList.remove('hidden');
+            if (countEl) {
+              countEl.textContent = `${visibleSectionCards.length} result${visibleSectionCards.length !== 1 ? 's' : ''}`;
+            }
+          }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          noResults?.classList.remove('hidden');
+        } else {
+          noResults?.classList.add('hidden');
+        }
+        
+        // Update URL without reload
+        const url = new URL(window.location.href);
+        if (selectedIsland === 'all') {
+          url.searchParams.delete('island');
+        } else {
+          url.searchParams.set('island', selectedIsland);
+        }
+        window.history.replaceState({}, '', url);
+      }
+      
+      // Button click handlers
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selectedIsland = (btn as HTMLElement).dataset.island || 'all';
+          applyIslandFilter(selectedIsland);
+          // Also update the global header selector
+          localStorage.setItem('selectedIsland', selectedIsland);
         });
       });
       
-      // Check for island param in URL on load
+      // Check URL param first, then localStorage
       const urlParams = new URLSearchParams(window.location.search);
       const islandParam = urlParams.get('island');
-      if (islandParam) {
-        const matchingBtn = document.querySelector(`[data-island="${islandParam}"]`);
-        if (matchingBtn) {
-          (matchingBtn as HTMLElement).click();
-        }
+      const savedIsland = islandParam || localStorage.getItem('selectedIsland') || 'all';
+      
+      if (savedIsland && savedIsland !== 'all') {
+        applyIslandFilter(savedIsland);
       }
+      
+      // Listen for changes from header selector
+      window.addEventListener('islandChanged', ((e: CustomEvent) => {
+        applyIslandFilter(e.detail.island);
+      }) as EventListener);
     });
   </script>
 </Layout>
