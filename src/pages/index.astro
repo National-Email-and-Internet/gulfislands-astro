@@ -507,34 +507,42 @@ function cleanUrl(url: string): string {
             Your <span class="italic text-ocean-200">Island</span> Email Address
           </h2>
           <p class="text-gray-300 mb-6">
-            Show your island connection with @gulfislands.com, @saltspring.com, @gabriola.com, @mayneisland.net, @galianoisland.net, @penderislands.net, or @pacificnet.net email. Ad-free, private, and secure.
+            Show your island connection with a personalized email address. Ad-free, private, and secure.
           </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@gulfislands.com</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@saltspring.com</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@gabriola.com</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@mayneisland.net</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@galianoisland.net</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@penderislands.net</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">@pacificnet.net</span>
+          </div>
           <a href="https://natinternet.com/personal-email/" class="inline-block border-2 border-white/40 hover:border-white/80 px-6 py-3 rounded-lg font-semibold transition">
             Get Island Email →
           </a>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>gulfislands.com</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>saltspring.com</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>gabriola.com</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>mayneisland.net</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>galianoisland.net</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>penderislands.net</div>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-            <div class="text-sm font-semibold">yourname@<br/>pacificnet.net</div>
+        <div class="flex items-center justify-center">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 w-full max-w-sm">
+            <div class="text-center">
+              <div class="text-4xl mb-4">📧</div>
+              <p class="text-lg font-semibold mb-2">yourname@</p>
+              <div class="relative">
+                <select class="w-full bg-ocean-800/50 border border-white/20 rounded-lg px-4 py-3 text-white appearance-none cursor-pointer focus:outline-none focus:border-ocean-300">
+                  <option>gulfislands.com</option>
+                  <option>saltspring.com</option>
+                  <option>gabriola.com</option>
+                  <option>mayneisland.net</option>
+                  <option>galianoisland.net</option>
+                  <option>penderislands.net</option>
+                  <option>pacificnet.net</option>
+                </select>
+                <svg class="w-5 h-5 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
