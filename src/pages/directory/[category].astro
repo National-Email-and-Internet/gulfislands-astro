@@ -84,6 +84,16 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
     return a.localeCompare(b);
 });
 
+// Featured images map
+const featuredImages: Record<string, string> = {
+  'salt-spring-island-firerescue': '/images/featured/saltspring-fire-crest.png',
+  'salt-spring-centre': '/images/featured/saltspring-centre.png',
+  'oceanwood-country-inn': '/images/featured/oceanwood.png',
+  'vbc-web-design-consulting': '/images/featured/isleofwebs.jpg',
+  'the-hastings-country-house-hotel': '/images/featured/hastings-house.png',
+  'cusheon-lake-resort': '/images/featured/cusheon-lake.png',
+};
+
 // Sorting helper for tiers
 const tierOrder = {
   'premium-featured': 0,
