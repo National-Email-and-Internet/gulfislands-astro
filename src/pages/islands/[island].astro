@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import VerifiedBadge from '../../components/badges/VerifiedBadge.astro';
+import PremiumBadge from '../../components/badges/PremiumBadge.astro';
 
 export async function getStaticPaths() {
   const islands = [
@@ -106,16 +108,22 @@ function cleanUrl(url: string): string {
                         if (aFeatured !== bFeatured) return aFeatured - bFeatured;
                         return a.data.name.localeCompare(b.data.name);
                       }).map(listing => (
-                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col h-full group">
+<div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col h-full group">
                           {/* Category icon + name — first line */}
                           <div class={`inline-flex items-center gap-1.5 mb-3 ${catCfg.color}`}>
                             <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={catCfg.icon} />
                             <span class="text-[11px] font-bold uppercase tracking-wider">{catCfg.label}</span>
                           </div>
 
-                          <h3 class="text-base font-bold text-gray-900 group-hover:text-ocean-600 transition-colors leading-snug mb-1">
-                            {listing.data.name}
-                          </h3>
+                          <div class="flex flex-col gap-1 mb-1">
+                            <h3 class="text-base font-bold text-gray-900 group-hover:text-ocean-600 transition-colors leading-snug">
+                              <a href={`/directory/${listing.slug}`}>{listing.data.name}</a>
+                            </h3>
+                            <div class="flex flex-wrap gap-1.5">
+                              {listing.data.tier === 'premium' && <PremiumBadge />}
+                              {listing.data.claimed && <VerifiedBadge />}
+                            </div>
+                          </div>
 
                           {listing.data.subcategory && (
                             <span class="text-xs text-gray-400 font-medium mb-2 block">{listing.data.subcategory}</span>
@@ -125,11 +133,22 @@ function cleanUrl(url: string): string {
                             {listing.data.description || "Local business serving the Gulf Islands."}
                           </p>
 
-                          {listing.data.url && (
-                            <p class="mt-3 pt-3 border-t border-gray-50 text-gray-400 text-xs font-mono truncate">
-                              {cleanUrl(listing.data.url)}
-                            </p>
-                          )}
+                          <div class="mt-3 pt-3 border-t border-gray-50 flex items-center justify-between">
+                            {listing.data.url ? (
+                              <p class="text-gray-400 text-xs font-mono truncate max-w-[150px]">
+                                {cleanUrl(listing.data.url)}
+                              </p>
+                            ) : <div></div>}
+                            
+                            {!listing.data.claimed && (
+                              <a 
+                                href={`/claim-listing?slug=${listing.slug}`}
+                                class="text-ocean-600 text-[10px] font-bold uppercase tracking-wider hover:text-ocean-800 transition-colors"
+                              >
+                                Claim Business &rarr;
+                              </a>
+                            )}
+                          </div>
                         </div>
                       ))}
                     </div>
