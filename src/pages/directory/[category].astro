@@ -83,6 +83,13 @@ const sortedSubKeys = Object.keys(groupedBySubcategory).sort((a, b) => {
     if (b === 'General') return -1;
     return a.localeCompare(b);
 });
+
+// Sorting helper for tiers
+const tierOrder = {
+  'premium-featured': 0,
+  'premium': 1,
+  'basic': 2
+};
 ---
 
 <Layout title={`${categoryName} - Gulf Islands Directory`}>

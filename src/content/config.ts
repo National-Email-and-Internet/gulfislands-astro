@@ -13,7 +13,7 @@ const directory = defineCollection({
     featured: z.boolean().optional(),
     // Claim System Fields
     claimed: z.boolean().optional().default(false),
-    tier: z.enum(['basic', 'featured', 'premium']).optional().default('basic'),
+    tier: z.enum(['basic', 'premium', 'premium-featured']).optional().default('basic'),
     owner_email: z.string().email().optional(),
     verified: z.boolean().optional().default(false),
     verified_date: z.string().optional(),

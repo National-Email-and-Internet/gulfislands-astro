@@ -92,6 +92,30 @@ async function getSigningKey(secretKey: string, dateStamp: string, region: strin
   return hmacRaw(kService, "aws4_request");
 }
 
+async function validateMosparo(env: Env, token: string, submitToken: string, formData: any): Promise<boolean> {
+  if (!token || !submitToken) return false;
+  
+  const endpoint = `${env.MOSPARO_HOST}/api/v1/verification/verify`;
+  
+  // Basic validation request as per Mosparo API
+  // Note: V1 focuses on token verification
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Basic " + btoa(`${env.MOSPARO_PUBLIC_KEY}:${env.MOSPARO_PRIVATE_KEY}`)
+    },
+    body: JSON.stringify({
+      submissionToken: submitToken,
+      validationToken: token,
+      formData: formData
+    })
+  });
+
+  const result = await response.json() as any;
+  return result.valid === true;
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const corsHeaders = {
@@ -116,7 +140,7 @@ export default {
     try {
       const body = await request.json() as any;
       const ip = request.headers.get("cf-connecting-ip") || "unknown";
-      const { slug, business_name, claimant_name, claimant_email, phone, role, message, honeypot } = body;
+      const { slug, business_name, claimant_name, claimant_email, phone, role, message, honeypot, mosparo_token, mosparo_submit_token } = body;
 
       // Honeypot check
       if (honeypot) {
@@ -126,6 +150,15 @@ export default {
       // Required field validation
       if (!slug || !claimant_email || !claimant_name) {
         return Response.json({ success: false, message: "Missing required fields" }, { status: 400, headers: corsHeaders });
+      }
+
+      // Mosparo validation
+      const isHuman = await validateMosparo(env, mosparo_token, mosparo_submit_token, {
+         slug, business_name, claimant_name, claimant_email, phone, role, message
+      });
+      
+      if (!isHuman) {
+        return Response.json({ success: false, message: "Spam verification failed. Please try again." }, { status: 403, headers: corsHeaders });
       }
 
       // Rate limiting
@@ -142,8 +175,6 @@ export default {
       if (slugValue && parseInt(slugValue) >= 3) {
         return Response.json({ success: false, message: "Too many claim attempts for this business. Please contact support." }, { status: 429, headers: corsHeaders });
       }
-
-      // TODO: Mosparo validation (add once project UUID/keys are available)
 
       // Store claim
       const claimId = crypto.randomUUID();

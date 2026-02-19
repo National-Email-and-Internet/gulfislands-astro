@@ -68,6 +68,13 @@ const categoryConfig: Record<string, { color: string; label: string; icon: strin
 function cleanUrl(url: string): string {
   return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 }
+
+// Sorting helper for tiers
+const tierOrder = {
+  'premium-featured': 0,
+  'premium': 1,
+  'basic': 2
+};
 ---
 
 <Layout title={`${islandName} - Gulf Islands Directory`}>
