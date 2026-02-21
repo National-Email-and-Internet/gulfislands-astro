@@ -11,7 +11,9 @@ export async function getStaticPaths() {
     { slug: 'mayne', name: 'Mayne Island' },
     { slug: 'pender', name: 'Pender Islands' },
     { slug: 'gabriola', name: 'Gabriola Island' },
-    { slug: 'saturna', name: 'Saturna Island' }
+    { slug: 'saturna', name: 'Saturna Island' },
+    { slug: 'quadra', name: 'Quadra Island' },
+    { slug: 'thetis', name: 'Thetis Island' }
   ];
 
   return islands.map(island => ({
@@ -31,7 +33,9 @@ const islandMap = {
   'mayne': 'Mayne Island',
   'pender': 'Pender Island', // Note: csv often uses 'Pender Island' singular
   'gabriola': 'Gabriola Island',
-  'saturna': 'Saturna Island'
+  'saturna': 'Saturna Island',
+  'quadra': 'Quadra Island',
+  'thetis': 'Thetis Island'
 };
 
 const allListings = await getCollection('directory');
