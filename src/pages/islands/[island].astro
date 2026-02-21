@@ -188,7 +188,7 @@ const tierOrder = {
                                 
                                 {!listing.data.claimed && (
                                   <a 
-                                    href={`/claim-listing?slug=${listing.id.replace(/\.[^/.]+$/, "")}`}
+                                    href={`/claim-listing/${listing.id.replace(/\.[^/.]+$/, "")}`}
                                     class="text-ocean-600 text-[10px] font-bold uppercase tracking-wider hover:text-ocean-800 transition-colors"
                                   >
                                     Claim &rarr;
