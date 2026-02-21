@@ -6,14 +6,8 @@ const slug = Astro.url.searchParams.get('slug');
 let listing = null;
 
 if (slug) {
-  // Try to lookup by ID first (Astro 5 standard)
+  // Use explicit ID lookup (Astro 5 standard)
   listing = await getEntry('directory', slug);
-  
-  // Fallback to searching the whole collection if ID lookup failed
-  if (!listing) {
-      const all = await getCollection('directory');
-      listing = all.find(e => e.slug === slug || e.id === slug);
-  }
 }
 
 const businessName = listing?.data?.name || "Business";
