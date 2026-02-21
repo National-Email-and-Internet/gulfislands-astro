@@ -192,7 +192,7 @@ const tierOrder = {
                   if (aFeatured !== bFeatured) return aFeatured - bFeatured;
                   return a.data.name.localeCompare(b.data.name);
                 }).map(listing => {
-                  const listingImg = featuredImages[listing.slug];
+                  const listingImg = featuredImages[listing.id];
                   return (
                     <div class="listing-card bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group overflow-hidden" data-island={listing.data.island} data-pagefind-body data-pagefind-meta={`name:${listing.data.name}`} data-pagefind-meta={`island:${listing.data.island}`} data-pagefind-meta={`category:${cfg.label}`}>
                       
@@ -219,7 +219,7 @@ const tierOrder = {
                         <div class="flex items-start justify-between mb-1.5">
                           <div class="flex flex-col gap-1">
                             <h3 class="text-base font-bold text-gray-900 group-hover:text-ocean-600 transition-colors leading-snug">
-                              <a href={`/directory/${listing.slug}`}>{listing.data.name}</a>
+                              <a href={`/directory/${listing.id}`}>{listing.data.name}</a>
                             </h3>
                             <div class="flex flex-wrap gap-1.5">
                               {listing.data.tier === 'premium-featured' && <PremiumBadge />}
@@ -243,7 +243,7 @@ const tierOrder = {
                           
                           {!listing.data.claimed && (
                             <a 
-                              href={`/claim-listing?slug=${listing.slug}`}
+                              href={`/claim-listing?slug=${listing.id}`}
                               class="text-ocean-600 text-[10px] font-bold uppercase tracking-wider hover:text-ocean-800 transition-colors"
                             >
                               Claim &rarr;
