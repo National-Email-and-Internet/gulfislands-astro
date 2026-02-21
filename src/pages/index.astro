@@ -20,6 +20,9 @@ const featuredImages: Record<string, string> = {
   'salt-spring-ferry': '/images/islands/salt-spring-ferry-hero.jpg',
   'galiano-inn-spa': '/images/islands/galiano-island-hero.jpg',
   'saturna-library': '/images/islands/saturna-island-hero.jpg',
+  'meadow-valley-properties': '/images/islands/pender-island-hero.jpg',
+  'heriot-bay-inn-marina': '/images/islands/gabriola-island-hero.jpg',
+  'thetis-island-vineyard': '/images/islands/saturna-island-hero.jpg',
 };
 
 // Category icon paths and colors
@@ -141,14 +144,14 @@ function cleanUrl(url: string): string {
             <span class="inline-flex items-center relative">
               <select id="hero-island-select" class="appearance-none bg-transparent border-b-2 border-ocean-200 text-ocean-200 italic font-semibold text-4xl md:text-6xl cursor-pointer focus:outline-none pr-8 min-w-[200px]">
                 <option value="all">...</option>
-                <option value="Salt Spring Island">Salt Spring</option>
-                <option value="Galiano Island">Galiano</option>
-                <option value="Mayne Island">Mayne</option>
-                <option value="Pender Island">Pender</option>
-                <option value="Gabriola Island">Gabriola</option>
-                <option value="Saturna Island">Saturna</option>
-                <option value="Quadra Island">Quadra</option>
-                <option value="Thetis Island">Thetis</option>
+                <option value="Salt Spring Island" class="bg-ocean-900 border-none">Salt Spring</option>
+                <option value="Galiano Island" class="bg-ocean-900 border-none">Galiano</option>
+                <option value="Mayne Island" class="bg-ocean-900 border-none">Mayne</option>
+                <option value="Pender Island" class="bg-ocean-900 border-none">Pender</option>
+                <option value="Gabriola Island" class="bg-ocean-900 border-none">Gabriola</option>
+                <option value="Saturna Island" class="bg-ocean-900 border-none">Saturna</option>
+                <option value="Quadra Island" class="bg-ocean-900 border-none">Quadra</option>
+                <option value="Thetis Island" class="bg-ocean-900 border-none">Thetis</option>
               </select>
               <svg class="w-6 h-6 md:w-8 md:h-8 text-ocean-200 absolute right-0 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
