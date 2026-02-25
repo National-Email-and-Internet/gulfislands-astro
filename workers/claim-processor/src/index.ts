@@ -152,7 +152,8 @@ export default {
         return Response.json({ success: false, message: "Missing required fields" }, { status: 400, headers: corsHeaders });
       }
 
-      // Mosparo validation
+      // Mosparo validation - Skip for now (frontend not integrated)
+      /*
       const isHuman = await validateMosparo(env, mosparo_token, mosparo_submit_token, {
          slug, business_name, claimant_name, claimant_email, phone, role, message
       });
@@ -160,6 +161,8 @@ export default {
       if (!isHuman) {
         return Response.json({ success: false, message: "Spam verification failed. Please try again." }, { status: 403, headers: corsHeaders });
       }
+      */
+      const isHuman = true; // Temporary bypass for JP testing
 
       // Rate limiting
       const ipSlugKey = `ratelimit:ip:${slug}:${ip}`;

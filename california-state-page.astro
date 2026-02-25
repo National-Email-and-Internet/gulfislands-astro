@@ -1,0 +1,282 @@
+---
+// Enhanced California State Page for PlayGolf Indoors
+// Based on GSC NEUTRAL findings - content enrichment to improve indexing
+
+import Layout from '../layouts/Layout.astro';
+import MissingLocationCTA from '../components/MissingLocationCTA.astro';
+import CityCard from '../components/CityCard.astro';
+
+const cities = [
+  { name: "Los Angeles", slug: "Los-Angeles", count: 15, description: "SoCal's indoor golf hub with facilities from Downtown to the Valley" },
+  { name: "San Diego", slug: "San-Diego", count: 8, description: "Perfect weather meets perfect practice with bayfront simulator lounges" },
+  { name: "San Francisco", slug: "San-Francisco", count: 6, description: "Fog City's solution for year-round golf" },
+  { name: "San Jose", slug: "San-Jose", count: 5, description: "Tech-forward facilities with pro-grade analytics" },
+  { name: "Sacramento", slug: "Sacramento", count: 4, description: "Central Valley's fastest-growing indoor golf scene" },
+  { name: "Fresno", slug: "Fresno", count: 3, description: "Beat the Central Valley heat with climate-controlled tee boxes" },
+];
+
+const faqs = [
+  {
+    question: "How many indoor golf facilities are in California?",
+    answer: "California has over 60 indoor golf simulator facilities across the state, from San Diego to Redding."
+  },
+  {
+    question: "What's the best indoor golf simulator in Los Angeles?",
+    answer: "Los Angeles has 15+ facilities ranging from luxury bays with TrackMan technology to budget-friendly options. Each offers unique amenities and course libraries."
+  },
+  {
+    question: "Does indoor golf help improve your actual game?",
+    answer: "Yes — launch monitors provide instant data on club speed, ball spin, carry distance, and shot dispersion that traditional driving ranges cannot match."
+  },
+  {
+    question: "How much does indoor golf cost in California?",
+    answer: "Bay rentals typically range from $40-80/hour depending on location, technology (TrackMan, Foresight, Full Swing), and time of day."
+  },
+  {
+    question: "Can I play famous courses on California simulators?",
+    answer: "Yes — most facilities offer Pebble Beach, Torrey Pines, PGA West, and 100+ other world-class courses from around the globe."
+  }
+];
+
+const missingCities = ["Oakland", "Bakersfield", "Stockton", "Riverside", "Anaheim"];
+
+const pageTitle = "Indoor Golf Simulators in California | 60+ Locations | PlayGolfIndoors";
+const pageDescription = "California's complete indoor golf guide: 60+ simulator facilities from LA to San Francisco. Play Pebble Beach, practice year-round at indoor golf centers near you.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Missing Location CTA - Top of page -->
+  <MissingLocationCTA 
+    type="city"
+    currentState="California"
+    currentLocation="California"
+    missingItems={missingCities}
+  />
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-green-800 to-green-900 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-green-200 mb-6" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+          <li><a href="/" class="hover:text-white">Home</a></li>
+          <li><span class="text-green-400">/</span></li>
+          <li><a href="/countries" class="hover:text-white">United States</a></li>
+          <li><span class="text-green-400">/</span></li>
+          <li class="text-white font-medium">California</li>
+        </ol>
+      </nav>
+      
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Indoor Golf in California
+        <span class="block text-2xl md:text-3xl font-normal text-green-200 mt-2">
+          Perfect Your Game Year-Round
+        </span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-green-100 leading-relaxed max-w-3xl">
+        California is the nation's golf paradise — with more than 900 golf courses and ideal weather most of the year. 
+        But even in the Golden State, Mother Nature can interrupt your game. From marine layer mornings in San Francisco 
+        to triple-digit heat in Palm Springs, indoor golf simulators offer the perfect climate-controlled alternative.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-white border-b py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-bold text-green-700">60+</div>
+          <div class="text-sm text-gray-600">Indoor Locations</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-green-700">365</div>
+          <div class="text-sm text-gray-600">Days of Play</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-green-700">900+</div>
+          <div class="text-sm text-gray-600">Traditional Courses</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-green-700">48.1M</div>
+          <div class="text-sm text-gray-600">US Golfers (2025)</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-green-700">19M</div>
+          <div class="text-sm text-gray-600">Off-Course Players</div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 text-center mt-4">
+        Source: National Golf Foundation 2024-2025 Industry Report
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    
+    <!-- Intro Paragraph -->
+    <section class="prose prose-lg max-w-none mb-12">
+      <p class="text-gray-700 leading-relaxed">
+        According to the <strong>National Golf Foundation</strong>, 48.1 million Americans played golf in some form during 2024, 
+        with 19 million choosing off-course options like simulators. California leads this trend, with indoor facilities 
+        expanding rapidly across the state. Whether you're looking to escape August heat in Riverside or find a fog-proof 
+        practice session in Half Moon Bay, indoor golf delivers consistent conditions 365 days a year.
+      </p>
+      <p class="text-gray-700 leading-relaxed mt-4">
+        With over 60 indoor golf locations across the state — from San Diego to Redding — California golfers have 
+        unprecedented access to <strong>TrackMan</strong>, <strong>Foresight</strong>, and <strong>Full Swing</strong> simulators. 
+        Practice on Pebble Beach without leaving Los Angeles. Play Torrey Pines from a bay in Fresno. 
+        California's indoor golf revolution is here.
+      </p>
+    </section>
+
+    <!-- Why Indoor Golf in CA -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Why Indoor Golf in California?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-orange-900 mb-2">🔥 Beat the Heat</h3>
+          <p class="text-orange-800 text-sm">
+            Inland areas regularly hit 100°F+ in summer. Simulators stay a comfortable 70°F year-round.
+          </p>
+        </div>
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-blue-900 mb-2">🌫️ Morning Fog Solution</h3>
+          <p class="text-blue-800 text-sm">
+            Coastal marine layer can linger until noon. Indoor golf starts at 6 AM sharp, fog-free.
+          </p>
+        </div>
+        <div class="bg-gray-50 border-l-4 border-gray-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-gray-900 mb-2">💨 Wildfire Season</h3>
+          <p class="text-gray-800 text-sm">
+            When AQI is unsafe outdoors, simulators offer clean, filtered air for your health.
+          </p>
+        </div>
+        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-green-900 mb-2">📊 Data-Driven Improvement</h3>
+          <p class="text-green-800 text-sm">
+            Launch monitors provide instant feedback on club speed, spin rate, and dispersion patterns.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Cities -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Cities</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cities.map(city => (
+          <CityCard 
+            name={city.name}
+            slug={city.slug}
+            count={city.count}
+            description={city.description}
+            state="California"
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- All Cities List -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">All California Cities</h2>
+      <div class="bg-gray-50 rounded-lg p-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Dynamic list of all cities from your data -->
+          <a href="/United-States/California/Arcadia" class="text-green-700 hover:text-green-900 hover:underline">
+            Arcadia <span class="text-gray-500 text-sm">(1)</span>
+          </a>
+          <a href="/United-States/California/Buena-Park" class="text-green-700 hover:text-green-900 hover:underline">
+            Buena Park <span class="text-gray-500 text-sm">(2)</span>
+          </a>
+          <!-- ... more cities ... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Schema Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="bg-white border rounded-lg group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary 
+              class="flex justify-between items-center p-4 cursor-pointer font-medium text-gray-900 hover:bg-gray-50"
+              itemprop="name"
+            >
+              {faq.question}
+              <span class="text-green-600 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div 
+              class="px-4 pb-4 text-gray-700 leading-relaxed"
+              itemscope 
+              itemprop="acceptedAnswer" 
+              itemtype="https://schema.org/Answer"
+            >
+              <div itemprop="text">{faq.answer}</div>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bg-green-800 text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-4">Ready to Play Indoor Golf in California?</h2>
+      <p class="text-green-100 mb-6 max-w-2xl mx-auto">
+        Find the perfect indoor golf facility near you. From Los Angeles to San Francisco, 
+        San Diego to Sacramento — we've got California covered.
+      </p>
+      <a 
+        href="/submit-listing" 
+        class="inline-block bg-white text-green-800 font-bold px-8 py-3 rounded-lg hover:bg-green-50 transition"
+      >
+        Add Your Facility
+      </a>
+    </section>
+
+  </main>
+</Layout>
+
+<!-- JSON-LD Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many indoor golf facilities are in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "California has over 60 indoor golf simulator facilities across the state, from San Diego to Redding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does indoor golf help improve your actual game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — launch monitors provide instant data on club speed, ball spin, carry distance, and shot dispersion that traditional driving ranges cannot match."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does indoor golf cost in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bay rentals typically range from $40-80/hour depending on location, technology (TrackMan, Foresight, Full Swing), and time of day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play famous courses on California simulators?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — most facilities offer Pebble Beach, Torrey Pines, PGA West, and 100+ other world-class courses from around the globe."
+      }
+    }
+  ]
+}
+</script>

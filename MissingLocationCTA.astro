@@ -1,0 +1,78 @@
+---
+// MissingLocationCTA.astro
+// Reusable CTA for "Are we missing a location?" prompts
+// Position: Top of page, compact design
+
+export interface Props {
+  type: 'state' | 'city' | 'facility';
+  currentLocation: string;
+  currentState?: string;
+  missingItems?: string[];
+}
+
+const { type, currentLocation, currentState, missingItems = [] } = Astro.props;
+
+// Generate appropriate text based on type
+const ctaText = {
+  state: {
+    title: "Are we missing a state?",
+    subtext: "Help us grow — add a golf facility in any state",
+    button: "Add Location",
+    link: "/submit-listing?context=state"
+  },
+  city: {
+    title: `Are we missing a city in ${currentState || currentLocation}?`,
+    subtext: "Know an indoor golf spot we don't have?",
+    button: "Add City",
+    link: `/submit-listing?state=${currentState || currentLocation}&context=city`
+  },
+  facility: {
+    title: `Are we missing a facility in ${currentLocation}?`,
+    subtext: "Add a new indoor golf location",
+    button: "Add Facility",
+    link: `/submit-listing?state=${currentState}&city=${currentLocation}&context=facility`
+  }
+};
+
+const { title, subtext, button, link } = ctaText[type];
+
+// Show max 4 missing items
+const displayItems = missingItems.slice(0, 4);
+const hasMore = missingItems.length > 4;
+---
+
+<div class="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-100">
+  <div class="max-w-6xl mx-auto px-4 py-3">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      {/* Left: Text */}
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="font-semibold text-green-900 text-sm">{title}</span>
+          <span class="text-green-700 text-sm hidden sm:inline">•</span>
+          <span class="text-green-700 text-sm">{subtext}</span>
+          
+          {/* Missing items list */}
+          {displayItems.length > 0 && (
+            <>
+              <span class="text-gray-500 text-sm">Coming soon:</span>
+              <span class="text-gray-600 text-sm">
+                {displayItems.join(", ")}{hasMore ? "..." : ""}
+              </span>
+            </>
+          )}
+        </div>
+      </div>
+      
+      {/* Right: Button */}
+      <a 
+        href={link}
+        class="inline-flex items-center gap-1.5 bg-green-700 hover:bg-green-800 text-white text-sm font-medium px-4 py-1.5 rounded-md transition-colors whitespace-nowrap flex-shrink-0"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+        {button}
+      </a>
+    </div>
+  </div>
+</div>
