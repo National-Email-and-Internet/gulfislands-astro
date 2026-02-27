@@ -1,0 +1,29 @@
+# Gulf Islands Cache Headers
+# For Cloudflare Pages / Netlify
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# HTML pages - cache for 5 minutes, revalidate in background
+/*.html
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# Static assets - cache for 1 year (immutable, content-hashed)
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# Sitemap and robots - short cache
+/sitemap-index.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=86400
