@@ -18,4 +18,7 @@ hours:
   breakfast: "8:00 AM - 11:00 AM"
   lunch: "11:30 AM - 2:30 PM"
   dinner: "5:00 PM - 9:00 PM"
+gallery:
+  - "/images/listings/pender-664671ad261e05a83b0d09b5_0.jpg"
+  - "/images/listings/pender-664671ad261e05a83b0d09b5_1.jpg"
 ---
