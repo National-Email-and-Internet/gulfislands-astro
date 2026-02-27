@@ -1,12 +1,16 @@
 ---
 name: "Galiano Conservancy Association"
-url: ""
+url: "https://galianoconservancy.ca"
 phone: "250-539-2424"
+email: ""
+address: "Galiano Island"
 island: "Galiano Island"
 category: "community"
 subcategory: "Conservation"
-description: "Non-profit conservation organization on Galiano Island"
-description_long: ""
+description: "One of British Columbia's first community-based land trusts, founded in 1989. Leaders in nature conservation through proactive land stewardship, ecological restoration, biodiversity conservation, sustainable food systems, and climate action."
+description_long: |
+  <p>The Galiano Conservancy was founded in 1989 as one of British Columbia's first community-based land trusts. It has grown to become a leader in nature conservation in BC through proactive land stewardship.</p>
+  <p>Focus areas: Land Stewardship, Ecological Restoration, Biodiversity Conservation, Sustainable Food Systems, Climate Action, and Environmental Education.</p>
 title: "Galiano Conservancy Association - Galiano Island"
 tier: "basic"
 claimed: false
