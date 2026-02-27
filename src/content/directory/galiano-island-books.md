@@ -1,6 +1,6 @@
 ---
 name: "Galiano Island Books"
-url: ""
+url: "https://www.galianoislandbooks.com"
 phone: "250-539-3340"
 email: "leetrentadue@gmail.com"
 address: "76 Madrona Drive"
