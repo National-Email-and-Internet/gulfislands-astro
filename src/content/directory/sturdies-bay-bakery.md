@@ -2,12 +2,16 @@
 name: "Sturdies Bay Bakery"
 url: ""
 phone: ""
+email: ""
+address: "Sturdies Bay Road"
 island: "Galiano Island"
 category: "eat"
 subcategory: "Bakeries"
-description: "Bakery on Galiano Island"
+description: "Local bakery in Sturdies Bay on Galiano Island"
 description_long: ""
 title: "Sturdies Bay Bakery - Galiano Island"
 tier: "basic"
 claimed: false
+social:
+  facebook: "SturdiesBayBakery"
 ---

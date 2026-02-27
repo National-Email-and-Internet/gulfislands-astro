@@ -15,4 +15,6 @@ description_long: |
 title: "Bodega Ridge - Galiano Island Resort"
 tier: "basic"
 claimed: false
+social:
+  instagram: "@bodegaridge"
 ---

@@ -2,6 +2,8 @@
 name: "The Crane and Robin Restaurant"
 url: ""
 phone: "250-539-3334"
+email: ""
+address: "Galiano Island"
 island: "Galiano Island"
 category: "eat"
 subcategory: "Restaurants"
@@ -10,4 +12,6 @@ description_long: ""
 title: "The Crane and Robin Restaurant - Galiano Island"
 tier: "basic"
 claimed: false
+social:
+  facebook: "TheCraneAndRobin"
 ---

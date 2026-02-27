@@ -14,4 +14,7 @@ description_long: |
 title: "Galiano Conservancy Association - Galiano Island"
 tier: "basic"
 claimed: false
+social:
+  facebook: "GalianoConservancy"
+  instagram: "@galianoconservancy"
 ---
