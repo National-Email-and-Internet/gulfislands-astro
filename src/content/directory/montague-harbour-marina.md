@@ -17,5 +17,6 @@ social:
 hours:
   season: "May 1 - Sept 30"
 gallery:
-  - "/images/listings/montague-harbour-marina.jpg"
+  - "/images/listings/montague-harbour-marina-11357285-10205497768637014-7800675095436562763-o-1-0-jpg.jpg"
+  - "/images/listings/montague-harbour-marina-img-1430450308897-0-jpg.jpg"
 ---

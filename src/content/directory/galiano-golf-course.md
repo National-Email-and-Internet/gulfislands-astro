@@ -26,5 +26,9 @@ amenities:
   - "Credit Cards"
   - "Interac"
 gallery:
-  - "/images/listings/galiano-golf-course.jpg"
+  - "/images/listings/galiano-golf-course-golf-clinic-jpg.jpg"
+  - "/images/listings/galiano-golf-course-clubhousecloseup-jpg.jpg"
+  - "/images/listings/galiano-golf-course-fairwayview-with-shadow-jpg.jpg"
+  - "/images/listings/galiano-golf-course-pondandtrees-jpg.jpg"
+  - "/images/listings/galiano-golf-course-ggc-hole4peekaboo-jpg.jpg"
 ---

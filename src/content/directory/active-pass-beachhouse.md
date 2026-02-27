@@ -11,5 +11,5 @@ title: "Active Pass Beachhouse - Galiano Island"
 tier: "basic"
 claimed: false
 gallery:
-  - "/images/listings/active-pass-beachhouse.jpg"
+  - "/images/listings/active-pass-beachhouse-activepassbh-2013-gif-gif.gif"
 ---

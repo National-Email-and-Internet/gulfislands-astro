@@ -25,5 +25,5 @@ amenities:
   - "E-Transfer"
   - "Wheelchair Access"
 gallery:
-  - "/images/listings/galiano-island-books.jpeg"
+  - "/images/listings/galiano-island-books-galianobooks2-gif-gif.gif"
 ---

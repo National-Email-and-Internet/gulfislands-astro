@@ -18,5 +18,8 @@ title: "Woodstone Manor - Galiano Island"
 tier: "basic"
 claimed: false
 gallery:
-  - "/images/listings/woodstone-manor.png"
+  - "/images/listings/woodstone-manor-web-env-horses-4893-png.png"
+  - "/images/listings/woodstone-manor-evening-back-136-chamber-jpg.jpg"
+  - "/images/listings/woodstone-manor-dining-rooms-jpg.jpg"
+  - "/images/listings/woodstone-manor-patio2-jpg.jpg"
 ---

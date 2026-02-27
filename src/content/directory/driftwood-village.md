@@ -34,5 +34,14 @@ amenities:
   - "Private Entrance"
   - "Self-contained"
 gallery:
-  - "/images/listings/driftwood-village.JPG"
+  - "/images/listings/driftwood-village-pacificlivingarea-jpg.jpg"
+  - "/images/listings/driftwood-village-grounds-jpg.jpg"
+  - "/images/listings/driftwood-village-8livingarea-jpg.jpg"
+  - "/images/listings/driftwood-village-5couch-jpg.jpg"
+  - "/images/listings/driftwood-village-property-panorama-jpg.jpg"
+  - "/images/listings/driftwood-village-11bed-jpg.jpg"
+  - "/images/listings/driftwood-village-pacifickitchen-jpg.jpg"
+  - "/images/listings/driftwood-village-6view-jpg.jpg"
+  - "/images/listings/driftwood-village-grounds-cherryblossom-jpg.jpg"
+  - "/images/listings/driftwood-village-magnolialiving-room-jpg.jpg"
 ---

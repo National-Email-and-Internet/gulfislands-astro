@@ -10,4 +10,6 @@ description_long: ""
 title: "Azami Cottage - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/azami-cottage-slideshow1-azami2015-gif.gif"
 ---

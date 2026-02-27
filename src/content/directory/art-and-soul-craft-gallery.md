@@ -11,5 +11,11 @@ title: "Art & Soul Craft Gallery - Galiano Island"
 tier: "basic"
 claimed: false
 gallery:
-  - "/images/listings/art-amp-soul-craft-gallery.gif"
+  - "/images/listings/art-and-soul-craft-gallery-img-4279-jpeg.jpeg"
+  - "/images/listings/art-and-soul-craft-gallery-img-4280-jpeg.jpeg"
+  - "/images/listings/art-and-soul-craft-gallery-img-4281-jpeg.jpeg"
+  - "/images/listings/art-and-soul-craft-gallery-img-4282-jpeg.jpeg"
+  - "/images/listings/art-and-soul-craft-gallery-img-4283-jpeg.jpeg"
+  - "/images/listings/art-and-soul-craft-gallery-img-4284-jpeg.jpeg"
+  - "/images/listings/art-and-soul-craft-gallery-img-4285-jpeg.jpeg"
 ---
