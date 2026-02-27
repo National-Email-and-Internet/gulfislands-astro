@@ -12,4 +12,6 @@ description_long: ""
 title: "Wind in the Arbutus - Mayne Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/mayne-windarbutus.jpg.jpg"
 ---

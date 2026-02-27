@@ -12,4 +12,6 @@ description_long: ""
 title: "Seal Beach Cottage - Mayne Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/mayne-sealbeachcottage16.jpg.jpg"
 ---

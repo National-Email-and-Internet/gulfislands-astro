@@ -12,4 +12,6 @@ description_long: ""
 title: "Blue Vista Resort - Mayne Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/mayne-bluevista4.jpg.jpg"
 ---

@@ -12,4 +12,6 @@ description_long: ""
 title: "Raylia Cottage B&B - Mayne Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/mayne-raylia3.jpg.jpg"
 ---

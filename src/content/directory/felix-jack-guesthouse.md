@@ -14,4 +14,6 @@ tier: "basic"
 claimed: false
 social:
   facebook: "Felix-Jack-Guest-House-Mayne-Island-BC-809983062463702"
+gallery:
+  - "/images/listings/mayne-felixjackguesthouse1sm.jpg.jpg"
 ---
