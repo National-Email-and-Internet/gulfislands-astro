@@ -1,0 +1,26 @@
+# Gulf Islands URL Redirects
+# Format: /old-url /new-url status-code
+
+# Category pages (legacy .html → new /directory/)
+/Food.html                          /directory/eat/              301
+/Construction.html                  /directory/trades/           301
+/Education.html                     /directory/education/        301
+/Health.html                        /directory/health/           301
+/Services.html                      /directory/services/         301
+/Shopping.html                      /directory/shopping/         301
+/FarmGarden.html                    /directory/farms/            301
+/Legal.html                         /directory/services/         301
+/Marine.html                        /directory/marine/           301
+/Community.html                     /directory/community/        301
+/Organizations.html                 /directory/community/        301
+/News_GI.html                       /directory/news/             301
+/transportation.html                /directory/getting-here/     301
+/realestate.html                    /directory/real-estate/      301
+/Recreation.html                    /directory/activities/       301
+/www_general.html                   /directory/services/         301
+/ad_text_1.html                     /                             301
+
+# Sub-category pages
+/Construction_Architects.html       /directory/trades/           301
+/arts&crafts_ssi_music.html         /directory/arts-culture/     301
+/arts&crafts_saturna.html           /directory/arts-culture/     301
