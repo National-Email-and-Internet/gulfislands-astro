@@ -92,14 +92,19 @@ const catLabel = categoryLabels[category] ?? category;
             )}
           </div>
 
-          <!-- Gallery (Premium Only) -->
-          {tier === 'premium' && gallery && gallery.length > 0 && (
+          <!-- Gallery -->
+          {gallery && gallery.length > 0 && (
             <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
-              <h2 class="font-['Playfair_Display'] text-2xl font-bold text-gray-900 mb-6">Gallery</h2>
-              <div class="grid grid-cols-2 gap-4">
-                {gallery.map(img => (
-                  <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-                    <img src={img} alt={`${name} gallery image`} class="w-full h-full object-cover" />
+              <h2 class="font-['Playfair_Display'] text-2xl font-bold text-gray-900 mb-6">Photos</h2>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {gallery.map((img, i) => (
+                  <div class={`rounded-xl overflow-hidden bg-gray-100 ${i === 0 ? 'col-span-2 md:col-span-2 aspect-[16/9]' : 'aspect-square'}`}>
+                    <img
+                      src={img}
+                      alt={`${name} photo ${i + 1}`}
+                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                    />
                   </div>
                 ))}
               </div>
