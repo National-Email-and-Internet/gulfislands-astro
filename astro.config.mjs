@@ -6,7 +6,14 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.gulfislands.com',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Exclude claim-listing and submit-listing pages (noindex forms)
+      filter: (page) => 
+        !page.includes('/claim-listing/') && 
+        !page.includes('/submit-listing'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()]
   },

@@ -5,12 +5,14 @@ interface Props {
   title?: string;
   description?: string;
   canonicalUrl?: string;
+  noindex?: boolean;
 }
 
 const { 
   title = 'Gulf Islands BC - Your Gateway to the Gulf Islands', 
   description = 'The Gulf Islands Directory — your guide to local businesses, accommodations, restaurants, and services across Salt Spring, Galiano, Mayne, Pender, and more.',
-  canonicalUrl = Astro.url.href
+  canonicalUrl = Astro.url.href,
+  noindex = false
 } = Astro.props;
 
 const siteUrl = 'https://www.gulfislands.com';
@@ -24,23 +26,30 @@ const siteUrl = 'https://www.gulfislands.com';
   <meta name="description" content={description}>
   <title>{title}</title>
   
-  <!-- Canonical URL -->
-  <link rel="canonical" href={canonicalUrl}>
+  <!-- Noindex for non-public pages -->
+  {noindex && <meta name="robots" content="noindex, nofollow">}
   
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content={canonicalUrl}>
-  <meta property="og:title" content={title}>
-  <meta property="og:description" content={description}>
-  <meta property="og:site_name" content="Gulf Islands Directory">
-  <meta property="og:image" content={`${siteUrl}/images/islands/salt-spring-ferry-hero.jpg`}>
-  <meta property="og:locale" content="en_CA">
+  <!-- Canonical URL (skip if noindex) -->
+  {!noindex && <link rel="canonical" href={canonicalUrl}>}
   
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content={title}>
-  <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content={`${siteUrl}/images/islands/salt-spring-ferry-hero.jpg`}>
+  <!-- Open Graph (skip if noindex) -->
+  {!noindex && (
+    <>
+      <meta property="og:type" content="website">
+      <meta property="og:url" content={canonicalUrl}>
+      <meta property="og:title" content={title}>
+      <meta property="og:description" content={description}>
+      <meta property="og:site_name" content="Gulf Islands Directory">
+      <meta property="og:image" content={`${siteUrl}/images/islands/salt-spring-ferry-hero.jpg`}>
+      <meta property="og:locale" content="en_CA">
+      
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content={title}>
+      <meta name="twitter:description" content={description}>
+      <meta name="twitter:image" content={`${siteUrl}/images/islands/salt-spring-ferry-hero.jpg`}>
+    </>
+  )}
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
