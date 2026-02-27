@@ -26,24 +26,20 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 51.79.92.134 >> ~/.ssh/known_hosts
+          ssh-keyscan -H 15.235.46.226 >> ~/.ssh/known_hosts
+
       - name: Deploy to WEB-01
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: 51.79.92.134
-          username: ubuntu
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          source: "dist/*"
-          target: "/var/www/gulfislands.com"
-          strip_components: 1
-          rm: true
+        run: |
+          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            dist/ ubuntu@51.79.92.134:/var/www/gulfislands.com/
 
       - name: Deploy to WEB-02
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: 15.235.46.226
-          username: ubuntu
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          source: "dist/*"
-          target: "/var/www/gulfislands.com"
-          strip_components: 1
-          rm: true
+        run: |
+          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            dist/ ubuntu@15.235.46.226:/var/www/gulfislands.com/
