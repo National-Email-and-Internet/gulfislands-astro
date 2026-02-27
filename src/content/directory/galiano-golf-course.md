@@ -25,4 +25,6 @@ amenities:
   - "Outdoor Patio"
   - "Credit Cards"
   - "Interac"
+gallery:
+  - "/images/listings/galiano-golf-course.jpg"
 ---

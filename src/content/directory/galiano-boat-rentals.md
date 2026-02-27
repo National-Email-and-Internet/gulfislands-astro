@@ -10,4 +10,6 @@ description_long: ""
 title: "Galiano Boat & Moped Rentals - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/galiano-boat-amp-moped-rentals.gif"
 ---

@@ -195,7 +195,10 @@ const tierOrder = {
                   if (aFeatured !== bFeatured) return aFeatured - bFeatured;
                   return a.data.name.localeCompare(b.data.name);
                 }).map(listing => {
-                  const listingImg = featuredImages[listing.id];
+                  // Check for image in gallery first, then featuredImages map
+                  const listingImg = (listing.data.gallery && listing.data.gallery.length > 0)
+                    ? listing.data.gallery[0]
+                    : featuredImages[listing.id];
                   return (
                     <div class="listing-card bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-ocean-100 transition flex flex-col h-full group overflow-hidden" data-island={listing.data.island} data-pagefind-body data-pagefind-meta={`name:${listing.data.name}`} data-pagefind-meta={`island:${listing.data.island}`} data-pagefind-meta={`category:${cfg.label}`}>
                       

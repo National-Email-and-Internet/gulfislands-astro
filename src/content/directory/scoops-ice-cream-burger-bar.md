@@ -14,4 +14,6 @@ tier: "basic"
 claimed: false
 social:
   facebook: "ScoopsGaliano"
+gallery:
+  - "/images/listings/scoops-ice-cream-amp-burger-bar.jpeg"
 ---

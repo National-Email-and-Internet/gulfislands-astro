@@ -14,4 +14,6 @@ tier: "basic"
 claimed: false
 social:
   facebook: "GalianoConcertSociety"
+gallery:
+  - "/images/listings/galiano-concert-society.png"
 ---

@@ -33,4 +33,6 @@ amenities:
   - "TV"
   - "Private Entrance"
   - "Self-contained"
+gallery:
+  - "/images/listings/driftwood-village.JPG"
 ---

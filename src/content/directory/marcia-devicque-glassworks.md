@@ -10,4 +10,6 @@ description_long: ""
 title: "Marcia DeVicque GlassWorks - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/marcia-devicque-glassworks.gif"
 ---

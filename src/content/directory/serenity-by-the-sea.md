@@ -10,4 +10,6 @@ description_long: ""
 title: "Serenity by the Sea - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/serenity-by-the-sea.jpeg"
 ---

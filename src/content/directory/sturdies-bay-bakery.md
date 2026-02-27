@@ -14,4 +14,6 @@ tier: "basic"
 claimed: false
 social:
   facebook: "SturdiesBayBakery"
+gallery:
+  - "/images/listings/sturdies-bay-bakery.jpeg"
 ---

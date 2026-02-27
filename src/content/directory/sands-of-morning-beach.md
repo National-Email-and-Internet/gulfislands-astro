@@ -10,4 +10,6 @@ description_long: ""
 title: "Sands of Morning Beach - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/sands-of-morning-beach.gif"
 ---

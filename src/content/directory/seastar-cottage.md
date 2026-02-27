@@ -10,4 +10,6 @@ description_long: ""
 title: "Seastar Cottage - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/seastar-cottage.GIF"
 ---

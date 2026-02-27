@@ -17,4 +17,6 @@ tier: "basic"
 claimed: false
 social:
   instagram: "@bodegaridge"
+gallery:
+  - "/images/listings/bodega-ridge.jpg"
 ---

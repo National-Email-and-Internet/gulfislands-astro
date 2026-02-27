@@ -10,4 +10,6 @@ description_long: ""
 title: "Jeanne Erickson Art - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/jeanne-erickson-art.jpg"
 ---

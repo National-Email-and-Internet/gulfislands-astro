@@ -10,4 +10,6 @@ description_long: ""
 title: "Paradise Rock Oceanfront Cottage - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/paradise-rock-oceanfront-cottage.gif"
 ---

@@ -10,4 +10,6 @@ description_long: ""
 title: "Morning Beach Waterfront B&B - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/morning-beach-waterfront-bed-amp-breakfast.gif"
 ---

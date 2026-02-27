@@ -24,4 +24,6 @@ amenities:
   - "Interac"
   - "E-Transfer"
   - "Wheelchair Access"
+gallery:
+  - "/images/listings/galiano-island-books.jpeg"
 ---

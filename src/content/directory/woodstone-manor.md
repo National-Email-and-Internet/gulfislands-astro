@@ -17,4 +17,6 @@ description_long: |
 title: "Woodstone Manor - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/woodstone-manor.png"
 ---

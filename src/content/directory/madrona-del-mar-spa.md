@@ -15,4 +15,6 @@ claimed: false
 social:
   facebook: "Galiano.Inn"
   instagram: "@galianoinnspa"
+gallery:
+  - "/images/listings/madrona-del-mar-spa.jpg"
 ---

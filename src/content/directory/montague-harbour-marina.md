@@ -16,4 +16,6 @@ social:
   facebook: "MontagueHarbourMarina"
 hours:
   season: "May 1 - Sept 30"
+gallery:
+  - "/images/listings/montague-harbour-marina.jpg"
 ---

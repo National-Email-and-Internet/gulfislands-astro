@@ -10,4 +10,6 @@ description_long: ""
 title: "Bodega North Woodworks - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/bodega-north-woodworks.jpg"
 ---

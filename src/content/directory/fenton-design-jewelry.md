@@ -10,4 +10,6 @@ description_long: ""
 title: "Fenton Design Jewelry - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/fenton-design-handcrafted-silver-jewelry.JPG"
 ---

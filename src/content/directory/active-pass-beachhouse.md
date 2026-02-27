@@ -10,4 +10,6 @@ description_long: ""
 title: "Active Pass Beachhouse - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/active-pass-beachhouse.jpg"
 ---

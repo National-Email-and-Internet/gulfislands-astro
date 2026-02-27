@@ -26,4 +26,6 @@ amenities:
   - "Credit Cards"
   - "Interac"
   - "E-Transfer"
+gallery:
+  - "/images/listings/gulf-island-kayaking.png"
 ---
