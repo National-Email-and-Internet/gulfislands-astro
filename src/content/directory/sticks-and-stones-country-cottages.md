@@ -1,11 +1,13 @@
 ---
-name: "STICKS and STONES Country Cottages"
-url: "http://www.galianoadventures.com/"
+name: "Sticks & Stones Country Cottages"
+url: ""
+phone: "250-539-3443"
 island: "Galiano Island"
 category: "stay"
-subcategory: ""
-description: ""
-title: "Welcome to Galiano Adventures | Galiano Adventures"
+subcategory: "Cottages"
+description: "Country cottages in arbutus grove setting on Galiano Island"
+description_long: ""
+title: "Sticks & Stones Country Cottages - Galiano Island"
+tier: "basic"
+claimed: false
 ---
-
-

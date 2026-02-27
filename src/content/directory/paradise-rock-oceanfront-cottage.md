@@ -1,11 +1,13 @@
 ---
 name: "Paradise Rock Oceanfront Cottage"
-url: "http://www.cedarplace.com/paradise"
+url: ""
+phone: "250-539-3404"
 island: "Galiano Island"
 category: "stay"
-subcategory: ""
-description: ""
-title: "Paradise Rock Oceanfront Cottage"
+subcategory: "Vacation Rentals"
+description: "Private oceanfront cottage rental on Galiano Island"
+description_long: ""
+title: "Paradise Rock Oceanfront Cottage - Galiano Island"
+tier: "basic"
+claimed: false
 ---
-
-
