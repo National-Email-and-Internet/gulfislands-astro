@@ -12,4 +12,6 @@ description_long: ""
 title: "Galiano Lions Club - Galiano Island"
 tier: "basic"
 claimed: false
+social:
+  facebook: "GalianoLionsClub"
 ---
