@@ -1,0 +1,49 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to WEB-01
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 51.79.92.134
+          username: ubuntu
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          source: "dist/*"
+          target: "/var/www/gulfislands.com"
+          strip_components: 1
+          rm: true
+
+      - name: Deploy to WEB-02
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 15.235.46.226
+          username: ubuntu
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          source: "dist/*"
+          target: "/var/www/gulfislands.com"
+          strip_components: 1
+          rm: true
