@@ -17,6 +17,10 @@ const directory = defineCollection({
     owner_email: z.string().email().optional(),
     verified: z.boolean().optional().default(false),
     verified_date: z.string().optional(),
+    
+    phone: z.string().optional(),
+    email: z.string().email().or(z.string().length(0)).optional(),
+    address: z.string().optional(),
     // Premium Listing Fields
     gallery: z.array(z.string()).optional(),
     hours: z.record(z.string()).optional(),
