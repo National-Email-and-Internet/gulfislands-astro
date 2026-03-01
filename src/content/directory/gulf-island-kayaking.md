@@ -8,8 +8,10 @@ island: "Galiano Island"
 category: "activities"
 subcategory: "Kayaking"
 description: "Family owned and operated since 1985, offering 3-6 hour guided tours, dockside lessons and kayak, paddleboard, canoe, and bike rentals year round. Small groups, no experience necessary. Local naturalist guides. 35+ years track record on Galiano."
+_description_formatted: true
 description_long: |
-  <p>We can hook you up with the best accommodations on Galiano Island. With our 35+ years track record on Galiano, we can point you in the right direction.</p>
+  We can hook you up with the best accommodations on Galiano Island. With our 35+ years track record on Galiano, we can point you in the right direction.
+
 title: "Gulf Island Kayaking - Galiano Island"
 tier: "basic"
 claimed: false

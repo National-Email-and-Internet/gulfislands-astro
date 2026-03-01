@@ -8,10 +8,36 @@ island: "Galiano Island"
 category: "stay"
 subcategory: "Resorts"
 description: "Cozy rental cottages near the water's edge, nestled in heritage orchard grounds. Studios, suites, one-bedroom and two-bedroom cottages with private kitchens, bathrooms, decks, and wood-burning fireplaces."
+_description_formatted: true
 description_long: |
-  <p>Driftwood Village is the perfect backdrop for quiet contemplation and creative inspiration—your home-base to explore beautiful Galiano Island.</p>
-  <p>Accommodation options include Studios, Suites, One-Bedroom, and Two-Bedroom cottages. All cottages feature a private kitchen, 3-piece bathroom, private deck, high-speed WiFi, and cozy wood-burning fireplace (with 2 exceptions).</p>
-  <p>Pet-friendly ($20/night). 2-night minimum stay. Cash, Debit, Visa, MasterCard accepted.</p>
+  Driftwood Village is the perfect backdrop for quiet contemplation and creative inspiration—your home base to explore beautiful Galiano Island.
+  
+  ### Accommodation Options
+  
+  - Studios
+  - Suites
+  - One-Bedroom cottages
+  - Two-Bedroom cottages
+  
+  All cottages feature:
+  - A private kitchen
+  - 3-piece bathroom
+  - Private deck
+  - High-speed WiFi
+  - Cozy wood-burning fireplace (with 2 exceptions)
+  
+  ### Pet Policy
+  
+  - Pet-friendly ($20/night)
+  - 2-night minimum stay
+  
+  ### Payment Methods
+  
+  - Cash
+  - Debit
+  - Visa
+  - MasterCard
+
 title: "Driftwood Village - Galiano Island Cottages"
 tier: "basic"
 claimed: false

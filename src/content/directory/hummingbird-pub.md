@@ -8,9 +8,12 @@ island: "Galiano Island"
 category: "eat"
 subcategory: "Pubs"
 description: "Family-friendly pub and restaurant open year-round. Features a free pub bus service from Montague Harbour Marina and Provincial Campground. Full menu with burgers, seafood, and pub classics."
+_description_formatted: true
 description_long: |
-  <p>The Hummingbird Pub is located near the corner of Porlier Pass road and Georgeson Bay road, just a 7 minute drive from Sturdies Bay ferry terminal.</p>
-  <p>Free pub bus service runs from Montague Harbour Marina and Provincial Campground. Open year-round, 7 days a week.</p>
+  The Hummingbird Pub is located near the corner of Porlier Pass Road and Georgeson Bay Road, just a 7-minute drive from Sturdies Bay ferry terminal.
+  
+  Free pub bus service runs from Montague Harbour Marina and Provincial Campground. Open year-round, 7 days a week.
+
 title: "Hummingbird Pub & Family Restaurant - Galiano Island"
 tier: "basic"
 claimed: false

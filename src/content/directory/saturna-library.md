@@ -5,9 +5,12 @@ island: "Saturna Island"
 category: "community"
 subcategory: "Libraries"
 description: "Cultural and educational hub serving the residents and visitors of Saturna Island."
+_description_formatted: true
 description_long: |
-  <p>The Saturna Island Library is more than just books; it is the heartbeat of our island community. Providing high-speed internet access, a rich collection of local literature, and ongoing community events, the library supports lifelong learning in a tranquil island setting.</p>
-  <p>We are proud to offer professional research assistance and regular guest speaker series that highlight the unique history and environment of the Gulf Islands.</p>
+  The Saturna Island Library is more than just books; it is the heartbeat of our island community. Providing high-speed internet access, a rich collection of local literature, and ongoing community events, the library supports lifelong learning in a tranquil island setting.
+  
+  We are proud to offer professional research assistance and a regular guest speaker series that highlight the unique history and environment of the Gulf Islands.
+
 title: "Saturna Island Library - Community Hub"
 tier: "premium-featured"
 claimed: true

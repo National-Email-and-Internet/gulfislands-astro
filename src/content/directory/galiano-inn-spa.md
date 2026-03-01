@@ -8,11 +8,27 @@ island: "Galiano Island"
 category: "stay"
 subcategory: "Hotels & Spas"
 description: "Luxury oceanfront boutique resort and full-service spa near Sturdies Bay ferry terminal. All oceanfront accommodation with wood-burning fireplaces and private terraces. Award-winning Atrevida Restaurant and Madrona del Mar Spa."
+_description_formatted: true
 description_long: |
-  <p>SPECTACULAR WEST COAST OCEANFRONT RESORT set on Active Pass, with orcas passing, eagles overhead, and beautiful gardens to enjoy.</p>
-  <p>ALL OCEANFRONT ACCOMMODATION: Each luxury suite and villa faces the water and has a wood burning fireplace and private terrace or deck. Our One Bedroom Oceanfront Villa Suites have an outdoor bath, outdoor wood-burning fireplace and heater, Kitchen/living/dining area and extra amenities like a washer/dryer.</p>
-  <p>DINING: Award-winning Atrevida Restaurant, Galiano's only oceanfront restaurant. In summer, enjoy thin-crust pizza baked in our wood-fired oven on our al fresco patio, La Lena.</p>
-  <p>SPA: Madrona del Mar Spa is Galiano's only full-service spa, set in beautiful gardens. Enjoy massage and treatments in our Couples Waterfall Cottage and Healing Earth Cottage.</p>
+  **Spectacular West Coast Oceanfront Resort** set on Active Pass, with orcas passing, eagles overhead, and beautiful gardens to enjoy.
+  
+  ### All Oceanfront Accommodation
+  Each luxury suite and villa faces the water and features:
+  - A wood-burning fireplace
+  - A private terrace or deck
+  
+  Our One Bedroom Oceanfront Villa Suites include:
+  - An outdoor bath
+  - An outdoor wood-burning fireplace and heater
+  - A kitchen/living/dining area
+  - Extra amenities like a washer/dryer
+  
+  ### Dining
+  Award-winning **Atrevida Restaurant**, Galiano's only oceanfront restaurant. In summer, enjoy thin-crust pizza baked in our wood-fired oven on our al fresco patio, La Lena.
+  
+  ### Spa
+  **Madrona del Mar Spa** is Galiano's only full-service spa, set in beautiful gardens. Enjoy massage and treatments in our Couples Waterfall Cottage and Healing Earth Cottage.
+
 title: "Galiano Inn & Spa - Oceanfront Luxury"
 tier: "premium-featured"
 claimed: true

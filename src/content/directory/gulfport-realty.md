@@ -8,9 +8,12 @@ island: "Galiano Island"
 category: "real-estate"
 subcategory: "Real Estate"
 description: "Pilar Osing, Personal Real Estate Corporation. Specializing in Galiano Island properties with authentic local knowledge and personalized service."
+_description_formatted: true
 description_long: |
-  <p>Discover the perfect Island property with Pilar Osing, your local Galiano Island real estate expert.</p>
-  <p>She represents Galiano Island in an authentic manner—and knows the best places to eat!</p>
+  Discover the perfect island property with Pilar Osing, your local Galiano Island real estate expert. 
+  
+  She represents Galiano Island in an authentic manner—and knows the best places to eat!
+
 title: "Galiano Properties - Pilar Osing - Galiano Island"
 tier: "basic"
 claimed: false

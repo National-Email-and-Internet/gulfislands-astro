@@ -5,9 +5,17 @@ island: "Salt Spring Island"
 category: "getting-here"
 subcategory: "Ferries"
 description: "Primary vehicle and passenger ferry service connecting Salt Spring Island to the mainland and Vancouver Island."
+_description_formatted: true
 description_long: |
-  <p>The Salt Spring Island Ferry service is the lifeline of the Southern Gulf Islands. Operated by BC Ferries, it provides consistent schedules for residents and visitors traveling between Salt Spring Island (Ganges, Fulford Harbour, and Vesuvius Bay) and terminals in Swartz Bay and Tsawwassen.</p>
-  <p>Premium features for ferry travelers include updated arrival tracking and vehicle reservation services for major routes. We ensure your island journey begins and ends smoothly.</p>
+  The Salt Spring Island Ferry service is the lifeline of the Southern Gulf Islands. Operated by BC Ferries, it provides consistent schedules for residents and visitors traveling between Salt Spring Island (Ganges, Fulford Harbour, and Vesuvius Bay) and terminals in Swartz Bay and Tsawwassen.
+  
+  Premium features for ferry travelers include:
+  
+  - Updated arrival tracking
+  - Vehicle reservation services for major routes
+  
+  We ensure your island journey begins and ends smoothly.
+
 title: "Salt Spring Island Ferry - Get to the Island"
 tier: "premium-featured"
 claimed: true
