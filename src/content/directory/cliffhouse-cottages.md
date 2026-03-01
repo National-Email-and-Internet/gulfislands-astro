@@ -15,4 +15,6 @@ description_long: |
 title: "Cliffhouse Cottages - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/site-cliffhouse-cottages-0.jpg"
 ---

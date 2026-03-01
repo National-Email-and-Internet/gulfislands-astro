@@ -18,4 +18,7 @@ claimed: false
 social:
   instagram: "@poetscove"
   facebook: "PoetsCoveResort"
+gallery:
+  - "/images/listings/site-poets-cove-resort-spa-0.jpg"
+  - "/images/listings/site-poets-cove-resort-spa-1.png"
 ---

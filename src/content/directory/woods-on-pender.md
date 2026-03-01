@@ -15,4 +15,7 @@ claimed: false
 social:
   instagram: "@woodsonpender"
   facebook: "WoodsOnPender"
+gallery:
+  - "/images/listings/site-woods-on-pender-0.jpg"
+  - "/images/listings/site-woods-on-pender-1.jpg"
 ---

@@ -15,4 +15,7 @@ description_long: |
 title: "Galiano Island Realty - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/site-galiano-realty-0.png"
+  - "/images/listings/site-galiano-realty-1.jpg"
 ---

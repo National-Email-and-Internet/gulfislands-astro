@@ -17,4 +17,6 @@ claimed: false
 social:
   facebook: "GalianoConservancy"
   instagram: "@galianoconservancy"
+gallery:
+  - "/images/listings/site-galiano-conservancy-association-0.jpeg"
 ---

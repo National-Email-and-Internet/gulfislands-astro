@@ -12,4 +12,7 @@ description_long: ""
 title: "The Grove B&B - Mayne Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/site-the-grove-bb-0.png"
+  - "/images/listings/site-the-grove-bb-1.png"
 ---

@@ -17,4 +17,7 @@ social:
   instagram: "@vanillaleafbakery"
 hours:
   daily: "8:00 AM - 5:00 PM"
+gallery:
+  - "/images/listings/site-vanilla-leaf-bakery-cafe-0.jpg"
+  - "/images/listings/site-vanilla-leaf-bakery-cafe-1.png"
 ---

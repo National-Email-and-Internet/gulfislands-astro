@@ -14,4 +14,7 @@ description_long: |
 title: "Galiano Properties - Pilar Osing - Galiano Island"
 tier: "basic"
 claimed: false
+gallery:
+  - "/images/listings/site-gulfport-realty-0.jpeg"
+  - "/images/listings/site-gulfport-realty-1.jpg"
 ---
