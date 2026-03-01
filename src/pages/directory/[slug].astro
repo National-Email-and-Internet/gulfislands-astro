@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import VerifiedBadge from '../../components/badges/VerifiedBadge.astro';
 import PremiumBadge from '../../components/badges/PremiumBadge.astro';
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const listings = await getCollection('directory');
@@ -37,6 +38,8 @@ function cleanUrl(u: string): string {
 }
 
 const catLabel = categoryLabels[category] ?? category;
+
+const renderedDescription = description_long ? marked.parse(description_long) : null;
 
 // Determine hero image vs logo
 let heroImage = null;
@@ -135,8 +138,8 @@ if (gallery && gallery.length > 0) {
           <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
             
             <div class="prose prose-ocean max-w-none text-gray-600 leading-relaxed">
-              {description_long ? (
-                <div set:html={description_long} />
+              {renderedDescription ? (
+                <div set:html={renderedDescription} />
               ) : (
                 <p class="text-lg">{description || "Local business serving the Gulf Islands community."}</p>
               )}
