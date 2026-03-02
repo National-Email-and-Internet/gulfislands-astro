@@ -1,0 +1,13 @@
+
+> gulfislands@0.0.1 build
+> astro build && pagefind --site dist
+
+12:17:24 [content] Syncing content
+12:17:24 [content] Synced content
+12:17:24 [types] Generated 473ms
+12:17:24 [build] output: "static"
+12:17:24 [build] mode: "static"
+12:17:24 [build] directory: /home/clawd/projects/astro-sites/gulfislands/dist/
+12:17:24 [build] Collecting build info...
+12:17:24 [build] ✓ Completed in 498ms.
+12:17:24 [build] Building static entrypoints...
