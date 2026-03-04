@@ -1,11 +1,12 @@
 ---
-name: "Kalai Custom paddles"
-url: "http://www.kalaipaddles.com/"
-island: "All Islands"
-category: "marine"
-subcategory: "Kayaking"
-description: ""
-title: "Kalai Paddles"
+name: Kalai Custom paddles
+url: 'http://www.kalaipaddles.com/'
+island: All Islands
+category: marine
+subcategory: Kayaking
+description: ''
+title: Kalai Paddles
+logo: /images/listings/kalai-custom-paddles/logo.png
 ---
 
 

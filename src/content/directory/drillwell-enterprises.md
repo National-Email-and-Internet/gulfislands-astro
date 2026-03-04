@@ -1,11 +1,12 @@
 ---
-name: "Drillwell Enterprises Ltd."
-url: "http://www.drillwell.com"
-island: "Thetis Island"
-category: "services"
-subcategory: "Well Drilling & Water"
-description: "Drilling and developing water wells throughout the Gulf Islands since 1965"
-title: "Drillwell Enterprises - Well Drilling"
+name: Drillwell Enterprises Ltd.
+url: 'http://www.drillwell.com'
+island: Thetis Island
+category: services
+subcategory: Well Drilling & Water
+description: Drilling and developing water wells throughout the Gulf Islands since 1965
+title: Drillwell Enterprises - Well Drilling
+logo: /images/listings/drillwell-enterprises/logo.png
 ---
 
 **Phone:** 250-746-5268  

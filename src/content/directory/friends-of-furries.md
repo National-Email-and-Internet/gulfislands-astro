@@ -1,11 +1,11 @@
 ---
-name: "Friends of Furries"
-url: "https://www.thetisisland.net/fof.html"
-island: "Thetis Island"
-category: "services"
-subcategory: "Animal Services"
-description: "Local volunteer, non-profit service for animal rescue and care"
-title: "Friends of Furries - Animal Rescue"
+name: Friends of Furries
+url: 'https://www.thetisisland.net/fof.html'
+island: Thetis Island
+category: services
+subcategory: Animal Services
+description: 'Local volunteer, non-profit service for animal rescue and care'
+title: Friends of Furries - Animal Rescue
 ---
 
 **Email:** friendsoffurries@gmail.com

@@ -1,0 +1,1568 @@
+{
+  "startedAt": "2026-03-04T14:17:08.773Z",
+  "dryRun": false,
+  "force": false,
+  "maxListings": null,
+  "concurrency": 3,
+  "timeoutMs": 15000,
+  "results": [
+    {
+      "file": "3-routes-scuba-diving-directory.md",
+      "slug": "3-routes-scuba-diving-directory",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "file": "active-pass-beachhouse.md",
+      "slug": "active-pass-beachhouse",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "ann-van-oeveren.md",
+      "slug": "ann-van-oeveren",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "abraham-ruben.md",
+      "slug": "abraham-ruben",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "annette-shaw-artist.md",
+      "slug": "annette-shaw-artist",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "aqua-arte-gallery.md",
+      "slug": "aqua-arte-gallery",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "art-and-soul-craft-gallery.md",
+      "slug": "art-and-soul-craft-gallery",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "abara.md",
+      "slug": "abara",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "artcentric.md",
+      "slug": "artcentric",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "apple-luscious-organic-orchard.md",
+      "slug": "apple-luscious-organic-orchard",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "atelier-simone.md",
+      "slug": "atelier-simone",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "atrevida-restaurant-la-lena-pizza.md",
+      "slug": "atrevida-restaurant-la-lena-pizza",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "aurora-restaurant.md",
+      "slug": "aurora-restaurant",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "azami-cottage.md",
+      "slug": "azami-cottage",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "babes-in-the-woods-restaurant.md",
+      "slug": "babes-in-the-woods-restaurant",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "artspring.md",
+      "slug": "artspring",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "bc-transit.md",
+      "slug": "bc-transit",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 6
+    },
+    {
+      "file": "bc-road-reports.md",
+      "slug": "bc-road-reports",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "bodega-cove.md",
+      "slug": "bodega-cove",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "blood-star-gallery.md",
+      "slug": "blood-star-gallery",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "bodega-north-woodworks.md",
+      "slug": "bodega-north-woodworks",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "bold-bluff-retreat.md",
+      "slug": "bold-bluff-retreat",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "bodega-ridge.md",
+      "slug": "bodega-ridge",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 1
+    },
+    {
+      "file": "cabin-at-swallows-keep.md",
+      "slug": "cabin-at-swallows-keep",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "cabra-gallery-museum.md",
+      "slug": "cabra-gallery-museum",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "capernwray-harbour-bible-centre.md",
+      "slug": "capernwray-harbour-bible-centre",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "canadian-airports.md",
+      "slug": "canadian-airports",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "capital-regional-district-bylaw-enforcement-division.md",
+      "slug": "capital-regional-district-bylaw-enforcement-division",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "captains-quarters-heritage-log-house.md",
+      "slug": "captains-quarters-heritage-log-house",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "casa-ao-pe-do-mar.md",
+      "slug": "casa-ao-pe-do-mar",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "capital-regional-district.md",
+      "slug": "capital-regional-district",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "cedar-beach-pizza-catering.md",
+      "slug": "cedar-beach-pizza-catering",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "cedar-grove-pottery.md",
+      "slug": "cedar-grove-pottery",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "certified-horticulturist-eco-garden.md",
+      "slug": "certified-horticulturist-eco-garden",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "cliffhouse-cottages.md",
+      "slug": "cliffhouse-cottages",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "continuous-light-sanctuary-spiritualist-church.md",
+      "slug": "continuous-light-sanctuary-spiritualist-church",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "community-gospel-chapel.md",
+      "slug": "community-gospel-chapel",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "cooper-air.md",
+      "slug": "cooper-air",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "corner-store-galiano.md",
+      "slug": "corner-store-galiano",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "crane-and-robin-restaurant.md",
+      "slug": "crane-and-robin-restaurant",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "blue-vista-resort.md",
+      "slug": "blue-vista-resort",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "cufra-cliffs-cottage.md",
+      "slug": "cufra-cliffs-cottage",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "copper-otter-grill.md",
+      "slug": "copper-otter-grill",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 1
+    },
+    {
+      "file": "deidre-jewell-acupuncturist.md",
+      "slug": "deidre-jewell-acupuncturist",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "deb-wilson-realty.md",
+      "slug": "deb-wilson-realty",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "denmanislandcom-real-estate-links.md",
+      "slug": "denmanislandcom-real-estate-links",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "dick-trory-agentnominee.md",
+      "slug": "dick-trory-agentnominee",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "denys-james-studio.md",
+      "slug": "denys-james-studio",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "cusheon-lake-resort.md",
+      "slug": "cusheon-lake-resort",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "dinner-bay-cottage.md",
+      "slug": "dinner-bay-cottage",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "don-tarris.md",
+      "slug": "don-tarris",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "donna-j-hall.md",
+      "slug": "donna-j-hall",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "driftwood-buttons.md",
+      "slug": "driftwood-buttons",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "driftwood-village.md",
+      "slug": "driftwood-village",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "dr-brian-grady-registered-psychologist.md",
+      "slug": "dr-brian-grady-registered-psychologist",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 2
+    },
+    {
+      "file": "drillwell-enterprises.md",
+      "slug": "drillwell-enterprises",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "farm-gate-store.md",
+      "slug": "farm-gate-store",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "felix-jack-guesthouse.md",
+      "slug": "felix-jack-guesthouse",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-bicycle-repair.md",
+      "slug": "galiano-bicycle-repair",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "fenton-design-jewelry.md",
+      "slug": "fenton-design-jewelry",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "friends-of-furries.md",
+      "slug": "friends-of-furries",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "galiano-community-development.md",
+      "slug": "galiano-community-development",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-concert-society.md",
+      "slug": "galiano-concert-society",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-boat-rentals.md",
+      "slug": "galiano-boat-rentals",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "galiano-excavating.md",
+      "slug": "galiano-excavating",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-garage-groceries.md",
+      "slug": "galiano-garage-groceries",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-conservancy-association.md",
+      "slug": "galiano-conservancy-association",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "galiano-harbour-view-house.md",
+      "slug": "galiano-harbour-view-house",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-golf-course.md",
+      "slug": "galiano-golf-course",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-health-care-centre.md",
+      "slug": "galiano-health-care-centre",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "galiano-inn-spa.md",
+      "slug": "galiano-inn-spa",
+      "status": "skip:already-enriched"
+    },
+    {
+      "file": "galiano-island-recycling.md",
+      "slug": "galiano-island-recycling",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-island-books.md",
+      "slug": "galiano-island-books",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 1
+    },
+    {
+      "file": "galiano-island-soap-works.md",
+      "slug": "galiano-island-soap-works",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-library-society.md",
+      "slug": "galiano-library-society",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-lions-club.md",
+      "slug": "galiano-lions-club",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-sailing-charters.md",
+      "slug": "galiano-sailing-charters",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-trails-society.md",
+      "slug": "galiano-trails-society",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-trading-company.md",
+      "slug": "galiano-trading-company",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "gerald-longson-architect.md",
+      "slug": "gerald-longson-architect",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "galiano-realty.md",
+      "slug": "galiano-realty",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "ganges-yoga-studio.md",
+      "slug": "ganges-yoga-studio",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "gulf-islands-insurance-galiano.md",
+      "slug": "gulf-islands-insurance-galiano",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "greyhound-canada-schedules.md",
+      "slug": "greyhound-canada-schedules",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 7
+    },
+    {
+      "file": "gulfport-realty.md",
+      "slug": "gulfport-realty",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "hans-henrikson.md",
+      "slug": "hans-henrikson",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "gulf-island-kayaking.md",
+      "slug": "gulf-island-kayaking",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "harry-manx.md",
+      "slug": "harry-manx",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "gulf-islands-spinning-mill.md",
+      "slug": "gulf-islands-spinning-mill",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "helijet-airways.md",
+      "slug": "helijet-airways",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "harlans-chocolates.md",
+      "slug": "harlans-chocolates",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "howling-wolf-farm-market.md",
+      "slug": "howling-wolf-farm-market",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "henri-procter.md",
+      "slug": "henri-procter",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "hummingbird-pub.md",
+      "slug": "hummingbird-pub",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 1
+    },
+    {
+      "file": "hunterston-homes.md",
+      "slug": "hunterston-homes",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "inthebluff-oceanside-log-house.md",
+      "slug": "inthebluff-oceanside-log-house",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "island-marine-construction.md",
+      "slug": "island-marine-construction",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "island-farmhouse.md",
+      "slug": "island-farmhouse",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 7
+    },
+    {
+      "file": "island-sails.md",
+      "slug": "island-sails",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "island-wildlife-natural-care.md",
+      "slug": "island-wildlife-natural-care",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "island-tides.md",
+      "slug": "island-tides",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "ixchel.md",
+      "slug": "ixchel",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "japanese-garden-mayne.md",
+      "slug": "japanese-garden-mayne",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "janet-moore-royal-lepage.md",
+      "slug": "janet-moore-royal-lepage",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "jarvis-legal-law.md",
+      "slug": "jarvis-legal-law",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "jeanne-erickson-art.md",
+      "slug": "jeanne-erickson-art",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "jd-harkley-chartered-accountant.md",
+      "slug": "jd-harkley-chartered-accountant",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "julia-lucich.md",
+      "slug": "julia-lucich",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "jill-louise-campbell.md",
+      "slug": "jill-louise-campbell",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "heriot-bay-inn-marina.md",
+      "slug": "heriot-bay-inn-marina",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "kayak-pender-island.md",
+      "slug": "kayak-pender-island",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "loose-leaf-tea-and-papery.md",
+      "slug": "loose-leaf-tea-and-papery",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "luttmer-boatworks.md",
+      "slug": "luttmer-boatworks",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "lyall-harbour-bb.md",
+      "slug": "lyall-harbour-bb",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "madrona-del-mar-spa.md",
+      "slug": "madrona-del-mar-spa",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "maple-leaf-adventures.md",
+      "slug": "maple-leaf-adventures",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "marcia-devicque-glassworks.md",
+      "slug": "marcia-devicque-glassworks",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "margaret-hope.md",
+      "slug": "margaret-hope",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "kalai-custom-paddles.md",
+      "slug": "kalai-custom-paddles",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "martinus-gold.md",
+      "slug": "martinus-gold",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "mary-forbes-counselling.md",
+      "slug": "mary-forbes-counselling",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "mayne-island-brewing-company.md",
+      "slug": "mayne-island-brewing-company",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "mayne-island-museum.md",
+      "slug": "mayne-island-museum",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "maryanna-gabriel.md",
+      "slug": "maryanna-gabriel",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "meadow-valley-properties.md",
+      "slug": "meadow-valley-properties",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "mcpherson-photography.md",
+      "slug": "mcpherson-photography",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "melissa-caron.md",
+      "slug": "melissa-caron",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "montague-harbour-marina.md",
+      "slug": "montague-harbour-marina",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "mls-listings-search.md",
+      "slug": "mls-listings-search",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "montague-provincial-campground.md",
+      "slug": "montague-provincial-campground",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "morning-beach-waterfront-bb.md",
+      "slug": "morning-beach-waterfront-bb",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "morningstone-bb.md",
+      "slug": "morningstone-bb",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "mount-parke-regional-park.md",
+      "slug": "mount-parke-regional-park",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "muralact.md",
+      "slug": "muralact",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "north-galiano-community-hall.md",
+      "slug": "north-galiano-community-hall",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "naturediver.md",
+      "slug": "naturediver",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "lohmann-sails-covers-ltd.md",
+      "slug": "lohmann-sails-covers-ltd",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "now-and-zen.md",
+      "slug": "now-and-zen",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "osmon-phillips-cedar-lane-studio.md",
+      "slug": "osmon-phillips-cedar-lane-studio",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "oceanwood-country-inn.md",
+      "slug": "oceanwood-country-inn",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "paradise-rock-oceanfront-cottage.md",
+      "slug": "paradise-rock-oceanfront-cottage",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "pacific-coastal-airlines.md",
+      "slug": "pacific-coastal-airlines",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 6
+    },
+    {
+      "file": "patrick-akerman.md",
+      "slug": "patrick-akerman",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "patti-moreland-textiles.md",
+      "slug": "patti-moreland-textiles",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "pender-islands-community-hall.md",
+      "slug": "pender-islands-community-hall",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "pender-creatives.md",
+      "slug": "pender-creatives",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "northwest-seaplanes.md",
+      "slug": "northwest-seaplanes",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "pink-geranium.md",
+      "slug": "pink-geranium",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "pioneer-pacific-camp.md",
+      "slug": "pioneer-pacific-camp",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "poirier-custom-homes.md",
+      "slug": "poirier-custom-homes",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "poets-cove-resort-spa.md",
+      "slug": "poets-cove-resort-spa",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "peter-prince.md",
+      "slug": "peter-prince",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "pringle-equine-services.md",
+      "slug": "pringle-equine-services",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "randy-bachman.md",
+      "slug": "randy-bachman",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "red-roof-cabin.md",
+      "slug": "red-roof-cabin",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "raylia-cottage-bb.md",
+      "slug": "raylia-cottage-bb",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "restaurant-house-piccolo.md",
+      "slug": "restaurant-house-piccolo",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "robert-bateman.md",
+      "slug": "robert-bateman",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "quarrystone-house.md",
+      "slug": "quarrystone-house",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "salt-spring-centre.md",
+      "slug": "salt-spring-centre",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "salt-spring-ferry.md",
+      "slug": "salt-spring-ferry",
+      "status": "skip:already-enriched"
+    },
+    {
+      "file": "salt-spring-golf-country-club.md",
+      "slug": "salt-spring-golf-country-club",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "richard-jacksties.md",
+      "slug": "richard-jacksties",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "salt-spring-island-charter-air-service.md",
+      "slug": "salt-spring-island-charter-air-service",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "sacred-mountain-lavender.md",
+      "slug": "sacred-mountain-lavender",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "salt-spring-island-sailing-club.md",
+      "slug": "salt-spring-island-sailing-club",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "salt-spring-resort-spa-retreat.md",
+      "slug": "salt-spring-resort-spa-retreat",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "salt-spring-island-public-library.md",
+      "slug": "salt-spring-island-public-library",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "salt-spring-seeds.md",
+      "slug": "salt-spring-seeds",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "salt-spring-vineyards.md",
+      "slug": "salt-spring-vineyards",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "saltspring-soapworks.md",
+      "slug": "saltspring-soapworks",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "salt-spring-island-firerescue.md",
+      "slug": "salt-spring-island-firerescue",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "saltspring-parks-recreation-commission.md",
+      "slug": "saltspring-parks-recreation-commission",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "sands-of-morning-beach.md",
+      "slug": "sands-of-morning-beach",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "sandy-bay-bb.md",
+      "slug": "sandy-bay-bb",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "saturna-is-tourism-assn.md",
+      "slug": "saturna-is-tourism-assn",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "saturna-island-realty.md",
+      "slug": "saturna-island-realty",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "saturna-library.md",
+      "slug": "saturna-library",
+      "status": "skip:already-enriched"
+    },
+    {
+      "file": "sandra-smith.md",
+      "slug": "sandra-smith",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "scoops-ice-cream-burger-bar.md",
+      "slug": "scoops-ice-cream-burger-bar",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "saturna-island-real-estate.md",
+      "slug": "saturna-island-real-estate",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "save-salt-spring-island.md",
+      "slug": "save-salt-spring-island",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 2
+    },
+    {
+      "file": "sculptor-systems.md",
+      "slug": "sculptor-systems",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "seal-beach-cottage.md",
+      "slug": "seal-beach-cottage",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 3
+    },
+    {
+      "file": "seastar-cottage.md",
+      "slug": "seastar-cottage",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "seair-seaplanes.md",
+      "slug": "seair-seaplanes",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 6
+    },
+    {
+      "file": "serenity-by-the-sea.md",
+      "slug": "serenity-by-the-sea",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "shingle-bay-cabin.md",
+      "slug": "shingle-bay-cabin",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "slow-coast-coffee.md",
+      "slug": "slow-coast-coffee",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "secret-garden-studio.md",
+      "slug": "secret-garden-studio",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "solar-art-solarbud.md",
+      "slug": "solar-art-solarbud",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "sentry-telecare-for-seniors.md",
+      "slug": "sentry-telecare-for-seniors",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "sporades-tours.md",
+      "slug": "sporades-tours",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "st-margarets-church-galiano.md",
+      "slug": "st-margarets-church-galiano",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "stagecoach-theatre-school-for-youth.md",
+      "slug": "stagecoach-theatre-school-for-youth",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "sticks-and-stones-country-cottages.md",
+      "slug": "sticks-and-stones-country-cottages",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "st-margarets-cemetery.md",
+      "slug": "st-margarets-cemetery",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "steven-friedman.md",
+      "slug": "steven-friedman",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "studio-54-art-gallery.md",
+      "slug": "studio-54-art-gallery",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "sturdies-bay-bakery.md",
+      "slug": "sturdies-bay-bakery",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "terence-warbey.md",
+      "slug": "terence-warbey",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "swordfern-cottage.md",
+      "slug": "swordfern-cottage",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "the-active-page.md",
+      "slug": "the-active-page",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "terri-bibby.md",
+      "slug": "terri-bibby",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "the-driftwood-online.md",
+      "slug": "the-driftwood-online",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "telegraph-harbour-marina.md",
+      "slug": "telegraph-harbour-marina",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "the-galiano-club.md",
+      "slug": "the-galiano-club",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "the-grove-bb.md",
+      "slug": "the-grove-bb",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "the-hastings-country-house-hotel.md",
+      "slug": "the-hastings-country-house-hotel",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "the-saturday-market.md",
+      "slug": "the-saturday-market",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "the-gabriola-sounder.md",
+      "slug": "the-gabriola-sounder",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "the-islands-trust.md",
+      "slug": "the-islands-trust",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "the-stack-sisters.md",
+      "slug": "the-stack-sisters",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3
+    },
+    {
+      "file": "the-victoria-clipper.md",
+      "slug": "the-victoria-clipper",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 6
+    },
+    {
+      "file": "the-visual-breakfast-company.md",
+      "slug": "the-visual-breakfast-company",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "thetis-island-community-association.md",
+      "slug": "thetis-island-community-association",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "thetis-island-elementary-school.md",
+      "slug": "thetis-island-elementary-school",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "thetis-island-getaway.md",
+      "slug": "thetis-island-getaway",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 403"
+    },
+    {
+      "file": "thetis-island-marine-association.md",
+      "slug": "thetis-island-marine-association",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "thetis-island-community-fund.md",
+      "slug": "thetis-island-community-fund",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "thetis-island-port-commission.md",
+      "slug": "thetis-island-port-commission",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "thetis-island-marina-resort.md",
+      "slug": "thetis-island-marina-resort",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "thetis-island-quarterly.md",
+      "slug": "thetis-island-quarterly",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "thetis-island-nature-conservancy.md",
+      "slug": "thetis-island-nature-conservancy",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "thetis-island-reflections.md",
+      "slug": "thetis-island-reflections",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "thetis-island-vineyard.md",
+      "slug": "thetis-island-vineyard",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "thetis-seaside-accommodations.md",
+      "slug": "thetis-seaside-accommodations",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "thetis-island-volunteer-fire-department.md",
+      "slug": "thetis-island-volunteer-fire-department",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "tirra-thetis-island-residents.md",
+      "slug": "tirra-thetis-island-residents",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "thriftys-foods.md",
+      "slug": "thriftys-foods",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "threads-in-time.md",
+      "slug": "threads-in-time",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "vacation-bb-mayne.md",
+      "slug": "vacation-bb-mayne",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "valdy.md",
+      "slug": "valdy",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 2
+    },
+    {
+      "file": "vbc-web-design-consulting.md",
+      "slug": "vbc-web-design-consulting",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    },
+    {
+      "file": "washington-state-ferries.md",
+      "slug": "washington-state-ferries",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "watertaxi-porlier-pass.md",
+      "slug": "watertaxi-porlier-pass",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "via-rail.md",
+      "slug": "via-rail",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "wild-seafood-galiano.md",
+      "slug": "wild-seafood-galiano",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "vanilla-leaf-bakery-cafe.md",
+      "slug": "vanilla-leaf-bakery-cafe",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "whiteheart-menagerie.md",
+      "slug": "whiteheart-menagerie",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "wildflower-tie-dye.md",
+      "slug": "wildflower-tie-dye",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4
+    },
+    {
+      "file": "wind-in-the-arbutus.md",
+      "slug": "wind-in-the-arbutus",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "william-deverell.md",
+      "slug": "william-deverell",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 4
+    },
+    {
+      "file": "woodstone-manor.md",
+      "slug": "woodstone-manor",
+      "status": "skip:no-url"
+    },
+    {
+      "file": "woods-on-pender.md",
+      "slug": "woods-on-pender",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2
+    },
+    {
+      "file": "zorah-staar.md",
+      "slug": "zorah-staar",
+      "status": "no-change",
+      "logoSaved": false,
+      "socialCount": 0
+    }
+  ],
+  "counts": {
+    "skip:dead-url": 8,
+    "skip:no-url": 79,
+    "updated": 107,
+    "no-change": 49,
+    "skip:already-enriched": 3
+  },
+  "finishedAt": "2026-03-04T14:18:29.188Z"
+}

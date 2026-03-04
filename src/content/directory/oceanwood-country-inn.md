@@ -1,12 +1,13 @@
 ---
-name: "Oceanwood Country Inn"
-url: "http://www.oceanwood.com/"
-island: "Mayne Island"
-category: "stay"
-subcategory: ""
-description: ""
-title: "Oceanwood Capital Management"
+name: Oceanwood Country Inn
+url: 'http://www.oceanwood.com/'
+island: Mayne Island
+category: stay
+subcategory: ''
+description: ''
+title: Oceanwood Capital Management
 featured: true
+logo: /images/listings/oceanwood-country-inn/logo.png
 ---
 
 

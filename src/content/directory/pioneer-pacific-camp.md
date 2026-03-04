@@ -1,14 +1,20 @@
 ---
-name: "Pioneer Pacific Camp"
-url: "http://www.pioneerpacific.ca"
-island: "Thetis Island"
-category: "recreation"
-subcategory: "Camps & Retreats"
-description: "Summer camp and rental site on Thetis Island"
-title: "Pioneer Pacific Camp - Thetis Island"
+name: Pioneer Pacific Camp
+url: 'http://www.pioneerpacific.ca'
+island: Thetis Island
+category: recreation
+subcategory: Camps & Retreats
+description: Summer camp and rental site on Thetis Island
+title: Pioneer Pacific Camp - Thetis Island
 map:
   lat: 48.9892
   lng: -123.5256
+logo: /images/listings/pioneer-pacific-camp/logo.png
+social:
+  instagram: 'https://instagram.com/pioneerpacificcamp'
+  facebook: 'https://www.facebook.com/PioneerPacific'
+  twitter: 'https://twitter.com/ppc_ivcf'
+  website: 'http://www.pioneerpacific.ca'
 ---
 
 247 Pioneer Road, Thetis Island

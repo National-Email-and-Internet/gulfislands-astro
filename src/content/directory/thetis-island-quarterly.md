@@ -1,11 +1,15 @@
 ---
-name: "Thetis Island Quarterly"
-url: "https://www.forbeshall.ca/thequarterly-2"
-island: "Thetis Island"
-category: "news"
-subcategory: "Community Publications"
-description: "Quarterly newsletter of island people, activities, interests and concerns"
-title: "Thetis Island Quarterly Magazine"
+name: Thetis Island Quarterly
+url: 'https://www.forbeshall.ca/thequarterly-2'
+island: Thetis Island
+category: news
+subcategory: Community Publications
+description: 'Quarterly newsletter of island people, activities, interests and concerns'
+title: Thetis Island Quarterly Magazine
+logo: /images/listings/thetis-island-quarterly/logo.png
+social:
+  facebook: 'https://www.facebook.com/ForbesHallCommunityCentre'
+  website: 'https://www.forbeshall.ca/thequarterly-2'
 ---
 
 **Submissions/Ads:** quarterly@thetisisland.net  

@@ -1,11 +1,14 @@
 ---
-name: "TIRRA - Thetis Island Residents' & Ratepayers' Association"
-url: "https://thetisisland.net/tirra/tirra-office.html"
-island: "Thetis Island"
-category: "community"
-subcategory: "Residents Associations"
-description: "Advocacy organization for Thetis Island ratepayers and residents. Coordinates local services."
-title: "TIRRA - Thetis Island Residents Association"
+name: TIRRA - Thetis Island Residents' & Ratepayers' Association
+url: 'https://thetisisland.net/tirra/tirra-office.html'
+island: Thetis Island
+category: community
+subcategory: Residents Associations
+description: >-
+  Advocacy organization for Thetis Island ratepayers and residents. Coordinates
+  local services.
+title: TIRRA - Thetis Island Residents Association
+logo: /images/listings/tirra-thetis-island-residents/logo.jpg
 ---
 
 **Email:** tirra@thetisisland.net

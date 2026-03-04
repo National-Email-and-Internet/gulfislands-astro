@@ -1,23 +1,27 @@
 ---
-name: "Vanilla Leaf Bakery Cafe"
-url: "https://vanillaleafbakery.com"
-phone: ""
-email: ""
-address: "4605 Bedwell Harbour Rd #17, Pender Island"
-island: "Pender Island"
-category: "eat"
-subcategory: "Bakeries"
-description: "Pender Island's only bakery café serving from-scratch pastries, savouries, and cakes. Vegan and gluten-free options available. Indoor and outdoor seating."
-description_long: ""
-title: "Vanilla Leaf Bakery Cafe - Pender Island"
-tier: "basic"
+name: Vanilla Leaf Bakery Cafe
+url: 'https://vanillaleafbakery.com'
+phone: ''
+email: ''
+address: '4605 Bedwell Harbour Rd #17, Pender Island'
+island: Pender Island
+category: eat
+subcategory: Bakeries
+description: >-
+  Pender Island's only bakery café serving from-scratch pastries, savouries, and
+  cakes. Vegan and gluten-free options available. Indoor and outdoor seating.
+description_long: ''
+title: Vanilla Leaf Bakery Cafe - Pender Island
+tier: basic
 claimed: false
 social:
-  facebook: "vanillaleafbakerycafe"
-  instagram: "@vanillaleafbakery"
+  facebook: vanillaleafbakerycafe
+  instagram: '@vanillaleafbakery'
 hours:
-  daily: "8:00 AM - 5:00 PM"
+  daily: '8:00 AM - 5:00 PM'
 gallery:
-  - "/images/listings/site-vanilla-leaf-bakery-cafe-0.jpg"
-  - "/images/listings/site-vanilla-leaf-bakery-cafe-1.png"
+  - /images/listings/site-vanilla-leaf-bakery-cafe-0.jpg
+  - /images/listings/site-vanilla-leaf-bakery-cafe-1.png
+logo: /images/listings/vanilla-leaf-bakery-cafe/logo.png
 ---
+

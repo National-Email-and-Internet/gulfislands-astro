@@ -1,11 +1,11 @@
 ---
-name: "St. Margaret's Cemetery"
-url: "http://thetisisland.squarespace.com/st-margarets-cemetery/"
-island: "Thetis Island"
-category: "community"
-subcategory: "Cemeteries"
-description: "Preserving the cemetery as a place of quiet tranquility in a park-like setting"
-title: "St. Margaret's Cemetery - Thetis Island"
+name: St. Margaret's Cemetery
+url: 'http://thetisisland.squarespace.com/st-margarets-cemetery/'
+island: Thetis Island
+category: community
+subcategory: Cemeteries
+description: Preserving the cemetery as a place of quiet tranquility in a park-like setting
+title: St. Margaret's Cemetery - Thetis Island
 ---
 
 **Contact:**

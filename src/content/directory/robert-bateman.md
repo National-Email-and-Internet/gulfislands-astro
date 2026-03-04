@@ -1,11 +1,11 @@
 ---
-name: "Robert Bateman"
-url: "http://www.robertbateman.ca/"
-island: "Salt Spring Island"
-category: "arts-culture"
-subcategory: "Painters Salt Spring Island, BC, Canada"
-description: ""
-title: "Robert Bateman - Home Page"
+name: Robert Bateman
+url: 'http://www.robertbateman.ca/'
+island: Salt Spring Island
+category: arts-culture
+subcategory: 'Painters Salt Spring Island, BC, Canada'
+description: ''
+title: Robert Bateman - Home Page
 ---
 
 

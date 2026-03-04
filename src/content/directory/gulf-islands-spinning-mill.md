@@ -1,11 +1,12 @@
 ---
-name: "Gulf Islands Spinning Mill"
-url: "http://www.gulfislandsspinningmill.com/"
-island: "Salt Spring Island"
-category: "arts-culture"
-subcategory: "s on Salt Spring Island"
-description: ""
-title: "soccer kits &#8211; gulfislandsspinningmill.com"
+name: Gulf Islands Spinning Mill
+url: 'http://www.gulfislandsspinningmill.com/'
+island: Salt Spring Island
+category: arts-culture
+subcategory: s on Salt Spring Island
+description: ''
+title: soccer kits &#8211; gulfislandsspinningmill.com
+logo: /images/listings/gulf-islands-spinning-mill/logo.jpg
 ---
 
 

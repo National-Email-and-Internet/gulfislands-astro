@@ -1,14 +1,21 @@
 ---
-name: "Telegraph Harbour Marina"
-url: "http://www.telegraphharbour.com"
-island: "Thetis Island"
-category: "food"
-subcategory: "Cafes & Marina Services"
-description: "Specialty coffees, fresh baking, home baked pies, ice cream, grocery items and quality deli products"
-title: "Telegraph Harbour Marina - Cafe & Store"
+name: Telegraph Harbour Marina
+url: 'http://www.telegraphharbour.com'
+island: Thetis Island
+category: food
+subcategory: Cafes & Marina Services
+description: >-
+  Specialty coffees, fresh baking, home baked pies, ice cream, grocery items and
+  quality deli products
+title: Telegraph Harbour Marina - Cafe & Store
 map:
   lat: 48.9696
   lng: -123.5543
+logo: /images/listings/telegraph-harbour-marina/logo.svg
+social:
+  instagram: 'https://www.instagram.com/telegraphharbour/'
+  facebook: 'https://www.facebook.com/TelegraphHarbour'
+  website: 'http://www.telegraphharbour.com'
 ---
 
 76 Marina Drive, Thetis Island

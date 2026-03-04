@@ -1,11 +1,14 @@
 ---
-name: "Thetis Island Volunteer Fire Department (TIVFD)"
-url: "https://www.thetisislandfire.ca"
-island: "Thetis Island"
-category: "services"
-subcategory: "Emergency Services"
-description: "Volunteer fire department providing fire protection, medical first response, and emergency services"
-title: "Thetis Island Volunteer Fire Department - TIVFD"
+name: Thetis Island Volunteer Fire Department (TIVFD)
+url: 'https://www.thetisislandfire.ca'
+island: Thetis Island
+category: services
+subcategory: Emergency Services
+description: >-
+  Volunteer fire department providing fire protection, medical first response,
+  and emergency services
+title: Thetis Island Volunteer Fire Department - TIVFD
+logo: /images/listings/thetis-island-volunteer-fire-department/logo.jpg
 ---
 
 **Emergency:** 9-1-1
