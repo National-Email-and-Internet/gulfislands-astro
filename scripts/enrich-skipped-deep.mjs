@@ -162,6 +162,9 @@ function pickLogoCandidates($, baseUrl) {
   return uniq;
 }
 
+const SEARCH_DELAY_MS = process.env.SEARCH_DELAY_MS ? Number(process.env.SEARCH_DELAY_MS) : 1200;
+const SEARCH_RETRIES = process.env.SEARCH_RETRIES ? Number(process.env.SEARCH_RETRIES) : 5;
+
 async function braveWebSearch(query) {
   const apiKey = process.env.BRAVE_API_KEY || process.env.BRAVE_SEARCH_API_KEY;
   if (!apiKey) throw new Error('Missing BRAVE_API_KEY in env for deep-search mode');
@@ -170,22 +173,39 @@ async function braveWebSearch(query) {
   url.searchParams.set('q', query);
   url.searchParams.set('count', '5');
 
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
-  try {
-    const res = await fetch(url.toString(), {
-      headers: {
-        'Accept': 'application/json',
-        'X-Subscription-Token': apiKey,
-        'User-Agent': 'NEIC-GulfIslandsBot/1.0'
-      },
-      signal: ctrl.signal,
-    });
-    if (!res.ok) throw new Error(`Brave HTTP ${res.status}`);
-    const json = await res.json();
-    const items = json?.web?.results || [];
-    return items.map(r => ({ url: r.url, title: r.title, description: r.description }));
-  } finally { clearTimeout(t); }
+  for (let attempt = 1; attempt <= SEARCH_RETRIES; attempt++) {
+    // throttle between searches
+    await sleep(SEARCH_DELAY_MS);
+
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+    try {
+      const res = await fetch(url.toString(), {
+        headers: {
+          'Accept': 'application/json',
+          'X-Subscription-Token': apiKey,
+          'User-Agent': 'NEIC-GulfIslandsBot/1.0'
+        },
+        signal: ctrl.signal,
+      });
+
+      if (res.status === 429) {
+        // exponential backoff
+        const backoff = Math.min(30000, 1500 * Math.pow(2, attempt));
+        await sleep(backoff);
+        continue;
+      }
+
+      if (!res.ok) throw new Error(`Brave HTTP ${res.status}`);
+      const json = await res.json();
+      const items = json?.web?.results || [];
+      return items.map(r => ({ url: r.url, title: r.title, description: r.description }));
+    } finally {
+      clearTimeout(t);
+    }
+  }
+
+  throw new Error('Brave HTTP 429 (rate limited)');
 }
 
 function scoreCandidate(url, name) {
@@ -313,7 +333,8 @@ async function run() {
   const active = new Set();
 
   async function worker(file) {
-    await sleep(200 + Math.random() * 300);
+    // general jitter; search function also throttles itself
+    await sleep(300 + Math.random() * 500);
     const res = await deepSearchAndEnrich(file);
     const row = { file, ...res };
     out.results.push(row);

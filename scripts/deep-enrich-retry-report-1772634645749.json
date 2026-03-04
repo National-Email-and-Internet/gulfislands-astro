@@ -1,0 +1,411 @@
+{
+  "startedAt": "2026-03-04T14:26:51.664Z",
+  "listPath": "scripts/deep-enrich-retry-files.txt",
+  "force": true,
+  "dryRun": false,
+  "concurrency": 1,
+  "searchDelayMs": 2500,
+  "searchRetries": 10,
+  "results": [
+    {
+      "file": "annette-shaw-artist.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5,
+      "foundUrl": "https://galianoinn.com/pages/art-at-the-inn",
+      "foundTitle": "Art At The Inn"
+    },
+    {
+      "file": "art-and-soul-craft-gallery.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed",
+      "foundUrl": "http://www.artandsoulcraftgallery.com/",
+      "foundTitle": "Art and Soul Craft Gallery - Home"
+    },
+    {
+      "file": "aurora-restaurant.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 1,
+      "foundUrl": "https://www.poetscove.com/dining/aurora",
+      "foundTitle": "Aurora Restaurant - Pender Island"
+    },
+    {
+      "file": "azami-cottage.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/azami-cottage",
+      "foundTitle": "Azami Cottage | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "bodega-cove.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5,
+      "foundUrl": "https://www.bodegaridge.com",
+      "foundTitle": "Galiano Island Resort | Retreats & Weddings | Bodega Ridge"
+    },
+    {
+      "file": "cabin-at-swallows-keep.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/cabin-swallows-keep",
+      "foundTitle": "Cabin at Swallow's Keep | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "bodega-north-woodworks.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed",
+      "foundUrl": "https://www.bodeganorthwoodworks.ca/",
+      "foundTitle": "Bodega North Woodworks -"
+    },
+    {
+      "file": "cabra-gallery-museum.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/cabra-gallery-museum",
+      "foundTitle": "Cabra Gallery Museum | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "casa-ao-pe-do-mar.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "https://leoandsashawedding.wordpress.com/accommodations/",
+      "foundTitle": "Accommodations – leo+sasha"
+    },
+    {
+      "file": "certified-horticulturist-eco-garden.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/business-directory/services/professions-trades",
+      "foundTitle": "Professions & Trades | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "corner-store-galiano.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoislandlife.com/groceries-and-markets.html",
+      "foundTitle": "Galiano Island Groceries, Markets and Gas"
+    },
+    {
+      "file": "crane-and-robin-restaurant.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://www.craneandrobin.com/",
+      "foundTitle": "The Crane and Robin Restaurant"
+    },
+    {
+      "file": "farm-gate-store.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://www.farmgatestore.com/",
+      "foundTitle": "Farm Gate Store"
+    },
+    {
+      "file": "felix-jack-guesthouse.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://www.airbnb.ca/rooms/10805397",
+      "foundTitle": "Felix Jack Guesthouse - Bungalow in Mayne Island"
+    },
+    {
+      "file": "fenton-design-jewelry.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/fenton-design-handcrafted-silver-jewelry",
+      "foundTitle": "Fenton Design Handcrafted Silver Jewelry | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "galiano-community-development.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://en.wikipedia.org/wiki/Galiano_Island",
+      "foundTitle": "Galiano Island - Wikipedia"
+    },
+    {
+      "file": "galiano-excavating.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/business-directory/services/professions-trades-0",
+      "foundTitle": "Professions & Trades | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "galiano-harbour-view-house.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoislandlife.com/accommodations.html",
+      "foundTitle": "Accommodations"
+    },
+    {
+      "file": "galiano-library-society.md",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 3,
+      "foundUrl": "https://sgicl.bc.libraries.coop/galiano-island/",
+      "foundTitle": "Galiano Island Community Library | Pender Island Public Library"
+    },
+    {
+      "file": "galiano-lions-club.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoislandlife.com/clubs-and-organizations.html",
+      "foundTitle": "Clubs and Organizations"
+    },
+    {
+      "file": "galiano-trails-society.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://www.galianotrails.com/",
+      "foundTitle": "Galiano Trails Society"
+    },
+    {
+      "file": "galiano-trading-company.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "https://www.galianotrading.ca/",
+      "foundTitle": "Galiano Trading Company - Your island home, garden & building centre - Home"
+    },
+    {
+      "file": "gulf-islands-insurance-galiano.md",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 0,
+      "foundUrl": "https://www.mapquest.com/ca/british-columbia/gulf-islands-insurance-agencies-ltd-galiano-island-500111053",
+      "foundTitle": "Gulf Islands Insurance Agencies LTD Galiano Island, 33 Manzanita Hill Rd, Capital, BC V0N, CA - MapQuest"
+    },
+    {
+      "file": "howling-wolf-farm-market.md",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 0,
+      "foundUrl": "https://www.thetisisland.net/business/chris-pegg/hwf.htm",
+      "foundTitle": "Marylyn's Kusina & Howling Wolf Farm - Thetis Island, BC, Canada"
+    },
+    {
+      "file": "hunterston-homes.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 404",
+      "foundUrl": "https://hunterstonhomes.ca/dave-koster/",
+      "foundTitle": "Dave Koster | HHL"
+    },
+    {
+      "file": "ixchel.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/",
+      "foundTitle": "Galiano Island Chamber of Commerce | the gem of the gulf islands"
+    },
+    {
+      "file": "japanese-garden-mayne.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://mayneisland.com/places/japanesegarden/",
+      "foundTitle": "The Japanese Gardens | MayneIsland.com"
+    },
+    {
+      "file": "jeanne-erickson-art.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://www.jeanneericksonart.com/",
+      "foundTitle": "Home - Jeanne Erickson Art"
+    },
+    {
+      "file": "madrona-del-mar-spa.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5,
+      "foundUrl": "https://galianoinn.com/pages/spa",
+      "foundTitle": "Luxury Oceanfront Spa Getaway on Galiano Island | Madrona del Mar Spa"
+    },
+    {
+      "file": "marcia-devicque-glassworks.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "https://www.marciaglass.com",
+      "foundTitle": "Warm Glass Artist | Galiano Island | Marcia DeVicque Glassworks"
+    },
+    {
+      "file": "mayne-island-museum.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "https://mayneisland.com/",
+      "foundTitle": "Mayne Island, British Columbia, Canada | MayneIsland.com"
+    },
+    {
+      "file": "montague-provincial-campground.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/montague-prov-campground-k2-park-serv",
+      "foundTitle": "Montague Prov Campground (K2 Park Serv) | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "morning-beach-waterfront-bb.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/morning-beach-waterfront-bed-breakfast",
+      "foundTitle": "Morning Beach Waterfront Bed & Breakfast | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "mount-parke-regional-park.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5,
+      "foundUrl": "https://www.ehcanadatravel.com/british-columbia/gulf-islands/mayne/parks-places/4893-mount-parke-regional-park.html",
+      "foundTitle": "Mount Parke Regional Park - Mayne Island"
+    },
+    {
+      "file": "north-galiano-community-hall.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoclub.org/",
+      "foundTitle": "The Galiano Club – Galiano Island's Community Association Since 1924"
+    },
+    {
+      "file": "now-and-zen.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5,
+      "foundUrl": "https://www.fashyas.com/CA/Galiano-Island/110047145752093/Now-and-Zen",
+      "foundTitle": "Now and Zen, #4-33 Manzanita Road, Galiano Island, BC (2025)"
+    },
+    {
+      "file": "paradise-rock-oceanfront-cottage.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/paradise-rock-oceanfront-cottage",
+      "foundTitle": "Paradise Rock Oceanfront Cottage | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "pink-geranium.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://www.pinkgeranium.com/",
+      "foundTitle": "The Pink Geranium"
+    },
+    {
+      "file": "poirier-custom-homes.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 500",
+      "foundUrl": "https://www.houzz.com/professionals/cabinets-and-cabinetry/poirier-custom-homes-pfvwus-pf~437920630",
+      "foundTitle": "POIRIER CUSTOM HOMES - Project Photos & Reviews - Thetis Island, BC CA | Houzz"
+    },
+    {
+      "file": "red-roof-cabin.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "http://www.redroofgaliano.com/the-red-roof",
+      "foundTitle": "The Cabin — The Red Roof"
+    },
+    {
+      "file": "seastar-cottage.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "https://seastarcottage.ca/",
+      "foundTitle": "Seastar Cottage | Galiano Island Beachfront Vacation Rental"
+    },
+    {
+      "file": "slow-coast-coffee.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 403",
+      "foundUrl": "https://www.zmenu.com/slow-coast-coffee-pender-island-online-menu/",
+      "foundTitle": "Online Menu of Slow Coast Coffee Restaurant, Pender Island, British Columbia, V0N 2M0 - Zmenu"
+    },
+    {
+      "file": "solar-art-solarbud.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://artistsincanada.com/thetis-island/artist/solarbud-6186",
+      "foundTitle": "Solarbud - Artists in Canada"
+    },
+    {
+      "file": "studio-54-art-gallery.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoislandlife.com/artists-in-our-midst.html",
+      "foundTitle": "Galiano Island Artists"
+    },
+    {
+      "file": "sturdies-bay-bakery.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/sturdies-bay-bakery",
+      "foundTitle": "Sturdies Bay Bakery | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "the-active-page.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/visitor-information",
+      "foundTitle": "Visitor Information | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "thetis-island-elementary-school.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://thetisisland.net/community.html",
+      "foundTitle": "Thetisisland"
+    },
+    {
+      "file": "thetis-island-port-commission.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://thetisisland.net/community.html",
+      "foundTitle": "Thetisisland"
+    },
+    {
+      "file": "watertaxi-porlier-pass.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/watertaxi-porlier-pass-provisions",
+      "foundTitle": "Watertaxi Porlier Pass Provisions | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "wild-seafood-galiano.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoislandlife.com/groceries-and-markets.html",
+      "foundTitle": "Galiano Island Groceries, Markets and Gas"
+    }
+  ],
+  "counts": {
+    "updated": 45,
+    "skip:dead-url": 5
+  },
+  "finishedAt": "2026-03-04T14:30:45.749Z"
+}
