@@ -1,22 +1,31 @@
 ---
-name: "Montague Harbour Marina"
-url: ""
-phone: "250-539-5733"
-email: "info@montagueharbour.com"
-address: "3451 Montague Road"
-island: "Galiano Island"
-category: "marine"
-subcategory: "Marinas"
-description: "Located on the sunny south shore of the harbour, the Marina offers annual, winter and guest moorage, fuel station with zero-ethanol gas and diesel, Wi-Fi, well-stocked market and general store, ice cream parlour, coffee shop, dining options, gift shop, moped rentals, and kayak outfitter."
-description_long: ""
-title: "Montague Harbour Marina - Galiano Island"
-tier: "basic"
+name: Montague Harbour Marina
+url: 'https://montagueharbour.com/'
+phone: 250-539-5733
+email: info@montagueharbour.com
+address: 3451 Montague Road
+island: Galiano Island
+category: marine
+subcategory: Marinas
+description: >-
+  Located on the sunny south shore of the harbour, the Marina offers annual,
+  winter and guest moorage, fuel station with zero-ethanol gas and diesel,
+  Wi-Fi, well-stocked market and general store, ice cream parlour, coffee shop,
+  dining options, gift shop, moped rentals, and kayak outfitter.
+description_long: ''
+title: Montague Harbour Marina - Galiano Island
+tier: basic
 claimed: false
 social:
-  facebook: "MontagueHarbourMarina"
+  facebook: 'https://www.facebook.com/MontagueHarbourMarina/'
+  instagram: 'https://www.instagram.com/p/DAcj8E5JgxK/'
+  website: 'https://montagueharbour.com/'
 hours:
-  season: "May 1 - Sept 30"
+  season: May 1 - Sept 30
 gallery:
-  - "/images/listings/montague-harbour-marina-11357285-10205497768637014-7800675095436562763-o-1-0-jpg.jpg"
-  - "/images/listings/montague-harbour-marina-img-1430450308897-0-jpg.jpg"
+  - >-
+    /images/listings/montague-harbour-marina-11357285-10205497768637014-7800675095436562763-o-1-0-jpg.jpg
+  - /images/listings/montague-harbour-marina-img-1430450308897-0-jpg.jpg
+logo: /images/listings/montague-harbour-marina/logo.jpg
 ---
+

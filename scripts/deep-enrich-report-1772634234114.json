@@ -1,0 +1,550 @@
+{
+  "startedAt": "2026-03-04T14:23:17.968Z",
+  "sourceReport": "scripts/enrich-report-1772633909188.json",
+  "force": true,
+  "dryRun": false,
+  "concurrency": 2,
+  "results": [
+    {
+      "file": "3-routes-scuba-diving-directory.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "file": "annette-shaw-artist.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "art-and-soul-craft-gallery.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "active-pass-beachhouse.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/active-pass-beachhouse",
+      "foundTitle": "Active Pass Beachhouse | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "aurora-restaurant.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "atrevida-restaurant-la-lena-pizza.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/atrevida-restaurant-and-la-lena-pizza-patio",
+      "foundTitle": "Atrevida Restaurant and La Lena Pizza Patio | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "azami-cottage.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "bodega-cove.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "babes-in-the-woods-restaurant.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 403",
+      "foundUrl": "https://www.sirved.com/restaurant/galiano_island-british_columbia-canada/babes-in-the-woods/61041/menus",
+      "foundTitle": "Menu for Babes in the Woods in Galiano Island, BC | Sirved"
+    },
+    {
+      "file": "cabin-at-swallows-keep.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "bodega-north-woodworks.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "cabra-gallery-museum.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "casa-ao-pe-do-mar.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "captains-quarters-heritage-log-house.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed",
+      "foundUrl": "https://www.galianogulfislands.ca/",
+      "foundTitle": "\"A Captain's Quarters\" 1894 Heritage Log House, Galiano, B.C."
+    },
+    {
+      "file": "cedar-beach-pizza-catering.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "certified-horticulturist-eco-garden.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "corner-store-galiano.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "cedar-grove-pottery.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://www.sandradolph.com/",
+      "foundTitle": "Sandra Dolph Ceramic Artist Galiano Island B.C."
+    },
+    {
+      "file": "crane-and-robin-restaurant.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "cufra-cliffs-cottage.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "farm-gate-store.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "felix-jack-guesthouse.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "deidre-jewell-acupuncturist.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoislandlife.com/health-services.html",
+      "foundTitle": "Health Services on Galiano Island"
+    },
+    {
+      "file": "fenton-design-jewelry.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-community-development.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-bicycle-repair.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianorecycles.ca/new-bike-fix-it-station/",
+      "foundTitle": "New Bike Fix-It Station – Galiano Island Recycling Resources Society"
+    },
+    {
+      "file": "galiano-concert-society.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/galiano-concert-society",
+      "foundTitle": "Galiano Concert Society | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "galiano-excavating.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-harbour-view-house.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-garage-groceries.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoislandlife.com/groceries-and-markets.html",
+      "foundTitle": "Galiano Island Groceries, Markets and Gas"
+    },
+    {
+      "file": "galiano-inn-spa.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5
+    },
+    {
+      "file": "galiano-island-recycling.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianorecycles.ca/",
+      "foundTitle": "Galiano Island Recycling Resources Society"
+    },
+    {
+      "file": "galiano-golf-course.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://www.golfgaliano.com/",
+      "foundTitle": "Galiano Golf Course"
+    },
+    {
+      "file": "galiano-library-society.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-lions-club.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-island-soap-works.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoskincare.com/",
+      "foundTitle": "Galiano Island Soap Works"
+    },
+    {
+      "file": "galiano-trails-society.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-trading-company.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "galiano-sailing-charters.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://galianosailingcharters.com/",
+      "foundTitle": "Galiano Sailing Charters"
+    },
+    {
+      "file": "gulf-islands-insurance-galiano.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "howling-wolf-farm-market.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "hunterston-homes.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "gerald-longson-architect.md",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 0,
+      "foundUrl": "https://galianoisland.com/sites/default/files/2018_MAP.pdf",
+      "foundTitle": "PORLIER PASS Spanish Hills Dock Spotlight Cove Lover’s Leap Viewpoint Retreat"
+    },
+    {
+      "file": "ixchel.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "japanese-garden-mayne.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "inthebluff-oceanside-log-house.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 429",
+      "foundUrl": "https://www.vrbo.com/101849",
+      "foundTitle": "InTheBluff - Galiano's Oceanside Log House - Galiano | Vrbo"
+    },
+    {
+      "file": "jeanne-erickson-art.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "kayak-pender-island.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "jill-louise-campbell.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0
+    },
+    {
+      "file": "madrona-del-mar-spa.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "marcia-devicque-glassworks.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "loose-leaf-tea-and-papery.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 0,
+      "foundUrl": "https://www.thelooseleafgaliano.ca/",
+      "foundTitle": "The Loose Leaf Tea & Papery - Galiano Island"
+    },
+    {
+      "file": "mayne-island-museum.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "mayne-island-brewing-company.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://mayneislandbrewing.com/",
+      "foundTitle": "Mayne Island Brewing Company"
+    },
+    {
+      "file": "montague-provincial-campground.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "morning-beach-waterfront-bb.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "montague-harbour-marina.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://montagueharbour.com/",
+      "foundTitle": "Montague Harbour Marina"
+    },
+    {
+      "file": "mount-parke-regional-park.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "north-galiano-community-hall.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "now-and-zen.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "morningstone-bb.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://mayneisland.com/accommodations/",
+      "foundTitle": "Accommodations on Mayne Island | MayneIsland.com"
+    },
+    {
+      "file": "paradise-rock-oceanfront-cottage.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "pink-geranium.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "poirier-custom-homes.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "patti-moreland-textiles.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 5,
+      "foundUrl": "https://galianoinn.com/pages/island-activities",
+      "foundTitle": "Island Activities"
+    },
+    {
+      "file": "red-roof-cabin.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "salt-spring-ferry.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "sands-of-morning-beach.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/sands-morning-beach",
+      "foundTitle": "Sands of Morning Beach | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "saturna-library.md",
+      "status": "updated",
+      "logoSaved": false,
+      "socialCount": 2
+    },
+    {
+      "file": "seastar-cottage.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "scoops-ice-cream-burger-bar.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://galianoisland.com/scoops-ice-cream-burger-bar",
+      "foundTitle": "Scoops Ice Cream & Burger Bar | Galiano Island Chamber of Commerce"
+    },
+    {
+      "file": "slow-coast-coffee.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "solar-art-solarbud.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "st-margarets-church-galiano.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://www.stmargaretsgaliano.com/",
+      "foundTitle": "St. Margaret of Scotland | Anglican Church in Galiano Island, BC"
+    },
+    {
+      "file": "serenity-by-the-sea.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://serenitybythesea.com/",
+      "foundTitle": "Wellness Retreat BC | Serenity By The Sea Galiano Island"
+    },
+    {
+      "file": "studio-54-art-gallery.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "sticks-and-stones-country-cottages.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 403",
+      "foundUrl": "https://sticks-and-stones-cottage.com-place.com/",
+      "foundTitle": "Sticks and Stones Cottage - Hotel in Galano Island - Website"
+    },
+    {
+      "file": "sturdies-bay-bakery.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "the-active-page.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "thetis-island-elementary-school.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "thetis-island-getaway.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 403"
+    },
+    {
+      "file": "thetis-island-port-commission.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "thetis-island-reflections.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "thetis-island-vineyard.md",
+      "status": "skip:dead-url",
+      "error": "TypeError: fetch failed"
+    },
+    {
+      "file": "the-galiano-club.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 3,
+      "foundUrl": "https://galianoclub.org/",
+      "foundTitle": "The Galiano Club – Galiano Island's Community Association Since 1924"
+    },
+    {
+      "file": "thetis-seaside-accommodations.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 4,
+      "foundUrl": "https://www.airbnb.ca/thetis-island-canada/stays",
+      "foundTitle": "Thetis Island, Canada Vacation Rentals - Airbnb"
+    },
+    {
+      "file": "watertaxi-porlier-pass.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "wild-seafood-galiano.md",
+      "status": "error:search",
+      "error": "Error: Brave HTTP 429"
+    },
+    {
+      "file": "vacation-bb-mayne.md",
+      "status": "updated",
+      "logoSaved": true,
+      "socialCount": 2,
+      "foundUrl": "https://mayneisland.com/accommodations/",
+      "foundTitle": "Accommodations on Mayne Island | MayneIsland.com"
+    },
+    {
+      "file": "woodstone-manor.md",
+      "status": "skip:dead-url",
+      "error": "Error: HTTP 404",
+      "foundUrl": "https://www.woodstonegaliano.com/",
+      "foundTitle": "Woodstone Manor - Boutique Hotel on Galiano Island"
+    }
+  ],
+  "counts": {
+    "skip:dead-url": 13,
+    "error:search": 50,
+    "updated": 27
+  },
+  "finishedAt": "2026-03-04T14:23:54.114Z"
+}
