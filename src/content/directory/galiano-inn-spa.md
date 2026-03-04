@@ -35,8 +35,10 @@ claimed: true
 verified: true
 verified_date: "2026-02-18"
 gallery:
+  - "/images/listings/galiano-inn-spa/featured.jpg"
   - "/images/islands/galiano-island-hero.jpg"
   - "/images/islands/galiano-island-card.jpg"
+logo: "/images/listings/galiano-inn-spa/logo.png"
 hours:
   monday: "Open 24 Hours"
   tuesday: "Open 24 Hours"
@@ -46,9 +48,11 @@ hours:
   sat: "Open 24 Hours"
   sun: "Open 24 Hours"
 social:
-  instagram: "@galianoinnspa"
-  facebook: "Galiano.Inn"
-  twitter: "@GalianoInnSpa"
+  website: "https://galianoinn.com"
+  instagram: "https://instagram.com/GalianoInnSpa"
+  facebook: "https://facebook.com/GalianoInnSpa"
+  twitter: "https://twitter.com/GalianoInnSpa"
+  pinterest: "https://pinterest.com/GalianoIsland"
 map:
   lat: 48.8781
   lng: -123.3131

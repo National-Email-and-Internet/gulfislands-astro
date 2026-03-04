@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { name, category, subcategory, island, description, description_long, url, tier, claimed, gallery, hours, social, map, phone, email, address } = entry.data;
+const { name, category, subcategory, island, description, description_long, url, tier, claimed, gallery, hours, social, map, phone, email, address, logo } = entry.data;
 
 const categoryLabels: Record<string, string> = {
   stay: 'Stay',
@@ -41,31 +41,38 @@ const catLabel = categoryLabels[category] ?? category;
 
 const renderedDescription = description_long ? marked.parse(description_long) : null;
 
-// Determine hero image vs logo
-let heroImage = null;
-let logoImage = null;
-let galleryImages = [];
+// Listing images
+let heroImage: string | null = null;
+let logoImage: string | null = null;
+let galleryImages: string[] = [];
 
+// Prefer explicit logo field (all listings can have this now)
+if ((entry.data as any).logo) {
+  logoImage = (entry.data as any).logo;
+}
+
+// First gallery image is hero (unless it's clearly a logo and we don't already have a logo)
 if (gallery && gallery.length > 0) {
-  const isLogo = (img) => img.toLowerCase().includes('logo') || img.toLowerCase().includes('avatar');
-  
-  if (isLogo(gallery[0])) {
-    logoImage = gallery[0];
-    if (gallery.length > 1 && !isLogo(gallery[1])) {
-      heroImage = gallery[1];
-      galleryImages = gallery.slice(2);
+  const isLogo = (img: string) => img.toLowerCase().includes('logo') || img.toLowerCase().includes('avatar');
+
+  if (!heroImage) {
+    if (isLogo(gallery[0]) && !logoImage) {
+      logoImage = gallery[0];
+      if (gallery.length > 1) {
+        heroImage = gallery[1];
+        galleryImages = gallery.slice(2);
+      } else {
+        galleryImages = [];
+      }
     } else {
+      heroImage = gallery[0];
       galleryImages = gallery.slice(1);
     }
-  } else {
-    heroImage = gallery[0];
-    galleryImages = gallery.slice(1);
-    // Find a logo if one exists further down (edge case)
-    const logoIndex = gallery.findIndex(isLogo);
-    if (logoIndex > 0) {
-      logoImage = gallery[logoIndex];
-      galleryImages = galleryImages.filter(img => img !== logoImage);
-    }
+  }
+
+  // Remove logo from gallery if it appears there
+  if (logoImage) {
+    galleryImages = galleryImages.filter(img => img !== logoImage);
   }
 }
 
@@ -187,7 +194,22 @@ if (gallery && gallery.length > 0) {
           <!-- Contact Info Card -->
           <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
             <h3 class="font-bold text-gray-900 mb-6 uppercase text-xs tracking-widest">Connect</h3>
-            
+
+            <!-- Logo (all listings; shows placeholder if missing) -->
+            <div class="mb-6">
+              {logoImage ? (
+                <div class="w-full h-24 rounded-2xl bg-white border border-gray-100 p-3 flex items-center justify-center">
+                  <img src={logoImage} alt={name + ' logo'} class="max-h-full max-w-full object-contain" loading="lazy" />
+                </div>
+              ) : (
+                <div class="w-full h-24 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400">
+                  <div class="text-center">
+                    <div class="text-[10px] font-black uppercase tracking-widest">Logo</div>
+                    <div class="text-xs font-medium">Coming soon</div>
+                  </div>
+                </div>
+              )}
+            </div>
             
             <div class="space-y-4">
               {address && (
@@ -238,17 +260,39 @@ if (gallery && gallery.length > 0) {
               )}
 
               {social && (
-                <div class="flex gap-3 mt-4">
-                  {social.instagram && (
-                    <a href={`https://instagram.com/${social.instagram.replace('@', '')}`} class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.074 4.771 4.85.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.074 4.771-4.85 4.771-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.074-4.771-4.85-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.074-4.771 4.85-4.771 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.78-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.78.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                  )}
-                  {social.facebook && (
-                    <a href={`https://facebook.com/${social.facebook}`} class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
-                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.8.714-1.8 1.768v2.319h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-                    </a>
-                  )}
+                <div class="mt-4">
+                  <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Social</p>
+                  <div class="flex flex-wrap gap-3">
+                    {social.website && (
+                      <a href={social.website} target="_blank" rel="noopener noreferrer" aria-label="Website" class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+                      </a>
+                    )}
+
+                    {social.instagram && (
+                      <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.074 4.771 4.85.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.074 4.771-4.85 4.771-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.074-4.771-4.85-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.074-4.771 4.85-4.771 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.78-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.78.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                      </a>
+                    )}
+
+                    {social.facebook && (
+                      <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.8.714-1.8 1.768v2.319h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                      </a>
+                    )}
+
+                    {social.twitter && (
+                      <a href={social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 01-2.828.775A4.932 4.932 0 0023.337 2.6a9.86 9.86 0 01-3.127 1.195 4.916 4.916 0 00-8.384 4.482A13.944 13.944 0 011.671 3.149a4.916 4.916 0 001.523 6.573A4.9 4.9 0 01.96 9.1v.062a4.916 4.916 0 003.946 4.814 4.996 4.996 0 01-2.212.084 4.919 4.919 0 004.588 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.057 0 14.01-7.496 14.01-13.986 0-.21 0-.423-.015-.637A10.012 10.012 0 0024 4.557z"/></svg>
+                      </a>
+                    )}
+
+                    {social.pinterest && (
+                      <a href={social.pinterest} target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center text-gray-600 hover:text-ocean-600 transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.004 0C5.374 0 0 5.373 0 12.004c0 5.092 3.163 9.444 7.63 11.19-.105-.95-.2-2.41.042-3.45.218-.938 1.405-5.97 1.405-5.97s-.36-.72-.36-1.78c0-1.67.968-2.917 2.173-2.917 1.025 0 1.52.77 1.52 1.694 0 1.032-.658 2.573-.998 4.004-.284 1.2.602 2.175 1.785 2.175 2.143 0 3.79-2.258 3.79-5.517 0-2.883-2.072-4.898-5.03-4.898-3.425 0-5.434 2.57-5.434 5.225 0 1.035.398 2.145.896 2.75a.36.36 0 01.083.345c-.09.38-.292 1.2-.332 1.37-.052.218-.17.265-.392.16-1.463-.68-2.377-2.81-2.377-4.52 0-3.68 2.675-7.06 7.713-7.06 4.05 0 7.2 2.89 7.2 6.76 0 4.04-2.55 7.29-6.09 7.29-1.19 0-2.31-.62-2.69-1.35l-.73 2.79c-.26 1-.97 2.26-1.44 3.03 1.08.33 2.22.51 3.41.51 6.63 0 12-5.37 12-12.004C24 5.373 18.634 0 12.004 0z"/></svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

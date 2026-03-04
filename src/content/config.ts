@@ -29,10 +29,17 @@ const directory = defineCollection({
       lng: z.number()
     }).optional(),
     description_long: z.string().optional(),
+    logo: z.string().optional(),
     social: z.object({
+      website: z.string().url().optional(),
       instagram: z.string().optional(),
       facebook: z.string().optional(),
       twitter: z.string().optional(),
+      x: z.string().optional(),
+      linkedin: z.string().optional(),
+      youtube: z.string().optional(),
+      tiktok: z.string().optional(),
+      pinterest: z.string().optional(),
     }).optional(),
   }),
 });
