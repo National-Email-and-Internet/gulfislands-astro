@@ -32,9 +32,12 @@ hours:
   friday: "6:00 AM - 11:00 PM"
   sat: "6:30 AM - 11:00 PM"
   sun: "7:00 AM - 10:00 PM"
+logo: "/images/listings/salt-spring-ferry/logo.png"
 social:
-  twitter: "@BCFerries"
-  facebook: "BCFerries"
+  website: "https://www.bcferries.com"
+  instagram: "https://www.instagram.com/bcferries/"
+  facebook: "https://www.facebook.com/BCFerries/"
+  x: "https://x.com/BCFerries"
 map:
   lat: 48.7667
   lng: -123.4167

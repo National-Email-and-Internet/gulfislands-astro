@@ -1,6 +1,6 @@
 ---
 name: "Saturna Island Library"
-url: "https://saturna-library.bc.ca"
+url: "https://sgicl.bc.libraries.coop/saturna-island/"
 island: "Saturna Island"
 category: "community"
 subcategory: "Libraries"
@@ -19,6 +19,9 @@ verified_date: "2026-02-18"
 gallery:
   - "/images/islands/saturna-island-hero.jpg"
   - "/images/islands/saturna-island-card.jpg"
+logo: "/images/listings/saturna-library/logo.png"
+social:
+  facebook: "https://www.facebook.com/Saturna-Island-Library-103170521250035"
 hours:
   monday: "10:00 AM - 4:00 PM"
   tuesday: "Closed"
