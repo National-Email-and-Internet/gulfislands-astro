@@ -1,11 +1,11 @@
 # Gulf Islands Directory - Robots.txt
-# https://www.gulfislands.com/
+# https://gulfislands.com/
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.gulfislands.com/sitemap-index.xml
+Sitemap: https://gulfislands.com/sitemap-index.xml
 
 # AI Content Signals (EU Directive 2019/790)
 # search: yes
