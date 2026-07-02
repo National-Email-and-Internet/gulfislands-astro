@@ -8,7 +8,7 @@ binding = "GULFISLANDS_SUBMISSIONS"
 id = "b1f507d9e89a4f349baea7e67adc0a21"
 
 [vars]
-ALLOWED_ORIGIN = "https://gulfislands.com"
+ALLOWED_ORIGIN = "https://www.gulfislands.com"
 SUPPORT_EMAIL = "support@natinternet.com"
 MOSPARO_HOST = "https://mosparo.natinternet.com"
 FROM_EMAIL = "noreply@natinternet.com"

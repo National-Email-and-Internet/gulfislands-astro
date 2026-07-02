@@ -90,8 +90,11 @@ async function getSigningKey(secretKey: string, dateStamp: string, region: strin
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    const requestOrigin = request.headers.get("Origin") || "";
+    const allowedOrigins = ["https://gulfislands.com", "https://www.gulfislands.com"];
+    const corsOrigin = allowedOrigins.includes(requestOrigin) ? requestOrigin : allowedOrigins[0];
     const corsHeaders = {
-      "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN,
+      "Access-Control-Allow-Origin": corsOrigin,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     };
