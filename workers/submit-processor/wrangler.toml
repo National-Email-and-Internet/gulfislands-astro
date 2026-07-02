@@ -1,0 +1,15 @@
+name = "gulfislands-submit-processor"
+main = "src/index.ts"
+compatibility_date = "2024-02-18"
+account_id = "d6eeb5835088b0cae5c7e624c336779f"
+
+[[kv_namespaces]]
+binding = "GULFISLANDS_SUBMISSIONS"
+id = "b1f507d9e89a4f349baea7e67adc0a21"
+
+[vars]
+ALLOWED_ORIGIN = "https://gulfislands.com"
+SUPPORT_EMAIL = "support@natinternet.com"
+MOSPARO_HOST = "https://mosparo.natinternet.com"
+FROM_EMAIL = "noreply@natinternet.com"
+AWS_SES_REGION = "ca-west-1"
