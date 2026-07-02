@@ -140,7 +140,7 @@ export default {
     try {
       const body = await request.json() as any;
       const ip = request.headers.get("cf-connecting-ip") || "unknown";
-      const { slug, business_name, claimant_name, claimant_email, phone, role, message, honeypot, mosparo_token, mosparo_submit_token } = body;
+      const { slug, business_name, claimant_name, claimant_email, phone, role, message, professional_link, honeypot, mosparo_token, mosparo_submit_token } = body;
 
       // Honeypot check
       if (honeypot) {
@@ -189,6 +189,7 @@ export default {
         claimant_email,
         phone: phone || "",
         role: role || "",
+        professional_link: professional_link || "",
         message: message || "",
         status: "pending_review",
         submitted_at: new Date().toISOString(),
@@ -212,15 +213,35 @@ export default {
       // Notify support (FreeScout)
       const supportBody = `New listing claim submitted on gulfislands.com
 
-Business: ${business_name} (${slug})
-Claimant: ${claimant_name} <${claimant_email}>
-Phone: ${phone || "not provided"}
-Role: ${role || "not specified"}
-Message: ${message || "none"}
-Submitted: ${claimRecord.submitted_at}
-Claim ID: ${claimId}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BUSINESS DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Business Name:    ${business_name}
+Listing Slug:     ${slug}
+Listing URL:      https://gulfislands.com/directory/${slug}
 
-Please review and verify ownership before approving.`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLAIMANT DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Full Name:        ${claimant_name}
+Email:            ${claimant_email}
+Phone:            ${phone || "not provided"}
+Role:             ${role || "not specified"}
+Professional Link: ${professional_link || "not provided"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MESSAGE / CONTENT REQUEST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${message || "(none)"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SUBMISSION INFO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Claim ID:         ${claimId}
+Submitted:        ${claimRecord.submitted_at}
+IP Address:       ${ip}
+
+Action required: verify ownership and approve or reject this claim.`;
 
       await sendSESEmail(
         env.AWS_SES_ACCESS_KEY,
