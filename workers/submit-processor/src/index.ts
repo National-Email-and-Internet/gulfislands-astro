@@ -60,6 +60,11 @@ async function sendSESEmail(
     body: payload,
   });
 
+  if (!response.ok) {
+    const errBody = await response.text();
+    console.error(`SES error ${response.status}: ${errBody}`);
+  }
+
   return response.ok;
 }
 
@@ -174,7 +179,6 @@ export default {
       // Send emails via AWS SES
       const region = env.AWS_SES_REGION || "ca-west-1";
       const from = env.FROM_EMAIL || "noreply@natinternet.com";
-
       // Support notification
       const supportBody = `New listing submission on gulfislands.com
 
