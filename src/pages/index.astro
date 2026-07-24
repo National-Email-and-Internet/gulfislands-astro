@@ -804,6 +804,7 @@ function cleanUrl(url: string): string {
       const el = card as HTMLElement;
       el.classList.add('selected', 'border-ocean-400');
       el.style.background = 'rgba(34, 211, 238, 0.1)';
+      el.style.borderWidth = '2px';
       selectedPlan = el.dataset.plan || null;
       updateContinueButton();
     });
@@ -811,7 +812,10 @@ function cleanUrl(url: string): string {
 
   function updatePlanSelection() {
     planCards.forEach(c => c.classList.remove('selected', 'border-ocean-400'));
-    planCards.forEach(c => (c as HTMLElement).style.background = '');
+    planCards.forEach(c => {
+      (c as HTMLElement).style.background = '';
+      (c as HTMLElement).style.borderWidth = '';
+    });
     selectedPlan = null;
   }
 
