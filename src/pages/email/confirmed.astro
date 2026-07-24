@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Email Confirmed — Gulf Islands" description="Your island email address is being set up.">
+  <section class="py-24 bg-ocean-900 text-white min-h-[70vh] flex items-center">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="mb-8">
+        <svg class="w-20 h-20 mx-auto text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+
+      <h1 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold mb-4">
+        Welcome to Your <span class="italic text-ocean-200">Island</span> Email
+      </h1>
+
+      <p class="text-lg text-gray-300 mb-8">
+        Your mailbox is being created. You'll receive a welcome email with your login details shortly.
+      </p>
+
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-8">
+        <h2 class="font-semibold text-lg mb-4">What happens next?</h2>
+        <div class="space-y-4 text-left text-gray-300">
+          <div class="flex gap-3">
+            <span class="text-ocean-300 font-bold">1.</span>
+            <span>Check your inbox for a welcome email from us (it may take a few minutes).</span>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-ocean-300 font-bold">2.</span>
+            <span>Follow the link to set your password and access your webmail.</span>
+          </div>
+          <div class="flex gap-3">
+            <span class="text-ocean-300 font-bold">3.</span>
+            <span>Set up your email on your phone, tablet, or computer using IMAP/POP3.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <a href="https://webmail.gulfislands.com" class="inline-block bg-ocean-500 hover:bg-ocean-400 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg">
+          Go to Webmail
+        </a>
+        <p class="text-sm text-white/40">
+          Questions? Email <a href="mailto:support@natinternet.com" class="text-ocean-300 hover:text-ocean-200">support@natinternet.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
