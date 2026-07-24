@@ -581,11 +581,11 @@ function cleanUrl(url: string): string {
 
             <!-- Billing Toggle -->
             <div class="flex items-center justify-center gap-3 mb-6">
-              <span id="toggle-monthly-label" class="text-sm font-semibold text-ocean-200">Monthly</span>
+              <span id="toggle-monthly-label" class="text-sm text-white/50">Monthly</span>
               <button id="billing-toggle" class="relative w-12 h-6 rounded-full bg-ocean-600 transition-colors" aria-label="Toggle billing period">
-                <span id="toggle-knob" class="absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform"></span>
+                <span id="toggle-knob" class="absolute top-1 w-4 h-4 rounded-full bg-white transition-transform" style="transform: translateX(1.5rem)"></span>
               </button>
-              <span id="toggle-annual-label" class="text-sm text-white/50">Annual <span class="text-xs text-ocean-300">(save ~10%)</span></span>
+              <span id="toggle-annual-label" class="text-sm font-semibold text-ocean-200">Annual <span class="text-xs text-ocean-300">(save ~10%)</span></span>
             </div>
 
             <!-- Plan Cards -->
@@ -597,7 +597,7 @@ function cleanUrl(url: string): string {
                     <p class="text-xs text-white/50">1 GB storage</p>
                   </div>
                   <div class="text-right">
-                    <p class="font-semibold text-white plan-price">$4.99<span class="text-sm text-white/50">/mo</span></p>
+                    <p class="font-semibold text-white plan-price">$52.99<span class="text-sm text-white/50">/yr</span></p>
                   </div>
                 </div>
               </div>
@@ -608,7 +608,7 @@ function cleanUrl(url: string): string {
                     <p class="text-xs text-white/50">5 GB storage</p>
                   </div>
                   <div class="text-right">
-                    <p class="font-semibold text-white plan-price">$5.49<span class="text-sm text-white/50">/mo</span></p>
+                    <p class="font-semibold text-white plan-price">$59.99<span class="text-sm text-white/50">/yr</span></p>
                   </div>
                 </div>
               </div>
@@ -690,7 +690,7 @@ function cleanUrl(url: string): string {
   const toggleAnnualLabel = document.getElementById('toggle-annual-label')!;
   const planCards = document.querySelectorAll('.plan-card');
 
-  let billingAnnual = false;
+  let billingAnnual = true;
   let selectedPlan: string | null = null;
   let lastCheckedEmail: string | null = null;
 
@@ -771,8 +771,7 @@ function cleanUrl(url: string): string {
       const annual = el.dataset.annual;
       const priceEl = el.querySelector('.plan-price')!;
       if (billingAnnual && annual) {
-        const monthlyEq = (parseFloat(annual) / 12).toFixed(2);
-        priceEl.innerHTML = `$${annual}<span class="text-sm text-white/50">/yr</span> <span class="text-xs text-ocean-300">($${monthlyEq}/mo)</span>`;
+        priceEl.innerHTML = `$${annual}<span class="text-sm text-white/50">/yr</span>`;
       } else if (monthly) {
         priceEl.innerHTML = `$${monthly}<span class="text-sm text-white/50">/mo</span>`;
       }
