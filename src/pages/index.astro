@@ -694,6 +694,18 @@ function cleanUrl(url: string): string {
   let selectedPlan: string | null = null;
   let lastCheckedEmail: string | null = null;
 
+  // Restricted names (mirrors backend)
+  const RESTRICTED_NAMES = new Set([
+    'abuse', 'accounts', 'accounting', 'admin', 'administrator',
+    'billing', 'cert', 'contact', 'dns', 'ftp',
+    'hello', 'help', 'host', 'hostmaster', 'imap',
+    'info', 'mail', 'mailer-daemon', 'natinternet', 'neic',
+    'no-reply', 'noc', 'noreply', 'office', 'payments',
+    'pop', 'postmaster', 'root', 'sales', 'security',
+    'service', 'smtp', 'ssl', 'staff', 'support',
+    'sysadmin', 'team', 'webmaster', 'www',
+  ]);
+
   // Validate username
   function isValidUsername(user: string): boolean {
     return /^[a-z0-9._-]+$/.test(user);
@@ -710,6 +722,11 @@ function cleanUrl(url: string): string {
     }
     if (!isValidUsername(user)) {
       showResult('Only letters, numbers, dots, dashes, and underscores allowed', 'text-yellow-300');
+      return;
+    }
+
+    if (RESTRICTED_NAMES.has(user)) {
+      showResult('This address is reserved', 'text-yellow-300');
       return;
     }
 
