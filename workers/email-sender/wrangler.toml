@@ -1,0 +1,8 @@
+name = "gulfislands-email-sender"
+main = "src/index.ts"
+compatibility_date = "2024-02-18"
+
+[vars]
+FROM_EMAIL = "noreply@natinternet.com"
+AWS_SES_REGION = "ca-west-1"
+ALLOWED_ORIGIN = "https://ops.natinternet.com"
