@@ -99,6 +99,18 @@ import Layout from '../../layouts/Layout.astro';
   ];
 
   const sessionId = new URLSearchParams(window.location.search).get('session_id');
+  const searchParams = new URLSearchParams(window.location.search);
+  const planParam = searchParams.get('plan') || '';
+  const billingParam = searchParams.get('billing') || 'monthly';
+  // Plan prices (CAD) — keep in sync with the checkout page and Stripe price IDs.
+  const PLAN_PRICES: Record<string, { monthly: number; annual: number }> = {
+    basic: { monthly: 4.99, annual: 52.99 },
+    'basic-plus': { monthly: 5.49, annual: 59.99 },
+    premium: { monthly: 6.99, annual: 74.99 },
+    'premium-plus': { monthly: 7.99, annual: 84.99 },
+  };
+  const CURRENCY = 'CAD';
+  let purchaseFired = false;
   const credentialsBox = document.getElementById('credentials-box')!;
   const backupBox = document.getElementById('backup-email-box')!;
   const statusMessage = document.getElementById('status-message')!
@@ -126,7 +138,7 @@ import Layout from '../../layouts/Layout.astro';
 
         if (data.success) {
           clearInterval(msgInterval);
-          showCredentials(data.email, data.password);
+          showCredentials(data.email, data.password, data.plan);
           return;
         }
 
@@ -147,7 +159,7 @@ import Layout from '../../layouts/Layout.astro';
     statusMessage.textContent = 'Your mailbox is being created. The welcome email with login details will arrive shortly.';
   }
 
-  function showCredentials(email: string, password: string) {
+  function showCredentials(email: string, password: string, plan?: string) {
     statusMessage.textContent = 'Your mailbox is ready!';
     document.getElementById('loading-spinner')!.classList.add('hidden');
     document.getElementById('checkmark-icon')!.classList.remove('hidden');
@@ -156,6 +168,46 @@ import Layout from '../../layouts/Layout.astro';
     document.getElementById('cred-password')!.textContent = password;
     credentialsBox.classList.remove('hidden');
     backupBox.classList.remove('hidden');
+
+    firePurchase(plan || planParam || 'basic');
+  }
+
+  // GA4 purchase + Meta Purchase (fired once per Stripe session).
+  function firePurchase(plan: string) {
+    if (purchaseFired || !sessionId) return;
+    purchaseFired = true;
+
+    const dedupeKey = 'gi_purchase_' + sessionId;
+    try {
+      if (localStorage.getItem(dedupeKey)) return;
+      localStorage.setItem(dedupeKey, '1');
+    } catch {}
+
+    const prices = PLAN_PRICES[plan] || { monthly: 0, annual: 0 };
+    const value = billingParam === 'annual' ? prices.annual : prices.monthly;
+    const utm = typeof (window as any).giGetUtm === 'function' ? ((window as any).giGetUtm() || {}) : {};
+    // Shared event_id with the server-side CAPI Purchase in the Stripe webhook.
+    const eventId = 'purchase_' + sessionId;
+
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'purchase', {
+        transaction_id: sessionId,
+        currency: CURRENCY,
+        value,
+        items: [{ item_id: plan, item_name: plan, price: value, quantity: 1 }],
+        ...utm,
+      });
+    }
+
+    if (typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Purchase', {
+        currency: CURRENCY,
+        value,
+        content_ids: [plan],
+        content_type: 'product',
+        ...utm,
+      }, { eventID: eventId });
+    }
   }
 
   // Copy password

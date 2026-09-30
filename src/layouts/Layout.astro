@@ -16,6 +16,10 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://gulfislands.com';
+
+// Meta pixel is config-gated: set PUBLIC_META_PIXEL_ID at build time to enable.
+// Empty (default) => the base snippet and all fbq() calls become no-ops.
+const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '';
 ---
 
 <!DOCTYPE html>
@@ -64,6 +68,49 @@ const siteUrl = 'https://gulfislands.com';
     gtag('js', new Date());
     gtag('config', 'G-GMSKTQXMB3');
   </script>
+
+  <!-- Attribution: first-touch UTM capture (utm_* + fbclid/gclid) -->
+  <script is:inline>
+    (function () {
+      var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+      var STORE = 'gi_attribution';
+      function readParams() {
+        var q = new URLSearchParams(window.location.search);
+        var out = {};
+        KEYS.forEach(function (k) { var v = q.get(k); if (v) out[k] = v; });
+        return out;
+      }
+      var current = readParams();
+      var stored = {};
+      try { stored = JSON.parse(localStorage.getItem(STORE) || 'null') || {}; } catch (e) { stored = {}; }
+      var hasStored = Object.keys(stored).length > 0;
+      // First-touch: only write when we have params and nothing recorded yet.
+      if (!hasStored && Object.keys(current).length > 0) {
+        stored = current;
+        stored.captured_at = new Date().toISOString();
+        try { localStorage.setItem(STORE, JSON.stringify(stored)); } catch (e) {}
+      }
+      window.giAttribution = hasStored ? stored : current;
+      window.giGetUtm = function () {
+        var u = window.giAttribution || {};
+        var out = {};
+        KEYS.forEach(function (k) { if (u[k]) out[k] = u[k]; });
+        return out;
+      };
+    })();
+  </script>
+
+  <!-- Meta (Facebook) Pixel — config-gated: no-op unless PUBLIC_META_PIXEL_ID is set -->
+  {metaPixelId && (
+    <>
+      <script define:vars={{ metaPixelId }}>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', metaPixelId);
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none" src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`} /></noscript>
+    </>
+  )}
 </head>
 <body class="bg-white text-gray-900 antialiased">
   <!-- Navigation -->

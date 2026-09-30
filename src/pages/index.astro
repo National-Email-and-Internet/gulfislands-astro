@@ -694,6 +694,28 @@ function cleanUrl(url: string): string {
   let selectedPlan: string | null = null;
   let lastCheckedEmail: string | null = null;
 
+  // Plan prices (CAD) — keep in sync with plan cards and Stripe price IDs.
+  const PLAN_PRICES: Record<string, { monthly: number; annual: number }> = {
+    basic: { monthly: 4.99, annual: 52.99 },
+    'basic-plus': { monthly: 5.49, annual: 59.99 },
+    premium: { monthly: 6.99, annual: 74.99 },
+    'premium-plus': { monthly: 7.99, annual: 84.99 },
+  };
+  const CURRENCY = 'CAD';
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+
+  function getUtm(): Record<string, string> {
+    const fn = (window as any).giGetUtm;
+    if (typeof fn === 'function') return fn() || {};
+    return {};
+  }
+
+  function planValue(plan: string): number {
+    const p = PLAN_PRICES[plan];
+    if (!p) return 0;
+    return billingAnnual ? p.annual : p.monthly;
+  }
+
   // Restricted names (mirrors backend)
   const RESTRICTED_NAMES = new Set([
     'abuse', 'accounts', 'accounting', 'admin', 'administrator',
@@ -830,6 +852,32 @@ function cleanUrl(url: string): string {
     continueBtn.textContent = 'Redirecting...';
     continueBtn.disabled = true;
 
+    const billing = billingAnnual ? 'annual' : 'monthly';
+    const value = planValue(selectedPlan);
+    const utm = getUtm();
+
+    // GA4 begin_checkout
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'begin_checkout', {
+        currency: CURRENCY,
+        value,
+        items: [{ item_id: selectedPlan, item_name: selectedPlan, price: value, quantity: 1 }],
+        ...utm,
+      });
+    }
+
+    // Meta InitiateCheckout (no-op unless a pixel ID is configured)
+    if (typeof (window as any).fbq === 'function') {
+      const initiateEventId = 'initiate_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      (window as any).fbq('track', 'InitiateCheckout', {
+        currency: CURRENCY,
+        value,
+        content_ids: [selectedPlan],
+        content_type: 'product',
+        ...utm,
+      }, { eventID: initiateEventId });
+    }
+
     try {
       const [mailbox, domain] = lastCheckedEmail.split('@');
       const response = await fetch('https://ops.natinternet.com/api/email/create-checkout', {
@@ -840,7 +888,8 @@ function cleanUrl(url: string): string {
           mailbox,
           domain,
           plan: selectedPlan,
-          billing: billingAnnual ? 'annual' : 'monthly',
+          billing,
+          ...utm,
         }),
       });
 
