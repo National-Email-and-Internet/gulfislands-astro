@@ -702,7 +702,7 @@ function cleanUrl(url: string): string {
     'premium-plus': { monthly: 7.99, annual: 84.99 },
   };
   const CURRENCY = 'CAD';
-  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'fbp', 'fbc'];
 
   function getUtm(): Record<string, string> {
     const fn = (window as any).giGetUtm;
