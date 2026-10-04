@@ -619,7 +619,7 @@ function cleanUrl(url: string): string {
                     <p class="text-xs text-white/50">10 GB storage · 2 aliases</p>
                   </div>
                   <div class="text-right">
-                    <p class="font-semibold text-white plan-price">$6.99<span class="text-sm text-white/50">/mo</span></p>
+                    <p class="font-semibold text-white plan-price">$74.99<span class="text-sm text-white/50">/yr</span></p>
                   </div>
                 </div>
               </div>
@@ -630,7 +630,7 @@ function cleanUrl(url: string): string {
                     <p class="text-xs text-white/50">20 GB storage · 5 aliases</p>
                   </div>
                   <div class="text-right">
-                    <p class="font-semibold text-white plan-price">$7.99<span class="text-sm text-white/50">/mo</span></p>
+                    <p class="font-semibold text-white plan-price">$84.99<span class="text-sm text-white/50">/yr</span></p>
                   </div>
                 </div>
               </div>
@@ -790,6 +790,7 @@ function cleanUrl(url: string): string {
     stepPlans.classList.remove('hidden');
     selectedEmailDisplay.textContent = email;
     selectedPlan = null;
+    updatePlanPrices();
     updatePlanSelection();
     updateContinueButton();
   }
@@ -816,6 +817,9 @@ function cleanUrl(url: string): string {
       }
     });
   }
+
+  // Sync card labels with the default billing period on load.
+  updatePlanPrices();
 
   // Plan card selection
   planCards.forEach(card => {
