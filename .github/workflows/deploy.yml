@@ -36,10 +36,12 @@ jobs:
 
       - name: Deploy to WEB-01
         run: |
-          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+          rsync -avz --delete --rsync-path="sudo rsync" --chown=www-data:www-data \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             dist/ ubuntu@51.79.92.134:/var/www/gulfislands.com/
 
       - name: Deploy to WEB-02
         run: |
-          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+          rsync -avz --delete --rsync-path="sudo rsync" --chown=www-data:www-data \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             dist/ ubuntu@15.235.46.226:/var/www/gulfislands.com/
