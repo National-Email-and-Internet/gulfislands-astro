@@ -58,8 +58,8 @@ import Layout from '../../layouts/Layout.astro';
 
       <!-- Backup email -->
       <div id="backup-email-box" class="hidden bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-8">
-        <h2 class="font-semibold text-lg mb-4">Send Instructions to Your Email</h2>
-        <p class="text-sm text-gray-300 mb-4">Enter an email address to receive your login instructions.</p>
+        <h2 id="backup-email-heading" class="font-semibold text-lg mb-4">Send Instructions to Your Email</h2>
+        <p id="backup-email-note" class="text-sm text-gray-300 mb-4">Enter an email address to receive your login instructions.</p>
         <div class="flex gap-3">
           <input 
             type="email" 
@@ -138,7 +138,7 @@ import Layout from '../../layouts/Layout.astro';
 
         if (data.success) {
           clearInterval(msgInterval);
-          showCredentials(data.email, data.password, data.plan);
+          showCredentials(data.email, data.password, data.plan, data.welcome_email);
           return;
         }
 
@@ -159,7 +159,7 @@ import Layout from '../../layouts/Layout.astro';
     statusMessage.textContent = 'Your mailbox is being created. The welcome email with login details will arrive shortly.';
   }
 
-  function showCredentials(email: string, password: string, plan?: string) {
+  function showCredentials(email: string, password: string, plan?: string, welcomeEmail?: string) {
     statusMessage.textContent = 'Your mailbox is ready!';
     document.getElementById('loading-spinner')!.classList.add('hidden');
     document.getElementById('checkmark-icon')!.classList.remove('hidden');
@@ -168,6 +168,16 @@ import Layout from '../../layouts/Layout.astro';
     document.getElementById('cred-password')!.textContent = password;
     credentialsBox.classList.remove('hidden');
     backupBox.classList.remove('hidden');
+
+    // Edge case (NAT-360): Stripe captured no separate buyer address, so the
+    // welcome email went to the mailbox itself, which is not readable until first
+    // login. Prompt the customer to send the instructions to a readable address.
+    if (!welcomeEmail || welcomeEmail.toLowerCase() === email.toLowerCase()) {
+      const heading = document.getElementById('backup-email-heading');
+      const note = document.getElementById('backup-email-note');
+      if (heading) heading.textContent = 'Where should we send your login info?';
+      if (note) note.textContent = "We only had your new mailbox address, which you can't open until you log in. Enter an email (or a phone-linked address) you can read now and we'll send your login details there.";
+    }
 
     firePurchase(plan || planParam || 'basic');
   }
