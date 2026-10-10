@@ -20,8 +20,8 @@ title: Gulf Island Kayaking - Galiano Island
 tier: basic
 claimed: false
 social:
-  facebook: GulfIslandKayaking
-  instagram: '@GulfIslandKayaking'
+  facebook: https://www.facebook.com/GulfIslandKayaking
+  instagram: 'https://www.instagram.com/GulfIslandKayaking/'
 amenities:
   - Waterfront
   - Pets OK

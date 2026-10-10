@@ -2,7 +2,7 @@
 name: Pioneer Pacific Camp
 url: 'http://www.pioneerpacific.ca'
 island: Thetis Island
-category: recreation
+category: activities
 subcategory: Camps & Retreats
 description: Summer camp and rental site on Thetis Island
 title: Pioneer Pacific Camp - Thetis Island

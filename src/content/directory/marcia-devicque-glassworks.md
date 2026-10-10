@@ -11,7 +11,7 @@ title: Marcia DeVicque GlassWorks - Galiano Island
 tier: basic
 claimed: false
 gallery:
-  - /images/listings/marcia-devicque-glassworks-marciadevicquegif-2012-gif.gif
+  - /images/listings/marcia-devicque-glassworks-marciadevicquegif-2012-gif.webp
   - >-
     /images/listings/marcia-devicque-glassworks-0b508761-a130-4383-b717-5dceff637c72-jpeg.jpeg
   - >-

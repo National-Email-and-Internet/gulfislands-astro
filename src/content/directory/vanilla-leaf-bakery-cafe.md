@@ -15,8 +15,8 @@ title: Vanilla Leaf Bakery Cafe - Pender Island
 tier: basic
 claimed: false
 social:
-  facebook: vanillaleafbakerycafe
-  instagram: '@vanillaleafbakery'
+  facebook: https://www.facebook.com/vanillaleafbakerycafe
+  instagram: 'https://www.instagram.com/vanillaleafbakery/'
 hours:
   daily: '8:00 AM - 5:00 PM'
 gallery:

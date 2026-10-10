@@ -2,7 +2,7 @@
 name: Friends of Furries
 url: 'https://www.thetisisland.net/fof.html'
 island: Thetis Island
-category: services
+category: trades
 subcategory: Animal Services
 description: 'Local volunteer, non-profit service for animal rescue and care'
 title: Friends of Furries - Animal Rescue

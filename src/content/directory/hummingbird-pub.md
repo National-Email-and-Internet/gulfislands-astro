@@ -23,7 +23,7 @@ title: Hummingbird Pub & Family Restaurant - Galiano Island
 tier: basic
 claimed: false
 social:
-  facebook: HummingbirdPub
+  facebook: https://www.facebook.com/HummingbirdPub
 hours:
   monday: '11:30 AM - 9:00 PM'
   tuesday: '11:30 AM - 9:00 PM'

@@ -11,7 +11,7 @@ title: Active Pass Beachhouse - Galiano Island
 tier: basic
 claimed: false
 gallery:
-  - /images/listings/active-pass-beachhouse-activepassbh-2013-gif-gif.gif
+  - /images/listings/active-pass-beachhouse-activepassbh-2013-gif-gif.webp
 logo: /images/listings/active-pass-beachhouse/logo.png
 social:
   instagram: 'https://www.instagram.com/galianoislandtourism/'

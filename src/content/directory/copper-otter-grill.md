@@ -16,7 +16,7 @@ title: Copper Otter Grill - Pender Island
 tier: basic
 claimed: false
 social:
-  facebook: CopperOtterGrill
+  facebook: https://www.facebook.com/CopperOtterGrill
 hours:
   breakfast: '8:00 AM - 11:00 AM'
   lunch: '11:30 AM - 2:30 PM'

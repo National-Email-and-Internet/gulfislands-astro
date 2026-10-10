@@ -16,7 +16,7 @@ title: Aurora Restaurant - Poets Cove
 tier: basic
 claimed: false
 social:
-  instagram: '@poetscove'
+  instagram: 'https://www.instagram.com/poetscove/'
 logo: /images/listings/aurora-restaurant/logo.png
 ---
 

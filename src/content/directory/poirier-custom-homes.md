@@ -2,7 +2,7 @@
 name: "Poirier Custom Homes"
 url: ""
 island: "Thetis Island"
-category: "services"
+category: "trades"
 subcategory: "Construction & Renovation"
 description: "Home construction & renovations, custom millwork & cabinetry. Building Thetis Island homes for over 25 years."
 title: "Poirier Custom Homes - Construction & Millwork"

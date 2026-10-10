@@ -3,7 +3,7 @@ name: The Active Page
 url: 'https://galianoisland.com/visitor-information'
 phone: 250-539-2018
 island: Galiano Island
-category: services
+category: trades
 subcategory: Printing
 description: Printing and design services on Galiano Island
 description_long: ''

@@ -2,7 +2,7 @@
 name: Thetis Island Volunteer Fire Department (TIVFD)
 url: 'https://www.thetisislandfire.ca'
 island: Thetis Island
-category: services
+category: trades
 subcategory: Emergency Services
 description: >-
   Volunteer fire department providing fire protection, medical first response,

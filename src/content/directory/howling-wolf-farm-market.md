@@ -2,7 +2,7 @@
 name: Howling Wolf Farm Market
 url: 'https://www.thetisisland.net/business/chris-pegg/hwf.htm'
 island: Thetis Island
-category: food
+category: eat
 subcategory: Farm Markets & Groceries
 description: >-
   Home made specialties and baked goods, fresh fruit & vegetables, seafood,

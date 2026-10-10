@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gulfislands.com',
+  trailingSlash: 'always',
   integrations: [
     sitemap({
       // Exclude claim-listing and submit-listing pages (noindex forms)
@@ -23,10 +24,10 @@ export default defineConfig({
     '/Construction.html': { destination: '/directory/trades/', status: 301 },
     '/Education.html': { destination: '/directory/education/', status: 301 },
     '/Health.html': { destination: '/directory/health/', status: 301 },
-    '/Services.html': { destination: '/directory/services/', status: 301 },
+    '/Services.html': { destination: '/directory/trades/', status: 301 },
     '/Shopping.html': { destination: '/directory/shopping/', status: 301 },
     '/FarmGarden.html': { destination: '/directory/farms/', status: 301 },
-    '/Legal.html': { destination: '/directory/services/', status: 301 },
+    '/Legal.html': { destination: '/directory/trades/', status: 301 },
     '/Marine.html': { destination: '/directory/marine/', status: 301 },
     '/Community.html': { destination: '/directory/community/', status: 301 },
     '/Organizations.html': { destination: '/directory/community/', status: 301 },

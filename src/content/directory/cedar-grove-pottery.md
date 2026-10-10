@@ -13,8 +13,8 @@ title: Cedar Grove Pottery Gallery - Galiano Island
 tier: basic
 claimed: false
 social:
-  facebook: CedarGrovePottery
-  instagram: '@cedargrovepottery'
+  facebook: https://www.facebook.com/CedarGrovePottery
+  instagram: 'https://www.instagram.com/cedargrovepottery/'
 logo: /images/listings/cedar-grove-pottery/logo.png
 ---
 

@@ -2,7 +2,7 @@
 name: Telegraph Harbour Marina
 url: 'http://www.telegraphharbour.com'
 island: Thetis Island
-category: food
+category: eat
 subcategory: Cafes & Marina Services
 description: >-
   Specialty coffees, fresh baking, home baked pies, ice cream, grocery items and

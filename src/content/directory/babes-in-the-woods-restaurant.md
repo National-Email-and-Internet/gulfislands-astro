@@ -13,5 +13,5 @@ title: "Babes in the Woods Restaurant - Galiano Island"
 tier: "basic"
 claimed: false
 social:
-  facebook: "BabesInTheWoodsGaliano"
+  facebook: "https://www.facebook.com/BabesInTheWoodsGaliano"
 ---

@@ -2,7 +2,7 @@
 name: "Cedar Beach Pizza & Catering"
 url: "https://www.cedar-beach.com/catering"
 island: "Thetis Island"
-category: "food"
+category: "eat"
 subcategory: "Pizza & Catering"
 description: "Gourmet pizza made to order. Catering for small events with custom menus."
 title: "Cedar Beach Pizza & Catering"

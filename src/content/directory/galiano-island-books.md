@@ -16,7 +16,7 @@ title: Galiano Island Books - Galiano Island
 tier: basic
 claimed: false
 social:
-  facebook: Galiano-Island-Books-170133982773
+  facebook: https://www.facebook.com/Galiano-Island-Books-170133982773
 amenities:
   - Waterview
   - Children OK

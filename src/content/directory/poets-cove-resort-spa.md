@@ -40,8 +40,8 @@ title: Poets Cove Resort & Spa - Pender Island
 tier: basic
 claimed: false
 social:
-  instagram: '@poetscove'
-  facebook: PoetsCoveResort
+  instagram: 'https://www.instagram.com/poetscove/'
+  facebook: https://www.facebook.com/PoetsCoveResort
 gallery:
   - /images/listings/site-poets-cove-resort-spa-0.jpg
   - /images/listings/site-poets-cove-resort-spa-1.png

@@ -15,8 +15,8 @@ title: WOODS on Pender - Glamping Resort
 tier: basic
 claimed: false
 social:
-  instagram: '@woodsonpender'
-  facebook: WoodsOnPender
+  instagram: 'https://www.instagram.com/woodsonpender/'
+  facebook: https://www.facebook.com/WoodsOnPender
 gallery:
   - /images/listings/site-woods-on-pender-0.jpg
   - /images/listings/site-woods-on-pender-1.jpg

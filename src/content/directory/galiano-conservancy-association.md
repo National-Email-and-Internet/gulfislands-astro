@@ -37,8 +37,8 @@ title: Galiano Conservancy Association - Galiano Island
 tier: basic
 claimed: false
 social:
-  facebook: GalianoConservancy
-  instagram: '@galianoconservancy'
+  facebook: https://www.facebook.com/GalianoConservancy
+  instagram: 'https://www.instagram.com/galianoconservancy/'
 gallery:
   - /images/listings/site-galiano-conservancy-association-0.jpeg
 logo: /images/listings/galiano-conservancy-association/logo.svg

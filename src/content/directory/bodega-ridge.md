@@ -33,7 +33,7 @@ title: Bodega Ridge - Galiano Island Resort
 tier: basic
 claimed: false
 social:
-  instagram: '@bodegaridge'
+  instagram: 'https://www.instagram.com/bodegaridge/'
 gallery:
   - /images/listings/bodega-ridge.jpg
 logo: /images/listings/bodega-ridge/logo.png

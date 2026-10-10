@@ -13,6 +13,6 @@ title: "Slow Coast Coffee - Pender Island"
 tier: "basic"
 claimed: false
 social:
-  facebook: "SlowCoastCoffee"
-  instagram: "@slowcoastcoffee"
+  facebook: "https://www.facebook.com/SlowCoastCoffee"
+  instagram: "https://www.instagram.com/slowcoastcoffee/"
 ---

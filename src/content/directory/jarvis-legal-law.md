@@ -5,7 +5,7 @@ phone: 778-239-9979
 email: ''
 address: Vancouver & Galiano Island
 island: Galiano Island
-category: services
+category: trades
 subcategory: Legal
 description: >-
   Client-focused Business, Real Estate, and Planning Law Firm serving Vancouver,
