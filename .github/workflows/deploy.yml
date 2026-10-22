@@ -9,6 +9,10 @@ jobs:
   deploy:
     name: Build & Deploy
     runs-on: ubuntu-latest
+    env:
+      # NAT-448: Meta pixel 2925124884553072 ("NEIC Gulf Islands Email").
+      # Layout.astro gates the pixel base code on this at build time; unset => no-op.
+      PUBLIC_META_PIXEL_ID: '2925124884553072'
 
     steps:
       - name: Checkout
