@@ -1,0 +1,441 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const plans = [
+  { id: 'basic', name: 'Basic', storage: '1 GB storage', monthly: '4.99', annual: '52.99' },
+  { id: 'basic-plus', name: 'Basic Plus', storage: '5 GB storage', monthly: '5.49', annual: '59.99' },
+  { id: 'premium', name: 'Premium', storage: '10 GB storage · 2 aliases', monthly: '6.99', annual: '74.99' },
+  { id: 'premium-plus', name: 'Premium Plus', storage: '20 GB storage · 5 aliases', monthly: '7.99', annual: '84.99' },
+];
+---
+
+<Layout
+  title="Get an Email That Shares Your Identity — Gulf Islands"
+  description="A mailbox that says where you live. you@gulfislands.com, not @gmail. Ad-free, hosted in Canada, never scanned for ads."
+  canonicalUrl="https://gulfislands.com/email/"
+>
+  <!-- 1. EmailHero -->
+  <section class="bg-ocean-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-ocean-300 mb-3 font-medium">Island Email</p>
+        <h1 class="font-['Playfair_Display'] text-3xl md:text-5xl font-bold mb-4 leading-tight">
+          Get an email that shares your identity.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-6">
+          A mailbox that says where you live — <span class="font-semibold text-white">you@gulfislands.com</span>, not @gmail.
+        </p>
+        <p class="text-base text-ocean-100 mb-8 max-w-md">
+          We're not Google. We don't read your email to place ads, sell your information, or spy on you.
+        </p>
+        <a
+          href="#checkout"
+          data-scroll-cta
+          class="inline-block bg-ocean-500 hover:bg-ocean-400 text-white px-8 py-4 rounded-full font-semibold transition shadow-lg text-lg"
+        >
+          Continue to Payment
+        </a>
+        <p class="text-xs text-white/40 mt-4">
+          Email accounts provided by
+          <a href="https://natinternet.com" class="text-white/60 hover:text-white/80">National Email and Internet Corp</a>
+        </p>
+      </div>
+      <div class="w-full">
+        <img
+          src="/images/islands/salt-spring-ferry-card.jpg"
+          width="800"
+          height="600"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          alt="A Gulf Islands ferry crossing between the islands"
+          class="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TrustProofBar -->
+  <section class="bg-ocean-950 text-white border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-6">
+      <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-3">
+        <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Ad-free</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Hosted in Canada</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-sm">No scanning for ads</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-sm">No data selling</span>
+      </div>
+      <p class="text-sm text-center text-gray-300 max-w-3xl mx-auto">
+        Hosted in Canada by National Email and Internet Corp. Never scanned for advertising. No ads, no tracking, no data harvesting.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. PlanGrid (prices visible before the availability gate) + 4/5 checkout card -->
+  <div id="checkout" class="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-start">
+    <!-- PlanGrid -->
+    <div id="plan-grid">
+      <p class="text-sm uppercase tracking-widest text-ocean-600 mb-2 font-medium">Choose Your Plan</p>
+      <h2 class="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-gray-900 mb-4">Simple, honest pricing</h2>
+
+      <!-- Billing Toggle -->
+      <div class="flex items-center gap-3 mb-6">
+        <span id="toggle-monthly-label" class="text-sm text-gray-400">Monthly</span>
+        <button id="billing-toggle" class="relative w-12 h-6 rounded-full bg-ocean-600 transition-colors" aria-label="Toggle billing period">
+          <span id="toggle-knob" class="absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform" style="transform: translateX(1.5rem)"></span>
+        </button>
+        <span id="toggle-annual-label" class="text-sm font-semibold text-ocean-700">Annual <span class="text-xs text-ocean-600">(save ~10%)</span></span>
+      </div>
+
+      <div class="space-y-3">
+        {plans.map((p) => (
+          <div
+            class="plan-card bg-white rounded-xl p-4 border border-gray-200 hover:border-ocean-400 cursor-pointer transition"
+            data-plan={p.id}
+            data-monthly={p.monthly}
+            data-annual={p.annual}
+          >
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="font-semibold text-gray-900">{p.name}</p>
+                <p class="text-xs text-gray-500">{p.storage}</p>
+              </div>
+              <div class="text-right">
+                <p class="font-semibold text-gray-900 plan-price">${p.annual}<span class="text-sm text-gray-500">/yr</span></p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 4. AvailabilityInline + 5. PrimaryCTA -->
+    <div class="bg-ocean-900 text-white rounded-2xl p-8 border border-white/10 w-full md:sticky md:top-24">
+      <p class="text-lg font-semibold mb-6 text-center">Is your email available?</p>
+      <div class="flex items-center justify-center gap-2 text-xl mb-6">
+        <input
+          type="text"
+          id="email-user"
+          placeholder="yourname"
+          autocomplete="off"
+          class="bg-transparent border-b-2 border-white/40 focus:border-white text-white placeholder-white/40 focus:outline-none text-center min-w-[120px]"
+        />
+        <span class="text-white/60">@</span>
+        <div class="relative">
+          <select id="email-domain" class="bg-transparent border-b-2 border-white/40 focus:border-white text-white appearance-none cursor-pointer focus:outline-none text-center pr-6">
+            <option value="gulfislands.com" class="bg-ocean-800">gulfislands.com</option>
+            <option value="saltspring.com" class="bg-ocean-800">saltspring.com</option>
+            <option value="gabriola.com" class="bg-ocean-800">gabriola.com</option>
+            <option value="mayneisland.net" class="bg-ocean-800">mayneisland.net</option>
+            <option value="galianoisland.net" class="bg-ocean-800">galianoisland.net</option>
+            <option value="penderislands.net" class="bg-ocean-800">penderislands.net</option>
+            <option value="pacificnet.net" class="bg-ocean-800">pacificnet.net</option>
+          </select>
+          <svg class="w-4 h-4 absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </div>
+      <button
+        id="check-email-btn"
+        class="w-full bg-white text-ocean-700 hover:bg-ocean-100 py-3 rounded-full font-semibold transition shadow-lg"
+      >
+        Check It
+      </button>
+      <div id="email-result" class="text-center py-3 text-lg hidden"></div>
+
+      <div class="mt-6 pt-6 border-t border-white/10">
+        <p id="selected-plan-display" class="text-sm text-white/60 text-center mb-4">Select a plan to continue</p>
+        <button
+          id="continue-payment-btn"
+          class="w-full bg-ocean-500 hover:bg-ocean-400 text-white py-3 rounded-full font-semibold transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled
+        >
+          Continue to Payment
+        </button>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const CURRENCY = 'CAD';
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'fbp', 'fbc'];
+
+  // Plan prices (CAD) — keep in sync with plan cards and Stripe price IDs.
+  const PLAN_PRICES: Record<string, { monthly: number; annual: number }> = {
+    basic: { monthly: 4.99, annual: 52.99 },
+    'basic-plus': { monthly: 5.49, annual: 59.99 },
+    premium: { monthly: 6.99, annual: 74.99 },
+    'premium-plus': { monthly: 7.99, annual: 84.99 },
+  };
+  const PLAN_NAMES: Record<string, string> = {
+    basic: 'Basic',
+    'basic-plus': 'Basic Plus',
+    premium: 'Premium',
+    'premium-plus': 'Premium Plus',
+  };
+
+  function getUtm(): Record<string, string> {
+    const fn = (window as any).giGetUtm;
+    return typeof fn === 'function' ? (fn() || {}) : {};
+  }
+
+  const checkBtn = document.getElementById('check-email-btn') as HTMLButtonElement;
+  const emailUser = document.getElementById('email-user') as HTMLInputElement;
+  const emailDomain = document.getElementById('email-domain') as HTMLSelectElement;
+  const resultDiv = document.getElementById('email-result')!;
+  const continueBtn = document.getElementById('continue-payment-btn') as HTMLButtonElement;
+  const selectedPlanDisplay = document.getElementById('selected-plan-display')!;
+  const billingToggle = document.getElementById('billing-toggle')!;
+  const toggleKnob = document.getElementById('toggle-knob')!;
+  const toggleMonthlyLabel = document.getElementById('toggle-monthly-label')!;
+  const toggleAnnualLabel = document.getElementById('toggle-annual-label')!;
+  const planCards = document.querySelectorAll('.plan-card');
+
+  let billingAnnual = true;
+  let selectedPlan: string | null = null;
+  let lastCheckedEmail: string | null = null;
+
+  function planValue(plan: string): number {
+    const p = PLAN_PRICES[plan];
+    if (!p) return 0;
+    return billingAnnual ? p.annual : p.monthly;
+  }
+
+  const RESTRICTED_NAMES = new Set([
+    'abuse', 'accounts', 'accounting', 'admin', 'administrator',
+    'billing', 'cert', 'contact', 'dns', 'ftp',
+    'hello', 'help', 'host', 'hostmaster', 'imap',
+    'info', 'mail', 'mailer-daemon', 'natinternet', 'neic',
+    'no-reply', 'noc', 'noreply', 'office', 'payments',
+    'pop', 'postmaster', 'root', 'sales', 'security',
+    'service', 'smtp', 'ssl', 'staff', 'support',
+    'sysadmin', 'team', 'webmaster', 'www',
+  ]);
+  function isValidUsername(user: string): boolean {
+    return /^[a-z0-9._-]+$/.test(user);
+  }
+
+  function updatePlanPrices() {
+    planCards.forEach((card) => {
+      const el = card as HTMLElement;
+      const monthly = el.dataset.monthly;
+      const annual = el.dataset.annual;
+      const priceEl = el.querySelector('.plan-price')!;
+      if (billingAnnual && annual) {
+        priceEl.innerHTML = `$${annual}<span class="text-sm text-gray-500">/yr</span>`;
+      } else if (monthly) {
+        priceEl.innerHTML = `$${monthly}<span class="text-sm text-gray-500">/mo</span>`;
+      }
+    });
+  }
+
+  function updateContinueButton() {
+    const ready = !!(selectedPlan && lastCheckedEmail);
+    continueBtn.disabled = !ready;
+    selectedPlanDisplay.textContent = selectedPlan
+      ? `${PLAN_NAMES[selectedPlan]} · ${billingAnnual ? 'annual' : 'monthly'}${lastCheckedEmail ? ' · ' + lastCheckedEmail : ''}`
+      : 'Select a plan to continue';
+  }
+
+  // Plan card selection → GA4 select_plan
+  planCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      planCards.forEach((c) => {
+        c.classList.remove('selected', 'border-ocean-400');
+        (c as HTMLElement).style.background = '';
+        (c as HTMLElement).style.borderWidth = '';
+      });
+      const el = card as HTMLElement;
+      el.classList.add('selected', 'border-ocean-400');
+      el.style.background = 'rgba(34, 211, 238, 0.08)';
+      el.style.borderWidth = '2px';
+      selectedPlan = el.dataset.plan || null;
+
+      if (selectedPlan && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'select_plan', {
+          currency: CURRENCY,
+          value: planValue(selectedPlan),
+          items: [{ item_id: selectedPlan, item_name: PLAN_NAMES[selectedPlan], price: planValue(selectedPlan), quantity: 1 }],
+          billing: billingAnnual ? 'annual' : 'monthly',
+          ...getUtm(),
+        });
+      }
+      updateContinueButton();
+    });
+  });
+
+  // Billing toggle
+  billingToggle.addEventListener('click', () => {
+    billingAnnual = !billingAnnual;
+    toggleKnob.style.transform = billingAnnual ? 'translateX(1.5rem)' : 'translateX(0)';
+    toggleMonthlyLabel.className = billingAnnual ? 'text-sm text-gray-400' : 'text-sm font-semibold text-ocean-700';
+    toggleAnnualLabel.className = billingAnnual ? 'text-sm font-semibold text-ocean-700' : 'text-sm text-gray-400';
+    updatePlanPrices();
+    updateContinueButton();
+  });
+
+  updatePlanPrices();
+  updateContinueButton();
+
+  // Availability check → GA4 check_availability on success
+  checkBtn?.addEventListener('click', async () => {
+    const user = emailUser?.value.trim().toLowerCase();
+    const domain = emailDomain?.value;
+
+    if (!user) {
+      showResult('Please enter a username', 'text-yellow-300');
+      return;
+    }
+    if (!isValidUsername(user)) {
+      showResult('Only letters, numbers, dots, dashes, and underscores allowed', 'text-yellow-300');
+      return;
+    }
+    if (RESTRICTED_NAMES.has(user)) {
+      showResult('This address is reserved', 'text-yellow-300');
+      return;
+    }
+
+    checkBtn.textContent = 'Checking...';
+    checkBtn.disabled = true;
+
+    try {
+      const response = await fetch(
+        `https://ops.natinternet.com/api/email/availability?user=${encodeURIComponent(user)}&domain=${domain}`
+      );
+      const data = await response.json();
+
+      if (data.available) {
+        lastCheckedEmail = `${user}@${domain}`;
+        showResult(`<span class="text-green-400">✓ ${lastCheckedEmail} is available!</span>`, 'text-green-400');
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'check_availability', { available: true, domain, ...getUtm() });
+        }
+      } else {
+        lastCheckedEmail = null;
+        showResult(`<span class="text-red-400">✗ ${user}@${domain} is already taken</span>`, 'text-red-400');
+      }
+    } catch (error) {
+      showResult('Error checking availability. Please try again.', 'text-yellow-300');
+    } finally {
+      checkBtn.textContent = 'Check It';
+      checkBtn.disabled = false;
+      updateContinueButton();
+    }
+  });
+
+  emailUser?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') checkBtn?.click();
+  });
+
+  function showResult(message: string, className: string) {
+    resultDiv.innerHTML = message;
+    resultDiv.className = `text-center py-3 text-lg ${className}`;
+    resultDiv.classList.remove('hidden');
+  }
+
+  // Continue to Payment → GA4 begin_checkout + Meta InitiateCheckout, fired before nav.
+  continueBtn.addEventListener('click', async () => {
+    if (!selectedPlan || !lastCheckedEmail) return;
+
+    continueBtn.textContent = 'Redirecting...';
+    continueBtn.disabled = true;
+
+    const billing = billingAnnual ? 'annual' : 'monthly';
+    const value = planValue(selectedPlan);
+    const utm = getUtm();
+
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'begin_checkout', {
+        currency: CURRENCY,
+        value,
+        items: [{ item_id: selectedPlan, item_name: PLAN_NAMES[selectedPlan], price: value, quantity: 1 }],
+        billing,
+        ...utm,
+      });
+    }
+
+    if (typeof (window as any).fbq === 'function') {
+      const initiateEventId = 'initiate_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      (window as any).fbq('track', 'InitiateCheckout', {
+        currency: CURRENCY,
+        value,
+        content_ids: [selectedPlan],
+        content_type: 'product',
+        ...utm,
+      }, { eventID: initiateEventId });
+    }
+
+    try {
+      const [mailbox, domain] = lastCheckedEmail.split('@');
+      const response = await fetch('https://ops.natinternet.com/api/email/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: lastCheckedEmail,
+          mailbox,
+          domain,
+          plan: selectedPlan,
+          billing,
+          ...utm,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.url) {
+        // Brief deferral so the checkout events flush before the outbound hop.
+        window.setTimeout(() => {
+          window.location.href = data.url;
+        }, 250);
+      } else {
+        alert('Could not start checkout. Please try again.');
+        continueBtn.textContent = 'Continue to Payment';
+        continueBtn.disabled = false;
+      }
+    } catch (error) {
+      alert('Error connecting to payment. Please try again.');
+      continueBtn.textContent = 'Continue to Payment';
+      continueBtn.disabled = false;
+    }
+  });
+
+  // Hero CTA simply scrolls to the checkout card.
+  document.querySelectorAll('[data-scroll-cta]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // PlanGrid in view → GA4 view_plan_list + Meta ViewContent (once).
+  let planListFired = false;
+  const planGrid = document.getElementById('plan-grid');
+  if (planGrid && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !planListFired) {
+          planListFired = true;
+          const utm = getUtm();
+          if (typeof (window as any).gtag === 'function') {
+            (window as any).gtag('event', 'view_plan_list', {
+              currency: CURRENCY,
+              items: Object.keys(PLAN_PRICES).map((id) => ({ item_id: id, item_name: PLAN_NAMES[id] })),
+              ...utm,
+            });
+          }
+          if (typeof (window as any).fbq === 'function') {
+            (window as any).fbq('track', 'ViewContent', {
+              content_type: 'product_group',
+              content_ids: Object.keys(PLAN_PRICES),
+              currency: CURRENCY,
+              ...utm,
+            });
+          }
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    obs.observe(planGrid);
+  }
+</script>
