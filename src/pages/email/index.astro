@@ -335,7 +335,7 @@ const plans = [
     resultDiv.classList.remove('hidden');
   }
 
-  // Continue to Payment → GA4 begin_checkout + Meta InitiateCheckout, fired before nav.
+  // Continue to Payment → GA4 begin_checkout + Meta InitiateCheckout, flushed before nav.
   continueBtn.addEventListener('click', async () => {
     if (!selectedPlan || !lastCheckedEmail) return;
 
@@ -346,6 +346,24 @@ const plans = [
     const value = planValue(selectedPlan);
     const utm = getUtm();
 
+    // Navigate only once the checkout URL is ready AND the GA4 hit has been sent,
+    // so begin_checkout is not lost to the outbound Stripe redirect (NAT-519).
+    let navigated = false;
+    let checkoutUrl: string | null = null;
+    let checkoutEventSent = false;
+    const maybeGo = () => {
+      if (navigated || !checkoutUrl || !checkoutEventSent) return;
+      navigated = true;
+      // Force gtag to flush its queued hits (incl. begin_checkout) before the
+      // outbound redirect; otherwise the batched send is lost (NAT-519).
+      try {
+        document.dispatchEvent(new Event('visibilitychange'));
+        window.dispatchEvent(new Event('pagehide'));
+      } catch (e) {}
+      const url = checkoutUrl;
+      window.setTimeout(() => { window.location.href = url; }, 150);
+    };
+
     if (typeof (window as any).gtag === 'function') {
       (window as any).gtag('event', 'begin_checkout', {
         currency: CURRENCY,
@@ -353,7 +371,16 @@ const plans = [
         items: [{ item_id: selectedPlan, item_name: PLAN_NAMES[selectedPlan], price: value, quantity: 1 }],
         billing,
         ...utm,
+        // event_callback fires once the hit is sent (or event_timeout elapses);
+        // navigation is gated on it so the event reaches GA4 (NAT-519).
+        event_callback: () => {
+          checkoutEventSent = true;
+          maybeGo();
+        },
+        event_timeout: 2000,
       });
+    } else {
+      checkoutEventSent = true;
     }
 
     if (typeof (window as any).fbq === 'function') {
@@ -385,10 +412,8 @@ const plans = [
       const data = await response.json();
 
       if (data.url) {
-        // Brief deferral so the checkout events flush before the outbound hop.
-        window.setTimeout(() => {
-          window.location.href = data.url;
-        }, 250);
+        checkoutUrl = data.url;
+        maybeGo();
       } else {
         alert('Could not start checkout. Please try again.');
         continueBtn.textContent = 'Continue to Payment';

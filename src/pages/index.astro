@@ -862,6 +862,24 @@ function cleanUrl(url: string): string {
     const value = planValue(selectedPlan);
     const utm = getUtm();
 
+    // Navigate only once the checkout URL is ready AND the GA4 hit has been sent,
+    // so begin_checkout is not lost to the outbound Stripe redirect (NAT-519).
+    let navigated = false;
+    let checkoutUrl: string | null = null;
+    let checkoutEventSent = false;
+    const maybeGo = () => {
+      if (navigated || !checkoutUrl || !checkoutEventSent) return;
+      navigated = true;
+      // Force gtag to flush its queued hits (incl. begin_checkout) before the
+      // outbound redirect; otherwise the batched send is lost (NAT-519).
+      try {
+        document.dispatchEvent(new Event('visibilitychange'));
+        window.dispatchEvent(new Event('pagehide'));
+      } catch (e) {}
+      const url = checkoutUrl;
+      window.setTimeout(() => { window.location.href = url; }, 150);
+    };
+
     // GA4 begin_checkout
     if (typeof (window as any).gtag === 'function') {
       (window as any).gtag('event', 'begin_checkout', {
@@ -869,7 +887,16 @@ function cleanUrl(url: string): string {
         value,
         items: [{ item_id: selectedPlan, item_name: selectedPlan, price: value, quantity: 1 }],
         ...utm,
+        // event_callback fires once the hit is sent (or event_timeout elapses);
+        // navigation is gated on it so the event reaches GA4 (NAT-519).
+        event_callback: () => {
+          checkoutEventSent = true;
+          maybeGo();
+        },
+        event_timeout: 2000,
       });
+    } else {
+      checkoutEventSent = true;
     }
 
     // Meta InitiateCheckout (no-op unless a pixel ID is configured)
@@ -902,13 +929,15 @@ function cleanUrl(url: string): string {
       const data = await response.json();
 
       if (data.url) {
-        window.location.href = data.url;
+        checkoutUrl = data.url;
+        maybeGo();
       } else {
         alert('Could not start checkout. Please try again.');
+        continueBtn.textContent = 'Continue to Payment';
+        continueBtn.disabled = false;
       }
     } catch (error) {
       alert('Error connecting to payment. Please try again.');
-    } finally {
       continueBtn.textContent = 'Continue to Payment';
       continueBtn.disabled = false;
     }
