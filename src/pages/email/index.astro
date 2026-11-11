@@ -102,6 +102,11 @@ const plans = [
                 <p class="font-semibold text-gray-900 plan-price">${p.monthly}<span class="text-sm text-gray-500">/mo</span></p>
               </div>
             </div>
+            <button
+              type="button"
+              class="plan-select-btn mt-3 w-full bg-ocean-600 hover:bg-ocean-500 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+              data-plan={p.id}
+            >Select</button>
           </div>
         ))}
       </div>
@@ -239,30 +244,42 @@ const plans = [
       : 'Select a plan to continue';
   }
 
-  // Plan card selection → GA4 select_plan
-  planCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      planCards.forEach((c) => {
-        c.classList.remove('selected', 'border-ocean-400');
-        (c as HTMLElement).style.background = '';
-        (c as HTMLElement).style.borderWidth = '';
-      });
-      const el = card as HTMLElement;
-      el.classList.add('selected', 'border-ocean-400');
-      el.style.background = 'rgba(34, 211, 238, 0.08)';
-      el.style.borderWidth = '2px';
-      selectedPlan = el.dataset.plan || null;
+  // Plan card selection → GA4 select_plan (fires exactly once per selection)
+  function selectPlan(card: Element) {
+    planCards.forEach((c) => {
+      c.classList.remove('selected', 'border-ocean-400');
+      (c as HTMLElement).style.background = '';
+      (c as HTMLElement).style.borderWidth = '';
+    });
+    const el = card as HTMLElement;
+    el.classList.add('selected', 'border-ocean-400');
+    el.style.background = 'rgba(34, 211, 238, 0.08)';
+    el.style.borderWidth = '2px';
+    selectedPlan = el.dataset.plan || null;
 
-      if (selectedPlan && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'select_plan', {
-          currency: CURRENCY,
-          value: planValue(selectedPlan),
-          items: [{ item_id: selectedPlan, item_name: PLAN_NAMES[selectedPlan], price: planValue(selectedPlan), quantity: 1 }],
-          billing: billingAnnual ? 'annual' : 'monthly',
-          ...getUtm(),
-        });
-      }
-      updateContinueButton();
+    if (selectedPlan && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'select_plan', {
+        currency: CURRENCY,
+        value: planValue(selectedPlan),
+        items: [{ item_id: selectedPlan, item_name: PLAN_NAMES[selectedPlan], price: planValue(selectedPlan), quantity: 1 }],
+        billing: billingAnnual ? 'annual' : 'monthly',
+        ...getUtm(),
+      });
+    }
+    updateContinueButton();
+  }
+
+  planCards.forEach((card) => {
+    card.addEventListener('click', () => selectPlan(card));
+  });
+
+  // Explicit "Select" button: same selection path, stopPropagation so the
+  // card-level listener does not fire a second select_plan event.
+  document.querySelectorAll('.plan-select-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = (btn as HTMLElement).closest('.plan-card');
+      if (card) selectPlan(card);
     });
   });
 
