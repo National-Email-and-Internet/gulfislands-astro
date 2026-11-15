@@ -1,3 +1,25 @@
+# gulfislands-astro
+
+## Deployment
+
+CI (`push` to `master` -> `.github/workflows/deploy.yml`) builds and rsyncs `dist/` to both boxes. It sets the Meta
+pixel env, so CI deploys are safe.
+
+**Any manual / hand-built deploy MUST build with the Meta pixel env**, or the pixel is silently stripped from every
+page (Meta PageView / InitiateCheckout / Purchase go dark — happened 2026-11-14):
+
+```sh
+PUBLIC_META_PIXEL_ID=2925124884553072 npm run build
+# then rsync dist/ to BOTH WEB-01 (51.79.92.134) and WEB-02 (15.235.46.226):
+#   rsync -avz --delete --rsync-path="sudo rsync" --chown=www-data:www-data dist/ ubuntu@<host>:/var/www/gulfislands.com/
+```
+
+Always deploy to BOTH boxes, else ~50% of requests drop the pixel. Verify after deploy: `https://gulfislands.com/`
+and `https://gulfislands.com/email/` must each contain `connect.facebook.net` and `2925124884553072`
+(the nightly site-seam check asserts this).
+
+---
+
 # Astro Starter Kit: Minimal
 
 ```sh
